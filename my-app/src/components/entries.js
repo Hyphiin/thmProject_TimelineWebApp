@@ -9,7 +9,7 @@ const entry = [
         }
     },
     {
-        text: "second entry: hier steht ein toller testender Text, mit sinnvollem Inhalt, der lang sein soll",
+        text: "second entry: hier soll gaaanz viel Text stehen, damit ich mehr erkennen kann. und noch ein bisschen",
         date: "02.05.2020",
         category: {
             tag: "last",
