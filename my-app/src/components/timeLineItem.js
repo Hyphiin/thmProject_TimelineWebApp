@@ -8,7 +8,9 @@ const TimeLineItem = ({entries}) => (
             </span>
             <time>{entries.date}</time>
             <p>{entries.text}</p>
-            <span className="circle"/>
+            <span className="circle1"/>
+            <span className="circle2"/>
+            <span className="circle3"/>
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 /*die einzelnen Einträge des Zeitstrahls werden hier als Array aufgelistet mit Datum etc.*/
 const entry = [
     {
-        text: "first entry",
+        text: "first eintrag",
         date: "02.05.2020",
         category: {
             tag: "medium",
@@ -9,11 +9,19 @@ const entry = [
         }
     },
     {
-        text: "second entry: hier soll gaaanz viel Text stehen, damit ich mehr erkennen kann. und noch ein bisschen",
+        text: "second eintrag: hier soll gaaanz viel Text stehen, damit ich mehr erkennen kann. und noch ein bisschen",
         date: "02.05.2020",
         category: {
             tag: "last",
             color: "#DF01D7"
+        }
+    },
+    {
+        text: "dritter eintrag: hier soll gaaanz viel Text stehen, damit ich mehr erkennen kann. und noch ein bisschen",
+        date: "02.05.2020",
+        category: {
+            tag: "last",
+            color: "#514"
         }
     }
 ];

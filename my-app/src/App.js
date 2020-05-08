@@ -4,7 +4,7 @@ import Timeline from "./components/timeLine";
 
 const App = () => (
     <>
-        <h1>React Timeline</h1>
+        <h1>Max Mustermann</h1>
         <Timeline/>
     </>
 );
