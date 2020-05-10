@@ -16,16 +16,14 @@ function TimeLineItem ({entries}) {
     return (
         <div className="timeline-item">
             <div className="timeline-item-content">
-            <span className="tag" style={{background: entries.category.color}}>
+            <span className="tag">
                 {entries.category.tag}
             </span>
                 <time>{entries.date}</time>
                 <p>{text}</p>
-                <div className="circles" >
-                    <span className="circle1" onClick={()=> console.log(addContent({}).length)}/>
+                <span className="circle"/> {/*onClick={()=> console.log(addContent({}).length)}/>
                     <span className="circle2" onClick={() => clickHandler()}/>
-                    <span className="circle3" onClick={() =>addContent({text: "bla", date:"09.08.98", tag:"last",color:"#514"})}/>
-                </div>
+                    <span className="circle3" onClick={() =>addContent({text: "bla", date:"09.08.98", tag:"last",color:"#514"})}/> */}
             </div>
         </div>
     )
