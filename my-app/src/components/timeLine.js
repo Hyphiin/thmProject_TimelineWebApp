@@ -1,12 +1,16 @@
 import React from "react";
-import entry from "./entries";
+import addContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
+import test from "./returnNewArray"
 
-const Timeline = () => entry.length > 0 && (
+
+console.log("timeline");
+const Timeline = () => addContent({}).length > 0 && (
     <div className="timeline-container">
-        {entry.map((entries, idx) => (
+        {addContent({}).map((entries, idx) => (
             <TimeLineItem entries={entries} key={idx}/>
         ))}
     </div>
+
 );
 export default Timeline;
