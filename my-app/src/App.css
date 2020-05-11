@@ -28,6 +28,7 @@ h1 {
     flex-direction: column;
     position: relative;
     margin: 40px 0;
+    width: 80%;
 }
 
 /*Linie des Zeitstrahls*/
@@ -43,7 +44,7 @@ h1 {
 .timeline-item {
     display: flex;
     justify-content: flex-end;
-    padding-right: 80px;
+    padding-right: 25px;
     position: relative;
     margin: 30px 0;
     width: 50%;
@@ -52,7 +53,7 @@ h1 {
 .timeline-item:nth-child(odd) {
     align-self: flex-end;
     justify-content: flex-start;
-    padding-left: 80px;
+    padding-left: 25px;
     padding-right: 0;
 }
 
@@ -70,25 +71,18 @@ h1 {
     text-align: right;
 }
 
-/*die Zeiger-Raute vom Text zum Zeitstrahl*/
+/*der Kreis des Eintrags*/
 .timeline-item-content::after {
     content: ' ';
-    /*background-color: #fff;
-    box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    right: -7.5px;
-    top: calc(50% - 7.5px);
-    transform: rotate(45deg);
-    width: 15px;
-    height: 15px;*/
-    /*es folgt ein punkt*/
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
     height: 18px;
     width: 18px;
     background-color: #000;
     border-radius: 50%;
     position: absolute;
-    right: -25px;
+    right: -34px;
     top: calc(50% - 8px);
+    z-index: 100;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content {
@@ -96,10 +90,10 @@ h1 {
     align-items: flex-start;
 }
 
-/*richtiges Einrücken der Zeiger-Raute*/
+/*Einrücken des schwarzen Kreises der rechtsseitigen Einträge*/
 .timeline-item:nth-child(odd) .timeline-item-content::after {
     right: auto;
-    left: -25px;
+    left: -34px;
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -115,13 +109,13 @@ h1 {
     text-transform: uppercase;
 }
 
-/*rückt Tags an richtige Stelle*/
+
 .timeline-item:nth-child(odd) .timeline-item-content .tag {
     left: auto;
     right: 5px;
 }
 
-/*vmtl time an die dots anpinnen und/oder time aus timelineItem separieren und einzelner .js wie dort*/
+
 .timeline-item-content time {
     color: #000000;
     font-size: 12px;
@@ -140,8 +134,8 @@ h1 {
     background-color: #f56e47;
     border-radius: 50%;
     position: absolute;
-    top: calc(50% - 10px);
-    right: -90px;
+    top: calc(50% - 70px);
+    right: -35px;
     width: 20px;
     height: 20px;
     z-index: 100;
@@ -150,42 +144,29 @@ h1 {
 
 .timeline-item:nth-child(odd) .timeline-item-content .circle {
    right: auto;
-   left: -90px;
+   left: -35px;
 }
 
-/*.timeline-item-content .circle::after {
+.timeline-item-content .circle::after {
     content: " ";
     background-color: #f56e47;
     border-radius: 50%;
     position: absolute;
-    margin-top: 500%;
+    margin-top: 600%;
     left: 0;
     width: 20px;
     height: 20px;
-    z-index: 100;
-}*/
-
-.timeline-item-content .circle::after {
-    content: " ";
-    background-color: #000000;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 8px);
-    left: -30px;
-    width: 18px;
-    height: 18px;
     z-index: 100;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content .circle::after {
     left: auto;
-    right: -30px;
 }
 
 
 @media only screen and (max-width: 1023px) {
     .timeline-item-content {
-        max-width: 100%;
+        max-width: 65%;
     }
 }
 
