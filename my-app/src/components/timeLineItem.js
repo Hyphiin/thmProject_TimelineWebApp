@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import addContent from "./AddEntries"
-
+import FileInput from "./FileInput";
 
 
 
@@ -21,6 +21,7 @@ function TimeLineItem ({entries}) {
             </span>
                 <time>{entries.date}</time>
                 <p>{text}</p>
+                <FileInput/>
                 <span className="circle"/> {/*onClick={()=> console.log(addContent({}).length)}/>
                     <span className="circle2" onClick={() => clickHandler()}/>
                     <span className="circle3" onClick={() =>addContent({text: "bla", date:"09.08.98", tag:"last",color:"#514"})}/> */}
