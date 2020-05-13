@@ -1,13 +1,10 @@
 import React, {useState} from "react";
 import addContent from "./AddEntries"
 
-
-
-
 function TimeLineItem ({entries}) {
     function clickHandler() {
         let eingabe=prompt("Inhalt eingeben.", "");
-        if (eingabe!=""){
+        if (eingabe!==""){
             setText(eingabe);
         }
     }
@@ -15,15 +12,15 @@ function TimeLineItem ({entries}) {
     const onChange = event => setText(event.target.text);
     return (
         <div className="timeline-item">
-            <div className="timeline-item-content">
-            <span className="tag">
+            <div className="timeline-item-content" >
+                <div className="box" onClick={() => clickHandler()}>
+            <span className="tag" >
                 {entries.category.tag}
             </span>
                 <time>{entries.date}</time>
                 <p>{text}</p>
-                <span className="circle"/> {/*onClick={()=> console.log(addContent({}).length)}/>
-                    <span className="circle2" onClick={() => clickHandler()}/>
-                    <span className="circle3" onClick={() =>addContent({text: "bla", date:"09.08.98", tag:"last",color:"#514"})}/> */}
+                </div>
+                <span className="circle" onClick={() => addContent("test","34.09.3999","last")}/>
             </div>
         </div>
     )

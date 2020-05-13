@@ -1,17 +1,16 @@
 import entry from "./entries";
-import React, {useState} from "react";
+import React from "react";
 
-function addContent (props){
-    if (props.text==null) {
+function addContent (text, date, tag){
+    if (text==null) {
         return entry
     }
     else {
         let newObject = {
-            text: props.text,
-            date: props.date,
+            text: text,
+            date: date,
             category: {
-                tag: props.tag,
-                color: props.color
+                tag: tag
             }
         };
         entry.push(newObject);
