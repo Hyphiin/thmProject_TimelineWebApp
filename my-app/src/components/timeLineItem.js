@@ -2,25 +2,32 @@ import React, {useState} from "react";
 import addContent from "./AddEntries"
 
 function TimeLineItem ({entries}) {
-    function clickHandler() {
-        let eingabe=prompt("Inhalt eingeben.", "");
-        if (eingabe!==""){
-            setText(eingabe);
+    function clickHandler(mode) {
+        if (mode==="add") {
+            let eingabe = prompt("Inhalt eingeben.", "");
+            if (eingabe !== "") {
+                let dateObject = new Date();
+                let currentDate = dateObject.toLocaleDateString();
+                addContent(eingabe, currentDate, "new", addContent().indexOf(entries),"add");
+            }
+        }
+        if (mode==="remove"){
+            addContent("","","",addContent().indexOf(entries),"remove");
         }
     }
-    const [text, setText] = useState(entries.text);
-    const onChange = event => setText(event.target.text);
+    const [text, setText] = useState(entries.text);//Übergeblieben, wichtig für Textchanges
+
     return (
         <div className="timeline-item">
             <div className="timeline-item-content" >
-                <div className="box" onClick={() => clickHandler()}>
+                <div className="box">
             <span className="tag" >
                 {entries.category.tag}
             </span>
                 <time>{entries.date}</time>
-                <p>{text}</p>
+                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 </div>
-                <span className="circle" onClick={() => addContent("test","34.09.3999","last")}/>
+                <span className="circle" onClick={() => clickHandler("add")}/>
             </div>
         </div>
     )
