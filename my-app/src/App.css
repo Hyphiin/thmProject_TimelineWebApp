@@ -23,6 +23,18 @@ h1 {
     width: 100%;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.toolbox-container {
+
+}
+
+#eintragerstellen {
+    background-color: #f56e47;
+}
+
 .timeline-container {
     display: flex;
     flex-direction: column;
