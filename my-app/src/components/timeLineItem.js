@@ -28,6 +28,7 @@ function TimeLineItem ({entries}) {
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 </div>
+                <FileInput/>
                 <span className="circle" onClick={() => clickHandler("add")}/>
             </div>
         </div>
