@@ -1,21 +1,31 @@
 import entry from "./entries";
-import React, {useState} from "react";
+import React, {Component} from "react";
 
-function addContent (props){
-    if (props.text==null) {
-        return entry
+function addContent (text, date, tag, position, mode){
+
+    if (text==null) {
+        return entry;
     }
-    else {
+    if (text==="get"){
+        console.log(entry);
+        let newEntry=[];
+        newEntry=entry.concat(newEntry);
+        console.log(newEntry);
+        return newEntry;
+    }
+    if(mode==="add") {
         let newObject = {
-            text: props.text,
-            date: props.date,
+            text: text,
+            date: date,
             category: {
-                tag: props.tag,
-                color: props.color
+                tag: tag
             }
         };
-        entry.push(newObject);
+        entry.splice(position,0,newObject);
         console.log(entry);
+    }
+    if (mode==="remove"){
+        entry.splice(position,1);
     }
 }
 export default addContent;
