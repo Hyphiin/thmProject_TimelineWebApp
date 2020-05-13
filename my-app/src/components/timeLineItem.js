@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import addContent from "./AddEntries"
+import FileInput from "./FileInput";
 
 function TimeLineItem ({entries}) {
     function clickHandler(mode) {
