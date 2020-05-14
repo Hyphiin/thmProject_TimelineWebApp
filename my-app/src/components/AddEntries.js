@@ -24,7 +24,17 @@ function addContent (text, date, tag, position, mode){
         entry.splice(position,0,newObject);
         console.log(entry);
     }
-    if (mode==="remove"){
+    if (mode==="edit"){
+        let newObject = {
+            text: text,
+            date: date,
+            category: {
+                tag: tag
+            }
+        };
+        entry.splice(position,1,newObject);
+    }
+    if (mode==="delete"){
         entry.splice(position,1);
     }
 }

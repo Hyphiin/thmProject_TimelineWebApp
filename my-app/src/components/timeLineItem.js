@@ -3,20 +3,20 @@ import addContent from "./AddEntries"
 import FileInput from "./FileInput";
 
 function TimeLineItem ({entries}) {
+    
     function clickHandler(mode) {
         if (mode==="add") {
-            let eingabe = prompt("Inhalt eingeben.", "");
-            if (eingabe !== "") {
-                let dateObject = new Date();
-                let currentDate = dateObject.toLocaleDateString();
-                addContent(eingabe, currentDate, "new", addContent().indexOf(entries),"add");
-            }
+                addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
         }
-        if (mode==="remove"){
-            addContent("","","",addContent().indexOf(entries),"remove");
+        if (mode==="delete"){
+            addContent("","","",addContent().indexOf(entries),"delete");
         }
+        if (mode==="edit"){
+            addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),addContent().indexOf(entries),"edit");
+        }
+
     }
-    const [text, setText] = useState(entries.text);//Übergeblieben, wichtig für Textchanges
+
 
     return (
         <div className="timeline-item">
@@ -28,8 +28,8 @@ function TimeLineItem ({entries}) {
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 </div>
-                <FileInput/>
-                <span className="circle" onClick={() => clickHandler("add")}/>
+
+                <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
             </div>
         </div>
     )

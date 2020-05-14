@@ -25,6 +25,7 @@ export default class Add extends React.Component{
                 <input type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
                 <br/>
                 <button onClick={(e) => this.onSubmit(e)}>Eintrag bearbeiten</button>
+                <br/>
             </form>
         )
     }
