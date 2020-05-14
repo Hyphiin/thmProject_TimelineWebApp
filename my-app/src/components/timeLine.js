@@ -9,7 +9,6 @@ function Timeline () {
     function clickHandler() {
         addEntry(addContent("get"));
     }
-
     const [eintrag, addEntry] = useState(addContent());
     console.log(eintrag);
             return (

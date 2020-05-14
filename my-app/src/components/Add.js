@@ -7,9 +7,18 @@ export default class Add extends React.Component{
         tag: "",
     }
 
-    onSubmit = (e) => {
+    onSubmit = (e, mode) => {
         e.preventDefault();
         console.log(this.state);
+        localStorage.setItem("text",this.state.description);
+        localStorage.setItem("date", this.state.date);
+        localStorage.setItem("tag",this.state.tag);
+        if (mode==="add"){
+            localStorage.setItem("mode", "add");
+        }
+        if (mode==="edit"){
+            localStorage.setItem("mode","edit");
+        }
         this.setState({date: "",
             description: "",
             tag: "",})
@@ -24,7 +33,9 @@ export default class Add extends React.Component{
                 <br/>
                 <input type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
                 <br/>
-                <button onClick={(e) => this.onSubmit(e)}>Eintrag erstellen</button>
+                <button onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
+                <br/>
+                <button type="button" id="eintragerstellenbutton" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
             </form>
         )
     }
