@@ -1,5 +1,6 @@
 import React from "react";
 import Add from "./Add";
+import Edit from "./Edit";
 
 const Toolbox = () => (
     <div className="toolBox-container">
@@ -8,7 +9,7 @@ const Toolbox = () => (
             <Add/>
         </div>
         <div id="eintragbearbeiten">
-            <Add/>
+            <Edit/>
         </div>
         <div id="eintraglöschen">
             <button type="button" id="eintragloeschenbutton">Eintrag löschen</button>

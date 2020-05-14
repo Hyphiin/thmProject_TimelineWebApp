@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Add extends React.Component{
+export default class Edit extends React.Component{
     state = {
         date: "",
         description: "",
