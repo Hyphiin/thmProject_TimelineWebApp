@@ -23,6 +23,13 @@ h1 {
     width: 100%;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
 .timeline-container {
     display: flex;
     flex-direction: column;
