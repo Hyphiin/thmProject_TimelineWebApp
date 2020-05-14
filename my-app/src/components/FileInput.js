@@ -17,7 +17,7 @@ class FileInput extends React.Component {
     render() {
         return (
             <div className="pic">
-                <input id="insert" type="file" onChange={this.handleChange} onClick={hide}/>
+                <input id="insert" type="file" onChange={this.handleChange}/>
                 <img className="image" src={this.state.file}/>
             </div>
         );

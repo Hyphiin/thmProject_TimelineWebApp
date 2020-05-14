@@ -175,6 +175,10 @@ h1 {
     .timeline-item-content {
         max-width: 65%;
     }
+    #insert{
+        width:80%;
+        height:80%;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -192,6 +196,10 @@ h1 {
 
     .timeline-item-content time {
         margin-top: 20px;
+    }
+    #insert{
+        width:50%;
+        height:50%;
     }
 }
 .image{
