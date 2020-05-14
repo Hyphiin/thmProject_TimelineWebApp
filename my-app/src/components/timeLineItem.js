@@ -5,8 +5,10 @@ import FileInput from "./FileInput";
 function TimeLineItem ({entries}) {
     
     function clickHandler(mode) {
+        localStorage.setItem("mode","neutral");
         if (mode==="add") {
                 addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
+
         }
         if (mode==="delete"){
             addContent("","","",addContent().indexOf(entries),"delete");
@@ -14,6 +16,7 @@ function TimeLineItem ({entries}) {
         if (mode==="edit"){
             addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),addContent().indexOf(entries),"edit");
         }
+        
 
     }
 
