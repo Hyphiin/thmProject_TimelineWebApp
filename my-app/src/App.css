@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: linear-gradient(90deg, #f6f4e1 70%, #fff 30%);
+    background-image: linear-gradient(90deg, #f6f4e1 70%, #e6e4e1 30%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,8 +27,6 @@ h1 {
     display: flex;
     flex-direction: row;
 }
-
-
 
 .timeline-container {
     display: flex;
@@ -197,4 +195,49 @@ h1 {
 .image{
     height: 50%;
     width: 50%;
+}
+
+#toolbox_container{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0px;
+    width: 30%;
+}
+
+#toolbox_header{
+    text-align: center;
+    font-weight: bold;
+}
+
+#form{
+    text-align: center;
+    margin: 20px;
+}
+
+#form_input{
+    display: flex;
+    flex-direction: column;
+}
+
+#form_tag{
+    margin: 5px 0px;
+}
+
+#form_desc{
+resize: none;
+}
+
+#form_button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#form_button_add, #form_button_delete, #form_button_edit{
+    height: 40px;
+    width: 33%;
+}
+.divider{
+    width: 0.5%;
+    margin: 2px;
 }

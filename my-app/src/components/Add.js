@@ -19,6 +19,9 @@ export default class Add extends React.Component{
         if (mode==="edit"){
             localStorage.setItem("mode","edit");
         }
+        if (mode==="delete"){
+            localStorage.setItem("mode","delete");
+        }
         this.setState({date: "",
             description: "",
             tag: "",})
@@ -26,16 +29,19 @@ export default class Add extends React.Component{
 
     render(){
         return (
-            <form>
-                <input placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}/>
-                <br/>
-                <input placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
-                <br/>
-                <input type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
-                <br/>
-                <button onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
-                <br/>
-                <button type="button" id="eintragerstellenbutton" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
+            <form id="form">
+                <div id="form_input">
+                    <textarea id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
+                    <input id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
+                    <input id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                </div>
+                <div id="form_button">
+                    <button id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
+                    <var className="divider"></var>
+                    <button id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
+                    <var className="divider"></var>
+                    <button id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
+                </div>
             </form>
         )
     }
