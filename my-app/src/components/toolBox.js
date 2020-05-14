@@ -1,21 +1,19 @@
 import React from "react";
+import Add from "./Add";
 
-console.log("toolbox");
 const Toolbox = () => (
-    <div className="toolbox-container">
+    <div className="toolBox-container">
         <p>Toolbox</p>
-
         <div id="eintragerstellen">
-            <button type="button" id="eintragerstellenbutton" onClick="eintragErstellenAusklappen()">Eintrag erstellen</button>
+            <Add/>
         </div>
         <div id="eintragbearbeiten">
-            <button type="button" id="eintragbearbeitenbutton">Eintrag bearbeiten</button>
+            <Add/>
         </div>
         <div id="eintraglöschen">
             <button type="button" id="eintragloeschenbutton">Eintrag löschen</button>
         </div>
-
     </div>
-
 );
+
 export default Toolbox;
