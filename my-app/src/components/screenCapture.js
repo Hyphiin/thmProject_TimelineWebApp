@@ -8,7 +8,7 @@ const Screenshot = () => (
 );
 
 function capture(){
-    let node = document.getElementById('root');
+    let node = document.getElementById('timeline-export');
     domtoimage.toPng(node).then(function (dataUrl){
         let text ="<img src="+dataUrl+" alt='viewport'>";
         let pic = window.open("about:blank", "Export");

@@ -13,7 +13,7 @@ function Timeline () {
     const [eintrag, addEntry] = useState(addContent());
     console.log(eintrag);
             return (
-                <div className="timeline-container" onClick={() => clickHandler()}>
+                <div id="timeline-export" className="timeline-container" onClick={() => clickHandler()}>
                     {eintrag.map((entries, idx) => (
                         <TimeLineItem entries={entries} key={idx}/>
                     ))}
