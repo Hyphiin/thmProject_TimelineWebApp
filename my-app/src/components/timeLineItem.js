@@ -1,14 +1,19 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import addContent from "./AddEntries"
 import FileInput from "./FileInput";
+import gsap from 'gsap';
 
 function TimeLineItem ({entries}) {
+    let content = useRef(null);
+
+    useEffect(() => {
+        gsap.to(content, {duration: 2, ease: 'bounce', rotate: 360})
+    })
     
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
                 addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
-
         }
         if (mode==="delete"){
             addContent("","","",addContent().indexOf(entries),"delete");
@@ -22,7 +27,7 @@ function TimeLineItem ({entries}) {
 
 
     return (
-        <div className="timeline-item">
+        <div ref={el => content = el} className="timeline-item">
             <div className="timeline-item-content" >
                 <div className="box">
             <span className="tag" >
