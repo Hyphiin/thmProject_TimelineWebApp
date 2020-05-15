@@ -241,3 +241,8 @@ resize: none;
     width: 0.5%;
     margin: 2px;
 }
+
+#export-container{
+    width: 70px;
+    height: 25px;
+}
