@@ -3,12 +3,27 @@ import '../App.css';
 import {render} from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IconInsert from "./IconInsert";
-import {faAnchor} from "@fortawesome/free-solid-svg-icons";
+import {
+    faAddressBook,
+    faAmbulance,
+    faAnchor, faAtom, faBaby, faBaseballBall, faBasketballBall, faBatteryEmpty, faBatteryFull,
+    faBirthdayCake,
+    faBook,
+    faCoffee, faFootballBall, faShoppingBag, faWineBottle
+} from "@fortawesome/free-solid-svg-icons";
 
 
-class IconResult extends React.Component {
-    render() {
-        return "" + IconInsert.result;
+
+
+function IconResult(icon){
+
+    switch (icon) {
+        case 'coffee':
+            return faCoffee;
+        case 'cake':
+            return faBirthdayCake;
+        default:
+            return null;
     }
 }
 

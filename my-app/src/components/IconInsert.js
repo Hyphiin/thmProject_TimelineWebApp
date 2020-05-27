@@ -17,6 +17,9 @@ import {
     faBatteryEmpty,
     faBatteryFull, faBook
 } from "@fortawesome/free-solid-svg-icons";
+import IconResult from "./IconResult";
+import {icon} from "@fortawesome/fontawesome-svg-core";
+
 
 class IconInsert extends React.Component {
     constructor(props) {
@@ -52,12 +55,11 @@ class IconInsert extends React.Component {
         });
     }
 
-
     render() {
         return <div className="icon">
             Icon:
             <div className="iconselect">
-                <input type="radio" name="radio" onClick={this.setIcon} icon="coffee"/>
+                <input type="radio" name="radio" value="coffee" onClick={this.setIcon} icon="coffee"/>
                 <FontAwesomeIcon icon={faCoffee}/>
 
                 <input type="radio" name="radio" onClick={this.setIcon} icon="cake"/>
@@ -109,12 +111,13 @@ class IconInsert extends React.Component {
             <span className="result">
                 {"Select Icon: " + this.state.icon ? (
                     <FontAwesomeIcon icon={this.state.icon}/>
-                ): (
+                ) : (
                     ""
                 )}
 
             </span>
-        </div>;
+
+        </div>
     }
 }
 

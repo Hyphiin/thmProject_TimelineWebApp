@@ -39,7 +39,7 @@ export default class Add extends React.Component{
                     <textarea id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
                     <input id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
                     <input id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
-                    <IconInsert value={this.state.icon} onChange={e => this.setState({icon: e.target.test})}/>
+                    <IconInsert value={this.state.icon} onChange={e => this.setState({icon: e.target.values})}/>
                 </div>
                 <div id="form_button">
                     <button id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>

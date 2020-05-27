@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import addContent from "./AddEntries"
 import FileInput from "./FileInput";
 import IconResult from "./IconResult";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCoffee} from "@fortawesome/free-solid-svg-icons";
 
 function TimeLineItem ({entries}) {
     
@@ -19,6 +21,11 @@ function TimeLineItem ({entries}) {
 
     }
 
+    function iconResult2() {
+       let icon = IconResult(entries.icon);
+       return icon;
+    }
+
 
     return (
         <div className="timeline-item">
@@ -30,7 +37,7 @@ function TimeLineItem ({entries}) {
                     <time>{entries.date}</time>
                     <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                     <p>
-                        <IconResult/>
+                        <FontAwesomeIcon icon={iconResult2()}/>
                     </p>
                 </div>
                 <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
