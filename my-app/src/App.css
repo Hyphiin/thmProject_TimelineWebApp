@@ -254,3 +254,8 @@ resize: none;
     width: 70px;
     height: 25px;
 }
+
+#cssOptions-header{
+    text-align: center;
+    font-weight: bold;
+}

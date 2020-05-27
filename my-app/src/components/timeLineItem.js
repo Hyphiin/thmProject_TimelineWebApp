@@ -31,7 +31,7 @@ function TimeLineItem ({entries}) {
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 </div>
-                <FileInput/>
+                {/*<FileInput/>*/}
                 <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
             </div>
         </div>
