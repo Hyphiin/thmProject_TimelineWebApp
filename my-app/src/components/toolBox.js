@@ -1,6 +1,6 @@
 import React from "react";
 import Add from "./Add";
-import IconInsert from "../IconInsert";
+import IconInsert from "./IconInsert";
 
 function Toolbox () {
 
