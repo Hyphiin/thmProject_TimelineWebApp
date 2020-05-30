@@ -2,6 +2,46 @@ import React, {useState} from "react";
 import addContent from "./AddEntries"
 import FileInput from "./FileInput";
 
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faCoffee,
+    faBirthdayCake,
+    faAddressBook,
+    faAmbulance,
+    faWineBottle,
+    faAnchor,
+    faAtom,
+    faBaby,
+    faBaseballBall,
+    faBasketballBall,
+    faFootballBall,
+    faShoppingBag,
+    faBatteryEmpty,
+    faBatteryFull,
+    faBook
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+    faCoffee,
+    faBirthdayCake,
+    faAddressBook,
+    faAmbulance,
+    faWineBottle,
+    faAnchor,
+    faAtom,
+    faBaby,
+    faBaseballBall,
+    faBasketballBall,
+    faFootballBall,
+    faShoppingBag,
+    faBatteryEmpty,
+    faBatteryFull,
+    faBook
+);
+
+
 function TimeLineItem ({entries}) {
     
     function clickHandler(mode) {
@@ -30,6 +70,7 @@ function TimeLineItem ({entries}) {
             </span>
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+                    { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
                 </div>
                 <FileInput/>
                 <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>

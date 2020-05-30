@@ -254,3 +254,16 @@ resize: none;
     width: 70px;
     height: 25px;
 }
+#icon_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0px;
+    width: 30%;
+}
+
+#iconpic{
+    text-align: center;
+    font-weight: bold;
+}

@@ -8,7 +8,6 @@ function Toolbox () {
     <div id="toolbox_container">
         <p id="toolbox_header">Toolbox</p>
         <Add/>
-        <IconInsert/>
     </div>
     )
 }

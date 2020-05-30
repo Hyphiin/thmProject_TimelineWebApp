@@ -1,4 +1,5 @@
 import React from "react";
+import IconInsert from "./IconInsert";
 
 export default class Add extends React.Component{
     state = {
@@ -41,6 +42,10 @@ export default class Add extends React.Component{
                     <button id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
                     <var className="divider"></var>
                     <button id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
+                </div>
+                <p id="iconpic">Icon und Bild</p>
+                <div id="icon_container">
+                    <IconInsert/>
                 </div>
             </form>
         )
