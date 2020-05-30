@@ -3,22 +3,26 @@ import './App.css';
 import Timeline from "./components/timeLine";
 import Toolbox from "./components/toolBox";
 import Screenshot from "./components/screenCapture";
-import localStorageCall from "./components/localStorageCall";
+import LocalStorageCall from "./components/localStorageCall";
+import UseStateWithLocalStorage from "./components/useStateWithLocalStorage";
 
-const App = () => (
-    <>
+const App = () => {
+    const [value, setValue] = UseStateWithLocalStorage("myValueLocal");
+    const onChange = event => setValue(event.target.value);
 
-        <h1>Max Mustermann</h1>
-        <div className="container">
-        <Timeline/>
-        <Toolbox/>
+    return (
+        <div className="container" onChange={UseStateWithLocalStorage}>
+            <h1>Max Mustermann</h1>
+
+            <Timeline/>
+            <Toolbox/>
+            <Screenshot/>
+            <LocalStorageCall/>
         </div>
-        <Screenshot/>
-        <localStorageCall/>
-   </>
 
+    );
 
-);
+}
 
 
 export default App;

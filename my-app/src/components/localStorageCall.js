@@ -2,7 +2,7 @@ import React from "react";
 import useStateWithLocalStorage from "./useStateWithLocalStorage";
 
 
- const localStorageCall = () => (
+ const LocalStorageCall = () => (
 
     <button id="localStorage-Button" onClick={useStateWithLocalStorage}>
         Speichern
@@ -30,4 +30,4 @@ const onClick = event => setValue(event.target.value);
 
 
 */}
-export default localStorageCall;
+export default LocalStorageCall;
