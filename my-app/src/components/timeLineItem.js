@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import addContent from "./AddEntries"
+import editContent from "./AddEntries"
 import FileInput from "./FileInput";
 
 
@@ -47,17 +47,15 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-                addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent().indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            addContent("","","",addContent().indexOf(entries),"delete");
+            editContent("","","",editContent().indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),addContent().indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent().indexOf(entries),"edit");
         }
-        
-
     }
 
 
@@ -69,7 +67,7 @@ function TimeLineItem ({entries}) {
                 {entries.category.tag}
             </span>
                 <time>{entries.date}</time>
-                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+                <p onClick={() => clickHandler("remove")}> {entries.text} {localStorage.getItem("Timeline")} </p>
                     { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
                 </div>
                 <FileInput/>

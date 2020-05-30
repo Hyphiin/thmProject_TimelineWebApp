@@ -267,3 +267,33 @@ resize: none;
     text-align: center;
     font-weight: bold;
 }
+
+#navButtons{
+    margin: 0px 0px 0px 40px;
+}
+.prev {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0px 5px;
+    background-color: #42a6c6;
+    color: black;
+    border-radius: 50%;
+}
+.prev:hover{
+    background-color: #f56e47;
+    color: black;
+}
+
+.next{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #42a6c6;
+    color: black;
+    border-radius: 50%;
+}
+.next:hover{
+    background-color: #f56e47;
+    color: black;
+}

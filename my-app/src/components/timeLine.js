@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import addContent from "./AddEntries";
+import editContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
 
 
@@ -7,9 +7,9 @@ import TimeLineItem from "./timeLineItem";
 console.log("timeline");
 function Timeline () {
     function clickHandler() {
-        addEntry(addContent("get"));
+        addEntry(editContent("get"));
     }
-    const [eintrag, addEntry] = useState(addContent());
+    const [eintrag, addEntry] = useState(editContent());
     console.log(eintrag);
             return (
                 <div id="timeline-export" className="timeline-container" onClick={() => clickHandler()}>
