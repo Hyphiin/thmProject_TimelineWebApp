@@ -1,4 +1,8 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+import gsap from "gsap";
+import {
+    hoverButton, hoverExitButton
+} from "./Animation";
 
 export default class Add extends React.Component{
     state = {
@@ -27,20 +31,44 @@ export default class Add extends React.Component{
             tag: "",})
     };
 
+    /* Animation */
+    componentDidMount() {
+        let tl = gsap.timeline();
+        console.clear();
+        console.log( this.description);
+        console.log( this.tag);
+        console.log( this.date);
+        console.log( this.button_add);
+        console.log( this.button_edit);
+        console.log( this.button_delete);
+        tl.from(this.description, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.tag, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+        tl.from(this.date, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+        tl.from(this.button_add, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+        tl.from(this.button_edit, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+        tl.from(this.button_delete, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+    }
+
     render(){
         return (
             <form id="form">
                 <div id="form_input">
-                    <textarea id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
-                    <input id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
-                    <input id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                    <textarea ref={ e => this.description = e } id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
+                    <input ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
+                    <input ref={ e => this.date = e } id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
                 </div>
                 <div id="form_button">
-                    <button id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
+                    <button onMouseEnter={e => hoverButton(e)}
+                            onMouseOut={e => hoverExitButton(e)}
+                            ref={ e => this.button_add = e } id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
                     <var className="divider"></var>
-                    <button id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
+                    <button onMouseEnter={e => hoverButton(e)}
+                            onMouseOut={e => hoverExitButton(e)}
+                            ref={ e => this.button_edit = e } id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
                     <var className="divider"></var>
-                    <button id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
+                    <button onMouseEnter={e => hoverButton(e)}
+                            onMouseOut={e => hoverExitButton(e)}
+                            ref={ e => this.button_delete = e } id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
                 </div>
             </form>
         )

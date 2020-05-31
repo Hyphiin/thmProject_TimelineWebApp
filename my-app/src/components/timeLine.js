@@ -1,21 +1,25 @@
 import React, {useEffect, useRef, useState} from "react";
 import addContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
-import {handleHoverExitItem, handleHoverItem, tlAnimationRight} from "./Animation";
+import {
+    hoverExitTimeline,
+    hoverTimelineItem,
+    tlAnimationRight
+} from "./Animation";
 
 
 console.log("timeline");
 function Timeline () {
-    let tlContainerA = useRef(null);
-    let entriesA = useRef(null);
-
-    useEffect(() => {
-        tlAnimationRight(tlContainerA);
-    })
 
     function clickHandler() {
         addEntry(addContent("get"));
     }
+
+    /*Animation*/
+    let tlContainerA = useRef(null);
+    useEffect(() => {
+
+    })
 
     const [eintrag, addEntry] = useState(addContent());
     console.log(eintrag);

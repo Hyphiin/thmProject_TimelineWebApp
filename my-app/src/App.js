@@ -1,24 +1,30 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, Component} from 'react';
 import './App.css';
 import Timeline from "./components/timeLine";
 import Toolbox from "./components/toolBox";
 import Screenshot from "./components/screenCapture";
 
 import {
-    ersteAnimation, h1Animation, handleHover, handleHoverExit
+    h1Animation,
+    hoverExitItem,
+    hoverItem, timelineLine, timelineStagger,
 } from "./components/Animation";
 
 function App () {
-        let userName = useRef(null);
 
+        /*Animation*/
+        let userName = useRef(null);
         useEffect(() => {
                 h1Animation(userName);
+                timelineStagger();
+                timelineLine();
         })
-
 
         return(
         <>
-             <h1 ref={el => (userName = el)} >Max Mustermann</h1>
+             <h1 onMouseEnter={e => hoverItem(e)}
+                 onMouseOut={e => hoverExitItem(e)}
+                 ref={el => (userName = el)} >Max Mustermann</h1>
              <div className="container">
                 <Timeline/>
                 <Toolbox/>
