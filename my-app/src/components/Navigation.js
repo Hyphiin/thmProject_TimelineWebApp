@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import entry2 from "./entries2";
-import timeLine from "./timeLine";
+import editContent from "./AddEntries";
+
 
 class Navigation extends React.Component {
     constructor(props) {
@@ -10,20 +10,24 @@ class Navigation extends React.Component {
         }
     }
 
-    setTimeline(entries) {
-        this.setState({
-            entries: entries
-        });
-        localStorage.setItem('Timeline', entries);
-        console.log(entries);
+    setTimeline(direction) {
+        if (direction==="next") {
+            editContent("", "", "", "", "next")
+        }
+        if (direction==="prev"){
+            let i=1;
+            editContent("", "", "", "", "prev");
+            localStorage.setItem("position",i.toString());
+            console.log(localStorage.getItem("position"));
+        }
     }
 
 
 
     render() {
         return <div id="navButtons">
-                    <a className="prev" href="#" onClick={() =>this.setTimeline(2)} >&#8249;</a>
-                    <a className="next" href="#" onClick={() =>this.setTimeline(1)}>&#8250;</a>
+                    <a className="prev" href="#" onClick={() =>this.setTimeline("prev")} >&#8249;</a>
+                    <a className="next" href="#" onClick={() =>this.setTimeline("next")}>&#8250;</a>
                 </div>
     }
 }
