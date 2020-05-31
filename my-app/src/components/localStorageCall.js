@@ -1,10 +1,10 @@
 import React from "react";
-import useStateWithLocalStorage from "./useStateWithLocalStorage";
+import LocalStorageSaved from "./localStorageFunction";
 
 
  const LocalStorageCall = () => (
 
-    <button id="localStorage-Button" onClick={useStateWithLocalStorage}>
+    <button id="localStorage-Button" onClick={LocalStorageSaved}>
         Speichern
     </button>
 
