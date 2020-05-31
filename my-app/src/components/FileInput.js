@@ -16,6 +16,7 @@ function FileInput() {
             };
             reader.readAsDataURL(file);
         }
+        localStorage.setItem('file', file);
     };
 
     return (
@@ -38,8 +39,8 @@ function FileInput() {
             />
             <div
                 style={{
-                    height: "60px",
-                    width: "60px",
+                    height: "50%",
+                    width: "50%",
                     border: "1px dashed black"
                 }}
                 onClick={() => imageUploader.current.click()}
@@ -49,7 +50,6 @@ function FileInput() {
                     style={{
                         width: "100%",
                         height: "100%",
-                        position: "acsolute"
                     }}
                 />
             </div>
