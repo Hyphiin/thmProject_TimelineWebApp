@@ -6,21 +6,18 @@ import Screenshot from "./components/screenCapture";
 import LocalStUsedButton from "./components/localStUsedButton";
 
 
-const App = () => {
+const App = () =>
 
-
-    return (
-        <div className="container">
+    (
+        <>
             <h1>Max Mustermann</h1>
-            <Timeline/>
-            <Toolbox/>
+            <div className="container">
+                <Timeline/>
+                <Toolbox/>
+            </div>
             <Screenshot/>
             <LocalStUsedButton/>
-        </div>
-
+        </>
     );
-
-}
-
 
 export default App;
