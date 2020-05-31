@@ -47,14 +47,14 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent().indexOf(entries),"add");
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent("","","","","get").indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            editContent("","","",editContent().indexOf(entries),"delete");
+            editContent("","","",editContent("","","","","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent().indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent("","","","","get").indexOf(entries),"edit");
         }
     }
 
@@ -67,7 +67,7 @@ function TimeLineItem ({entries}) {
                 {entries.category.tag}
             </span>
                 <time>{entries.date}</time>
-                <p onClick={() => clickHandler("remove")}> {entries.text} {localStorage.getItem("Timeline")} </p>
+                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                     { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
                 </div>
                 <FileInput/>
