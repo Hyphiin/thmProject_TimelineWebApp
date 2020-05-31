@@ -3,7 +3,6 @@ import './App.css';
 import Timeline from "./components/timeLine";
 import Toolbox from "./components/toolBox";
 import Screenshot from "./components/screenCapture";
-import LocalStorageCall from "./components/localStorageCall";
 import LocalStUsedButton from "./components/localStUsedButton";
 
 
@@ -16,7 +15,6 @@ const App = () => {
             <Timeline/>
             <Toolbox/>
             <Screenshot/>
-            <LocalStorageCall/>
             <LocalStUsedButton/>
         </div>
 

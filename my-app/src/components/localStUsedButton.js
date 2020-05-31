@@ -8,3 +8,7 @@ const LocalStUsedButton = () => (
 )
 
 export default LocalStUsedButton;
+
+{/*
+ruft das abgespeicherte Array auf, soll später ersetzt werden bzw. ohne button funktionieren
+*/}

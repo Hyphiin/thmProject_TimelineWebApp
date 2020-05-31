@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import addContent from "./AddEntries"
 import FileInput from "./FileInput";
+import LocalStorageSave from "./LocalStorageSave";
 
 function TimeLineItem ({entries}) {
     
@@ -32,7 +33,7 @@ function TimeLineItem ({entries}) {
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 </div>
                 <FileInput/>
-                <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
+                <span className="circle" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
             </div>
         </div>
     )
