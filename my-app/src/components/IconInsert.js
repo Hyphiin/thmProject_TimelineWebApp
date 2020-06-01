@@ -55,6 +55,7 @@ class IconInsert extends React.Component {
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
             </div>
+            { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
         </div>;
     }
 }

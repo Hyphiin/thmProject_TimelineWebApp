@@ -1,5 +1,6 @@
 import React from "react";
 import IconInsert from "./IconInsert";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default class Add extends React.Component{
     state = {
