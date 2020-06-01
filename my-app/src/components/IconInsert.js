@@ -37,7 +37,6 @@ class IconInsert extends React.Component {
 
     render() {
         return  <div className="icon">
-            Icon:
             <div className="iconselect">
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />
@@ -55,7 +54,6 @@ class IconInsert extends React.Component {
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
             </div>
-            { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
         </div>;
     }
 }

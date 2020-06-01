@@ -70,7 +70,7 @@ function TimeLineItem ({entries}) {
             </span>
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
-                <FontAwesomeIcon icon={entries.icon}/>
+                <FontAwesomeIcon className="test" icon={entries.icon}/>
                 </div>
                 <FileInput/>
                 <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
