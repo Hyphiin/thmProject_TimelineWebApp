@@ -1,10 +1,10 @@
 import entry from "./entries";
-import entry2 from "./entries2";
-import entry3 from "./entries3";
 import React, {Component} from "react";
+import LocalStorageUsage from "./localStorageUsage";
+import LocalStorageSave from "./LocalStorageSave";
+
 
 function editContent (text, date, tag, position, mode){
-
     if (mode==="get") {
         return entry;
     }
@@ -19,22 +19,25 @@ function editContent (text, date, tag, position, mode){
         entry.splice(position,0,newObject);
         console.log(entry);
     }
-    if(mode==="next"){
+
+    if(mode==="nav"){
         while(entry.length>0){
             entry.pop();
         }
-        for (let i=0; i<entry2.length;i++){
-            entry.push(entry2[i]);
+        if(LocalStorageUsage()!=null) {
+            for (let i = 0; i < LocalStorageUsage().length; i++) {
+                entry.push(LocalStorageUsage()[i]);
+            }
         }
     }
-    if(mode==="prev"){
+
+    if (mode==="new"){
         while(entry.length>0){
             entry.pop();
         }
-        for (let i=0; i<entry3.length;i++){
-            entry.push(entry3[i]);
-        }
+        LocalStorageSave()
     }
+
     if (mode==="edit"){
         let newObject = {
             text: text,
@@ -45,8 +48,6 @@ function editContent (text, date, tag, position, mode){
         };
         entry.splice(position,1,newObject);
     }
-
-
     if (mode==="delete"){
         entry.splice(position,1);
     }

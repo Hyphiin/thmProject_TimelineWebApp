@@ -1,8 +1,9 @@
 import entry from "./entries";
 
 const LocalStorageSave = () => {
-    localStorage.setItem("allEntries", JSON.stringify(entry));
-}
+    localStorage.setItem("allEntries"+localStorage.getItem("position"), JSON.stringify(entry));
+    console.log(localStorage.getItem("allEntries"+localStorage.getItem("position")));
+};
 
 export default LocalStorageSave;
 
