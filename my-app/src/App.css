@@ -44,6 +44,7 @@ h1 {
     left: calc(50% - 2px);
     width: 4px;
     height: 105%;
+    z-index:-100;
 }
 
 .timeline-item {
@@ -170,6 +171,7 @@ h1 {
 }
 
 
+
 @media only screen and (max-width: 1023px) {
     .timeline-item-content {
         max-width: 65%;
@@ -255,3 +257,4 @@ resize: none;
     width: 70px;
     height: 25px;
 }
+
