@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import editContent from "./AddEntries"
 import FileInput from "./FileInput";
+import LocalStorageSave from "./LocalStorageSave";
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -71,7 +72,7 @@ function TimeLineItem ({entries}) {
                     { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
                 </div>
                 <FileInput/>
-                <span className="circle" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
+                <span className="circle" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
             </div>
         </div>
     )

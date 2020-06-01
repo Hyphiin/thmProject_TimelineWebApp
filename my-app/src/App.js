@@ -3,6 +3,7 @@ import './App.css';
 import Timeline from "./components/timeLine";
 import Toolbox from "./components/toolBox";
 import Screenshot from "./components/screenCapture";
+import LocalStUsedButton from "./components/localStUsedButton";
 
 class App extends React.Component {
         constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
                 }
         }
 
+            
         clickHandler(nu){
                 this.setState({
                         entries: nu
@@ -26,6 +28,7 @@ class App extends React.Component {
                                 <Toolbox/>
                         </div>
                         <Screenshot/>
+                        <LocalStUsedButton/>
                 </>
         }
 }
