@@ -1,19 +1,19 @@
 import entry from "./entries";
 import React, {Component} from "react";
 
-function addContent (text, date, tag, position, mode){
+function addContent(text, date, tag, position, mode) {
 
-    if (text==null) {
+    if (text == null) {
         return entry;
     }
-    if (text==="get"){
+    if (text === "get") {
         console.log(entry);
-        let newEntry=[];
-        newEntry=entry.concat(newEntry);
+        let newEntry = [];
+        newEntry = entry.concat(newEntry);
         console.log(newEntry);
         return newEntry;
     }
-    if(mode==="add") {
+    if (mode === "add") {
         let newObject = {
             text: text,
             date: date,
@@ -21,10 +21,10 @@ function addContent (text, date, tag, position, mode){
                 tag: tag
             }
         };
-        entry.splice(position,0,newObject);
+        entry.splice(position, 0, newObject);
         console.log(entry);
     }
-    if (mode==="edit"){
+    if (mode === "edit") {
         let newObject = {
             text: text,
             date: date,
@@ -32,10 +32,11 @@ function addContent (text, date, tag, position, mode){
                 tag: tag
             }
         };
-        entry.splice(position,1,newObject);
+        entry.splice(position, 1, newObject);
     }
-    if (mode==="delete"){
-        entry.splice(position,1);
+    if (mode === "delete") {
+        entry.splice(position, 1);
     }
 }
+
 export default addContent;

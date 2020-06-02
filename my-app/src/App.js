@@ -10,28 +10,28 @@ import {
     hoverItem, timelineLine, timelineStagger,
 } from "./components/Animation";
 
-function App () {
+function App() {
 
-        /*Animation*/
-        let userName = useRef(null);
-        useEffect(() => {
-                h1Animation(userName);
-                timelineStagger();
-                timelineLine();
-        })
+    /*Animation*/
+    let userName = useRef(null);
+    useEffect(() => {
+        h1Animation(userName);
+        timelineStagger();
+        timelineLine();
+    })
 
-        return(
+    return (
         <>
-             <h1 onMouseEnter={e => hoverItem(e)}
-                 onMouseOut={e => hoverExitItem(e)}
-                 ref={el => (userName = el)} >Max Mustermann</h1>
-             <div className="container">
+            <h1 onMouseEnter={e => hoverItem(e)}
+                onMouseOut={e => hoverExitItem(e)}
+                ref={el => (userName = el)}>Max Mustermann</h1>
+            <div className="container">
                 <Timeline/>
                 <Toolbox/>
-             </div>
-                <Screenshot/>
+            </div>
+            <Screenshot/>
         </>
-        )
+    )
 };
 
 export default App;

@@ -9,7 +9,8 @@ import {
 
 
 console.log("timeline");
-function Timeline () {
+
+function Timeline() {
 
     function clickHandler() {
         addEntry(addContent("get"));
@@ -23,13 +24,15 @@ function Timeline () {
 
     const [eintrag, addEntry] = useState(addContent());
     console.log(eintrag);
-            return (
-                <div ref={el => (tlContainerA = el)} id="timeline-export" className="timeline-container" onClick={() => clickHandler()}>
-                    {eintrag.map((entries, idx) => (
-                        <TimeLineItem entries={entries} key={idx}/>
-                    ))}
-                </div>
-            )
+    return (
+        <div ref={el => (tlContainerA = el)} id="timeline-export" className="timeline-container"
+             onClick={() => clickHandler()}>
+            {eintrag.map((entries, idx) => (
+                <TimeLineItem entries={entries} key={idx}/>
+            ))}
+        </div>
+    )
 
 }
+
 export default Timeline;
