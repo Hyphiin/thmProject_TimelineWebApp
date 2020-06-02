@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import addContent from "./AddEntries"
 import FileInput from "./FileInput";
+import entry from "./entries";
 
 import {
     circlesStagger,
@@ -35,7 +36,7 @@ function TimeLineItem ({entries}) {
 
     return (
         <div className="timeline-item">
-            <div className="timeline-item-content" >
+            <div className="timeline-item-content" draggable={"true"}>
                 <div className="box">
                     <span ref={el => (tagA = el)} className="tag" >
                         {entries.category.tag}
