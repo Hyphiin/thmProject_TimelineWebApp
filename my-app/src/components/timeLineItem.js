@@ -65,7 +65,7 @@ function TimeLineItem ({entries}) {
             <div className="timeline-item-content" >
                 <div className="box">
             <span className="tag" >
-                {entries.category.tag}
+                {entries.tag}
             </span>
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>

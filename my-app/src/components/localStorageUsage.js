@@ -1,10 +1,8 @@
 import addContent from "./AddEntries";
 
 const LocalStorageUsage = () => {
-    console.log("Ausgabe von: "+localStorage.getItem("position"));
     var intermediate = localStorage.getItem("allEntries"+localStorage.getItem("position"));
     var allEntriesBackToObj = JSON.parse(intermediate);
-    console.log(intermediate);
     //addContent(allEntriesBackToObj[0].text, allEntriesBackToObj[0].date, allEntriesBackToObj[0].tag, allEntriesBackToObj[0].position, "edit");
     //console.log("hallo " + allEntriesBackToObj[0].text + allEntriesBackToObj[0].date);
     return allEntriesBackToObj;

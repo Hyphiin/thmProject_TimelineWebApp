@@ -6,15 +6,16 @@ import LocalStorageSave from "./LocalStorageSave";
 
 function editContent (text, date, tag, position, mode){
     if (mode==="get") {
-        return entry;
+
+            return entry;
+
     }
     if(mode==="add") {
         let newObject = {
             text: text,
             date: date,
-            category: {
-                tag: tag
-            }
+            tag: tag
+
         };
         entry.splice(position,0,newObject);
         console.log(entry);
@@ -32,6 +33,7 @@ function editContent (text, date, tag, position, mode){
     }
 
     if (mode==="new"){
+
         while(entry.length>0){
             entry.pop();
         }
