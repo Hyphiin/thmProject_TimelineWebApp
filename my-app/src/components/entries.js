@@ -4,5 +4,4 @@ import LocalStorageUsage from "./localStorageUsage";
 
     const entry = [LocalStorageUsage()];
 
-
 export default entry;

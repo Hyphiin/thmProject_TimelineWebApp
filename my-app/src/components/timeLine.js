@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import editContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
+import MapEntries from "./mapEntries";
 
 
 
-console.log("timeline");
  class Timeline extends React.Component{
 
      constructor(props) {
@@ -14,14 +14,13 @@ console.log("timeline");
          }
      }
 
+                render()
+     {
+         return <div id="timeline-export" className="timeline-container">
+             <MapEntries/>
+         </div>
+     }
 
-            render () {
-               return <div id="timeline-export" className="timeline-container">
-                    {editContent("","","","","get").map((entries, idx) => (
-                        <TimeLineItem entries={entries} key={idx}/>
-                    ))}
-                </div>
-            }
 
 }
 export default Timeline;

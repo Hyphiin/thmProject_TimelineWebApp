@@ -35,7 +35,6 @@ class Navigation extends React.Component {
 
     newTimeline(){
         let i=parseInt(localStorage.getItem("nuOfTimelines"));
-        console.log(localStorage.getItem("nuOfTimelines"));
         if(isNaN(i)===true){
             i=1;
         }
