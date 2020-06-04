@@ -6,9 +6,7 @@ import LocalStorageSave from "./LocalStorageSave";
 
 function editContent (text, date, tag, icon, position, mode){
     if (mode==="get") {
-
             return entry;
-
     }
     if(mode==="add") {
         let newObject = {

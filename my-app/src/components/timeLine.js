@@ -3,8 +3,6 @@ import editContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
 import MapEntries from "./mapEntries";
 import {
-    hoverExitTimeline,
-    hoverTimelineItem,
     tlAnimationRight
 } from "./Animation";
 

@@ -4,9 +4,7 @@ import FileInput from "./FileInput";
 import LocalStorageSave from "./LocalStorageSave";
 
 import {
-    circlesStagger,
-    hoverCircle,
-    hoverExitCircle, hoverExitTimeline, hoverTimelineItem, timelineContentAOFF, timelineContentAON,
+    circlesStagger
 } from "./Animation";
 
 

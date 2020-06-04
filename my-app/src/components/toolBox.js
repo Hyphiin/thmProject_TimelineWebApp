@@ -4,12 +4,6 @@ import Navigation from "./Navigation";
 import IconInsert from "./IconInsert";
 import Export_Import from "./Export_Import";
 import {
-    circlesStagger,
-    ersteAnimation,
-    h1Animation, hoverExitItem,
-    hoverItem,
-    tlAnimationRight,
-    toolboxFadeIn,
     toolboxHeader
 } from "./Animation";
 

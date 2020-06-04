@@ -22,14 +22,14 @@ class Navigation extends React.Component {
             }
             localStorage.setItem("position",i.toString());
             console.log(localStorage.getItem("position"));
-            editContent("", "", "", "", "nav");
+            editContent("", "", "", "","", "nav");
         }
         if (direction==="prev"){
             if (i>1) {
                 i--;
             }
             localStorage.setItem("position",i.toString());
-            editContent("", "", "", "", "nav");
+            editContent("", "", "", "","", "nav");
         }
     }
 
@@ -41,7 +41,7 @@ class Navigation extends React.Component {
         i++;
         localStorage.setItem("nuOfTimelines",i.toString());
         localStorage.setItem("position",i.toString());
-        editContent("", "", "", "", "new");
+        editContent("", "", "", "","", "new");
     }
 
     deleteTimeline(){
