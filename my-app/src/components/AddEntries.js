@@ -14,7 +14,8 @@ function editContent (text, date, tag, icon, position, mode){
         let newObject = {
             text: text,
             date: date,
-            tag: tag
+            tag: tag,
+            icon: icon
 
         };
         entry.splice(position, 0, newObject);

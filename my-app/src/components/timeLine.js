@@ -12,11 +12,6 @@ import {
 console.log("timeline");
 
  class Timeline extends React.Component{
-    /*Animation*/
-    let tlContainerA = useRef(null);
-    useEffect(() => {
-
-    })
 
      constructor(props) {
          super(props);

@@ -54,14 +54,14 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent("","","","","get").indexOf(entries),"add");
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent("","","","","","get").indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            editContent("","","",editContent("","","","","get").indexOf(entries),"delete");
+            editContent("","","",editContent("","","","", "","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent("","","","","get").indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent("","","","", "","get").indexOf(entries),"edit");
         }
     }
 
@@ -90,6 +90,7 @@ function TimeLineItem ({entries}) {
                 <FileInput/>
                 <span className="circle" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
             </div>
+        </div>
         </div>
     )
 }
