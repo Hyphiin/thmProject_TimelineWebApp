@@ -8,18 +8,60 @@ import {
     hoverExitCircle, hoverExitTimeline, hoverTimelineItem, timelineContentAOFF, timelineContentAON,
 } from "./Animation";
 
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faCoffee,
+    faBirthdayCake,
+    faAddressBook,
+    faAmbulance,
+    faWineBottle,
+    faAnchor,
+    faAtom,
+    faBaby,
+    faBaseballBall,
+    faBasketballBall,
+    faFootballBall,
+    faShoppingBag,
+    faBatteryEmpty,
+    faBatteryFull,
+    faBook
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+    faCoffee,
+    faBirthdayCake,
+    faAddressBook,
+    faAmbulance,
+    faWineBottle,
+    faAnchor,
+    faAtom,
+    faBaby,
+    faBaseballBall,
+    faBasketballBall,
+    faFootballBall,
+    faShoppingBag,
+    faBatteryEmpty,
+    faBatteryFull,
+    faBook
+);
+
+
 function TimeLineItem ({entries}) {
 
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
                 addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
+                addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), addContent().indexOf(entries),"add");
+
         }
         if (mode==="delete"){
-            addContent("","","",addContent().indexOf(entries),"delete");
+            addContent("","","", "",addContent().indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),addContent().indexOf(entries),"edit");
+            addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), addContent().indexOf(entries),"edit");
         }
     }
 
@@ -42,6 +84,12 @@ function TimeLineItem ({entries}) {
                      </span>
                      <time ref={el => (timeA = el)} >{entries.date}</time>
                     <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+            <span className="tag" >
+                {entries.category.tag}
+            </span>
+                <time>{entries.date}</time>
+                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+                <FontAwesomeIcon className="test" icon={entries.icon}/>
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
                 <FileInput/>

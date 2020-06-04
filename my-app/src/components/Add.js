@@ -3,6 +3,9 @@ import gsap from "gsap";
 import {
     hoverButton, hoverExitButton
 } from "./Animation";
+import React from "react";
+import IconInsert from "./IconInsert";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default class Add extends React.Component{
     state = {
@@ -56,6 +59,10 @@ export default class Add extends React.Component{
                     <textarea ref={ e => this.description = e } id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
                     <input ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
                     <input ref={ e => this.date = e } id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                    <textarea id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
+                    <input id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
+                    <input id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                    <IconInsert/>
                 </div>
                 <div id="form_button">
                     <button onMouseEnter={e => hoverButton(e)}

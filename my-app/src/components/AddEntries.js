@@ -1,7 +1,7 @@
 import entry from "./entries";
 import React, {Component} from "react";
 
-function addContent(text, date, tag, position, mode) {
+function addContent (text, date, tag, icon, position, mode){
 
     if (text == null) {
         return entry;
@@ -19,7 +19,8 @@ function addContent(text, date, tag, position, mode) {
             date: date,
             category: {
                 tag: tag
-            }
+            },
+            icon: icon
         };
         entry.splice(position, 0, newObject);
         console.log(entry);
@@ -30,7 +31,8 @@ function addContent(text, date, tag, position, mode) {
             date: date,
             category: {
                 tag: tag
-            }
+            },
+            icon: icon
         };
         entry.splice(position, 1, newObject);
     }

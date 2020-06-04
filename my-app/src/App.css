@@ -257,4 +257,8 @@ resize: none;
     width: 70px;
     height: 25px;
 }
-
+.iconselect{
+    border: 2px black solid;
+    margin: 5px;
+    box-shadow: 1px -1px black;
+}

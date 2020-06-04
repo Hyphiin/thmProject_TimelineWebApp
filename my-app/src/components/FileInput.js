@@ -1,26 +1,63 @@
-import React from 'react';
-import hide from "./hide";
+import React from "react";
+import ReactDOM from "react-dom";
 
-class FileInput extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            file: null
+function FileInput() {
+    const uploadedImage = React.useRef(null);
+    const imageUploader = React.useRef(null);
+
+    const handleImageUpload = e => {
+        const [file] = e.target.files;
+        if (file) {
+            const reader = new FileReader();
+            const { current } = uploadedImage;
+            current.file = file;
+            reader.onload = e => {
+                current.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
         }
-        this.handleChange = this.handleChange.bind(this)
-    }
-    handleChange(event) {
-        this.setState({
-            file: URL.createObjectURL(event.target.files[0])
-        })
-    }
-    render() {
-        return (
-            <div className="pic">
-                <input id="insert" type="file" onChange={this.handleChange}/>
-                <img className="image" src={this.state.file}/>
+        localStorage.setItem('file', file);
+    };
+
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center"
+            }}
+        >
+            <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                ref={imageUploader}
+                style={{
+                    display: "none"
+                }}
+            />
+            <div
+                style={{
+                    height: "50%",
+                    width: "50%",
+                    border: "1px dashed black"
+                }}
+                onClick={() => imageUploader.current.click()}
+            >
+                <img
+                    ref={uploadedImage}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                    }}
+                />
             </div>
-        );
-    }
+            Click to upload Image
+        </div>
+    );
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<FileInput />, rootElement);
 export default FileInput;
