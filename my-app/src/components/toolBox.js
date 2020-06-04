@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import Add from "./Add";
 import Navigation from "./Navigation";
-import IconInsert from "./IconInsert";
+import gsap from "gsap";
 import Export_Import from "./Export_Import";
 import {
     toolboxHeader
@@ -12,7 +12,13 @@ function Toolbox () {
     let toolbox_containerA = useRef(null);
     let toolbox_headerA = useRef(null);
     useEffect(() => {
-        toolboxHeader(toolbox_headerA);
+        gsap.from(toolboxHeader(), {
+            x: 400,
+            duration: 2,
+            delay: -1,
+            opacity: 0.5,
+            ease: "power3.inOut"
+        });
     })
 
 

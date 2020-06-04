@@ -3,6 +3,8 @@ import editContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
 import MapEntries from "./mapEntries";
 import {
+    timelineLine,
+    timelineStagger,
     tlAnimationRight
 } from "./Animation";
 
@@ -18,8 +20,7 @@ console.log("timeline");
          }
      }
 
-                render()
-     {
+     render() {
          return <div id="timeline-export" className="timeline-container">
              <MapEntries/>
          </div>
