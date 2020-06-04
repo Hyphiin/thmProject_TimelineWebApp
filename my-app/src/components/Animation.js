@@ -59,16 +59,6 @@ export const circlesStagger = (node1, node2) => {
     });
 };
 
-/*Animation Toolbox Header (der Rest von der ToolBox wurde in Add animiert)*/
-export const toolboxHeader = node => {
-    gsap.from(node, {
-        x: 400,
-        duration: 2,
-        delay: -1,
-        opacity: 0.5,
-        ease: "power3.inOut"
-    });
-};
 
 /*Animation hover on TimelineItem
 export const timelineContentAON = (node1 ,node2 ,node3) => {
@@ -174,7 +164,8 @@ export const hoverButton = e => {
         duration: 0.3,
         scale: 1.05,
         backgroundColor: "#f56e47",
-        ease: "power1.inOut"
+        ease: "power1.inOut",
+
     });
 };
 

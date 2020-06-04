@@ -44,23 +44,26 @@ export default class Add extends React.Component{
     componentDidMount() {
         let tl = gsap.timeline();
         console.clear();
+        console.log( this.header);
         console.log( this.description);
         console.log( this.tag);
         console.log( this.date);
         console.log( this.button_add);
         console.log( this.button_edit);
         console.log( this.button_delete);
-        tl.from(this.description, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.tag, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
-        tl.from(this.date, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
-        tl.from(this.button_add, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
-        tl.from(this.button_edit, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
-        tl.from(this.button_delete, {x: 400, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"})
+        tl.from(this.header, {x: 400, duration: 1.5, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.description, {x: 600, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.tag, {x: 600, duration: 1, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.date, {x: 600, duration: 1, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_add, {x: 600, duration: 1, delay: -0.7, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_edit, {x: 600, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_delete, {x: 600, duration: 1, delay: -0.9, opacity: 0.5, ease: "power3.inOut"});
     }
 
     render(){
         return (
             <form id="form">
+                <p  ref={ e => this.header = e } id="toolbox_header">Toolbox</p>
                 <div id="form_input">
                     <textarea ref={ e => this.description = e } id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
                     <input ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>

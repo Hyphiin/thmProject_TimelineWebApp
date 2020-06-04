@@ -18,6 +18,7 @@ import {
     faBatteryFull,
     faBook
 } from "@fortawesome/free-solid-svg-icons";
+import gsap from "gsap";
 
 class IconInsert extends React.Component {
     constructor(props) {
@@ -35,8 +36,16 @@ class IconInsert extends React.Component {
         console.log(icon);
     }
 
+    /* Animation */
+    componentDidMount() {
+        let tl = gsap.timeline();
+        console.clear();
+        console.log( this.icon);
+        tl.from(this.icon, {duration: 2, delay: -0.8, opacity: 0, scale: 0.9})
+    }
+
     render() {
-        return  <div className="icon">
+        return  <div ref={ e => this.icon = e } className="icon">
             <div className="iconselect">
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />

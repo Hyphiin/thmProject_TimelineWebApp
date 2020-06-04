@@ -1,8 +1,11 @@
 import domtoimage from "dom-to-image";
 import React from "react";
+import {hoverButton, hoverExitButton} from "./Animation";
 
 const Screenshot = () => (
-    <button id ="export-container" onClick={capture}>
+    <button  onMouseEnter={e => hoverButton(e)}
+             onMouseOut={e => hoverExitButton(e)}
+             id ="export-container" onClick={capture}>
         Export
     </button>
 );
