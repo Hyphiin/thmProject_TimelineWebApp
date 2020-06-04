@@ -1,6 +1,7 @@
+import editContent from "./AddEntries"
 import React, {useState, useEffect, useRef} from "react";
-import addContent from "./AddEntries"
 import FileInput from "./FileInput";
+import LocalStorageSave from "./LocalStorageSave";
 
 import {
     circlesStagger,
@@ -53,15 +54,14 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-                addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), addContent().indexOf(entries),"add");
-                addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), addContent().indexOf(entries),"add");
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent("","","","","get").indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            addContent("","","", "",addContent().indexOf(entries),"delete");
+            editContent("","","",editContent("","","","","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            addContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), addContent().indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent("","","","","get").indexOf(entries),"edit");
         }
     }
 
@@ -79,22 +79,16 @@ function TimeLineItem ({entries}) {
         <div className="timeline-item">
             <div className="timeline-item-content" >
                 <div className="box">
-                    <span ref={el => (tagA = el)} className="tag" >
-                        {entries.category.tag}
-                     </span>
-                     <time ref={el => (timeA = el)} >{entries.date}</time>
-                    <p onClick={() => clickHandler("remove")}> {entries.text} </p>
-                <FontAwesomeIcon className="test" icon={entries.icon}/>
+            <span className="tag" >
+                {entries.tag}
+            </span>
+                <time>{entries.date}</time>
+                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+                    { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
                 <FileInput/>
-                </div>
-                <span onMouseEnter={e => hoverCircle(e)}
-                      onMouseOut={e => hoverExitCircle(e)}
-                      ref={el => (circle1A = el)} className="circle1" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
-                <span onMouseEnter={e => hoverCircle(e)}
-                      onMouseOut={e => hoverExitCircle(e)}
-                      ref={el => (circle2A = el)} className="circle2" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
+                <span className="circle" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
             </div>
         </div>
     )

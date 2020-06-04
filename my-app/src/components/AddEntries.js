@@ -1,31 +1,46 @@
 import entry from "./entries";
 import React, {Component} from "react";
+import LocalStorageUsage from "./localStorageUsage";
+import LocalStorageSave from "./LocalStorageSave";
 
-function addContent (text, date, tag, icon, position, mode){
 
-    if (text == null) {
-        return entry;
+function editContent (text, date, tag, icon, position, mode){
+    if (mode==="get") {
+
+            return entry;
+
     }
-    if (text === "get") {
-        console.log(entry);
-        let newEntry = [];
-        newEntry = entry.concat(newEntry);
-        console.log(newEntry);
-        return newEntry;
-    }
-    if (mode === "add") {
+    if(mode==="add") {
         let newObject = {
             text: text,
             date: date,
-            category: {
-                tag: tag
-            },
-            icon: icon
+            tag: tag
+
         };
         entry.splice(position, 0, newObject);
         console.log(entry);
     }
-    if (mode === "edit") {
+
+    if(mode==="nav"){
+        while(entry.length>0){
+            entry.pop();
+        }
+        if(LocalStorageUsage()!=null) {
+            for (let i = 0; i < LocalStorageUsage().length; i++) {
+                entry.push(LocalStorageUsage()[i]);
+            }
+        }
+    }
+
+    if (mode==="new"){
+
+        while(entry.length>0){
+            entry.pop();
+        }
+        LocalStorageSave()
+    }
+
+    if (mode==="edit"){
         let newObject = {
             text: text,
             date: date,
@@ -41,4 +56,5 @@ function addContent (text, date, tag, icon, position, mode){
     }
 }
 
-export default addContent;
+
+export default editContent;

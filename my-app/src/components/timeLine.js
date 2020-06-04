@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
-import addContent from "./AddEntries";
+import React, {useState} from "react";
+import editContent from "./AddEntries";
 import TimeLineItem from "./timeLineItem";
+import MapEntries from "./mapEntries";
 import {
     hoverExitTimeline,
     hoverTimelineItem,
@@ -10,28 +11,27 @@ import {
 
 console.log("timeline");
 
-function Timeline() {
-
-    function clickHandler() {
-        addEntry(addContent("get"));
-    }
-
+ class Timeline extends React.Component{
     /*Animation*/
     let tlContainerA = useRef(null);
     useEffect(() => {
 
     })
 
-    const [eintrag, addEntry] = useState(addContent());
-    console.log(eintrag);
-    return (
-        <div ref={el => (tlContainerA = el)} id="timeline-export" className="timeline-container"
-             onClick={() => clickHandler()}>
-            {eintrag.map((entries, idx) => (
-                <TimeLineItem entries={entries} key={idx}/>
-            ))}
-        </div>
-    )
+     constructor(props) {
+         super(props);
+         this.state = {
+             entries: this.props.entries
+         }
+     }
+
+                render()
+     {
+         return <div id="timeline-export" className="timeline-container">
+             <MapEntries/>
+         </div>
+     }
+
 
 }
 

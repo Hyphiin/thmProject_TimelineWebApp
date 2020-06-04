@@ -5,13 +5,15 @@ import {
 } from "./Animation";
 import IconInsert from "./IconInsert";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import LocalStorageUsage from "./localStorageUsage";
+import editContent from "./AddEntries";
 
 export default class Add extends React.Component{
     state = {
         date: "",
         description: "",
         tag: "",
-    }
+    };
 
     onSubmit = (e, mode) => {
         e.preventDefault();
@@ -20,7 +22,12 @@ export default class Add extends React.Component{
         localStorage.setItem("date", this.state.date);
         localStorage.setItem("tag",this.state.tag);
         if (mode==="add"){
-            localStorage.setItem("mode", "add");
+            if (LocalStorageUsage().length===0){
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), 0,"add");
+            }
+            else {
+                localStorage.setItem("mode", "add");
+            }
         }
         if (mode==="edit"){
             localStorage.setItem("mode","edit");
@@ -77,3 +84,6 @@ export default class Add extends React.Component{
         )
     }
 }
+{/*
+aktuell wird noch der letzte punkt aus dem localStorage nicht abgespeichert, evtl auf nen andren OnClick oder ähnliches
+*/}
