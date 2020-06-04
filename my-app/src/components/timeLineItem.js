@@ -8,6 +8,7 @@ import {
     hoverCircle,
     hoverExitCircle, hoverExitTimeline, hoverTimelineItem, timelineContentAOFF, timelineContentAON,
 } from "./Animation";
+import Entry from "./EntryCards";
 
 function TimeLineItem ({entries}) {
 
@@ -35,8 +36,8 @@ function TimeLineItem ({entries}) {
     })
 
     return (
-        <div className="timeline-item">
-            <div className="timeline-item-content" draggable={"true"}>
+        <Entry id={"entry_id"} className="timeline-item" draggable={"true"}>
+            <div className="timeline-item-content">
                 <div className="box">
                     <span ref={el => (tagA = el)} className="tag" >
                         {entries.category.tag}
@@ -54,7 +55,7 @@ function TimeLineItem ({entries}) {
                       onMouseOut={e => hoverExitCircle(e)}
                       ref={el => (circle2A = el)} className="circle2" onClick={() => clickHandler(localStorage.getItem("mode"))}/>
             </div>
-        </div>
+        </Entry>
     )
 }
 

@@ -6,6 +6,7 @@ import {
     hoverTimelineItem,
     tlAnimationRight
 } from "./Animation";
+import Container from "./EntryContainer";
 
 
 console.log("timeline");
@@ -25,12 +26,12 @@ function Timeline() {
     const [eintrag, addEntry] = useState(addContent());
     console.log(eintrag);
     return (
-        <div ref={el => (tlContainerA = el)} id="timeline-export" className="timeline-container"
+        <Container ref={el => (tlContainerA = el)} id="timeline-export" className="timeline-container"
              onClick={() => clickHandler()}>
             {eintrag.map((entries, idx) => (
                 <TimeLineItem entries={entries} key={idx}/>
             ))}
-        </div>
+        </Container>
     )
 
 }
