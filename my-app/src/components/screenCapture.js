@@ -1,8 +1,9 @@
 import domtoimage from "dom-to-image";
-import React from "react";
-import {hoverButton, hoverExitButton} from "./Animation";
+import React, {useEffect, useRef} from "react";
+import {circlesStagger, hoverButton, hoverExitButton} from "./Animation";
 
 const Screenshot = () => (
+
     <button  onMouseEnter={e => hoverButton(e)}
              onMouseOut={e => hoverExitButton(e)}
              id ="export-container" onClick={capture}>

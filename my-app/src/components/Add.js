@@ -40,7 +40,7 @@ export default class Add extends React.Component{
             tag: "",})
     };
 
-    /* Animation */
+    /* Animation ToolBox oben*/
     componentDidMount() {
         let tl = gsap.timeline();
         console.clear();
@@ -51,13 +51,13 @@ export default class Add extends React.Component{
         console.log( this.button_add);
         console.log( this.button_edit);
         console.log( this.button_delete);
-        tl.from(this.header, {x: 400, duration: 1.5, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.description, {x: 600, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.tag, {x: 600, duration: 1, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.date, {x: 600, duration: 1, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.button_add, {x: 600, duration: 1, delay: -0.7, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.button_edit, {x: 600, duration: 1, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
-        tl.from(this.button_delete, {x: 600, duration: 1, delay: -0.9, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.header, {x: 400, duration: 1.2, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.description, {x: 600, duration: 0.8, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.tag, {x: 600, duration: 0.8, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.date, {x: 600, duration: 0.8, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_add, {x: 600, duration: 0.8, delay: -0.7, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_edit, {x: 600, duration: 0.8, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
+        tl.from(this.button_delete, {x: 600, duration: 0.8, delay: -0.9, opacity: 0.5, ease: "power3.inOut"});
     }
 
     render(){

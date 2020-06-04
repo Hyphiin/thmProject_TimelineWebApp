@@ -54,20 +54,36 @@ class Export_Import extends React.Component {
     };
 
     componentDidMount() {
+        let tl = gsap.timeline();
         console.clear();
+        console.log( this.jsonBtn);
+        console.log( this.xmlBtn);
         console.log( this.exportBtn);
-        gsap.from(this.exportBtn, {duration: 1, delay: -0.9, opacity: 0.5, rotate: 360})
+        console.log( this.file);
+        console.log( this.importBtn);
+        tl.from(this.jsonBtn, {duration: 1.5, delay: -0.7, opacity: 0.5, scale: 0.9})
+        tl.from(this.xmlBtn, {duration: 1, delay: -0.7, opacity: 0.5, scale: 0.9})
+        tl.from(this.exportBtn, {duration: 1, delay: -0.7, opacity: 0.5, scale: 0.9})
+        tl.from(this.file, {duration: 1, delay: -0.7, opacity: 0.5, scale: 0.9})
+        tl.from(this.importBtn, {duration: 1, delay: -0.7, opacity: 0.5, scale: 0.9})
     }
 
     render() {
         return <div id="exportimportButtons">
-            <button className="" onClick={(e) => this.onSubmit(e, "json")}>JSON</button>
-            <button className="" onClick={(e) => this.onSubmit(e, "xml")}>XML</button>
+            <button onMouseEnter={e => hoverButton(e)}
+                    onMouseOut={e => hoverExitButton(e)} ref={ e => this.jsonBtn = e }
+                    className="" onClick={(e) => this.onSubmit(e, "json")}>JSON</button>
+            <button onMouseEnter={e => hoverButton(e)}
+                    onMouseOut={e => hoverExitButton(e)} ref={ e => this.xmlBtn = e }
+                    className="" onClick={(e) => this.onSubmit(e, "xml")}>XML</button>
             <button  onMouseEnter={e => hoverButton(e)}
                      onMouseOut={e => hoverExitButton(e)} ref={ e => this.exportBtn = e }
                      className="exportBtn" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>Export Timeline</button>
-                <input id="InputFile" type="file"/>
-            <button className="importBtn" onClick={() =>this.upload()}>Import Timeline</button>
+                <input onMouseEnter={e => hoverButton(e)}
+                       onMouseOut={e => hoverExitButton(e)} ref={ e => this.file = e } id="InputFile" type="file"/>
+            <button onMouseEnter={e => hoverButton(e)}
+                    onMouseOut={e => hoverExitButton(e)} ref={ e => this.importBtn = e }
+                    className="importBtn" onClick={() =>this.upload()}>Import Timeline</button>
         </div>
     }
 }

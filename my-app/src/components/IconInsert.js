@@ -19,6 +19,7 @@ import {
     faBook
 } from "@fortawesome/free-solid-svg-icons";
 import gsap from "gsap";
+import {hoverButton, hoverExitButton} from "./Animation";
 
 class IconInsert extends React.Component {
     constructor(props) {
@@ -47,7 +48,9 @@ class IconInsert extends React.Component {
     render() {
         return  <div ref={ e => this.icon = e } className="icon">
             <div className="iconselect">
-                <FontAwesomeIcon style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)} />
+                <FontAwesomeIcon onMouseEnter={e => hoverButton(e)}
+                                 onMouseOut={e => hoverExitButton(e)} ref={ e => this.icon = e }
+                                 className="icon" style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)}/>
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faAnchor} onClick={() => this.setIcon(faAnchor)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faAddressBook} onClick={() => this.setIcon(faAddressBook)} />

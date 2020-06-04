@@ -163,7 +163,7 @@ export const hoverButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1.05,
-        backgroundColor: "#f56e47",
+        backgroundColor: "#004f6e",
         ease: "power1.inOut",
 
     });

@@ -69,11 +69,11 @@ class Navigation extends React.Component {
         console.log( this.prev);
         console.log( this.next);
         console.log( this.pTag);
-        tl.from(this.prev, {duration: 1, delay: -0.6, opacity: 0, scale: 0.9});
-        tl.from(this.next, {duration: 1, delay: -0.6, opacity: 0, scale: 0.9});
-        tl.from(this.addBtn, {duration: 1, delay: -0.7, opacity: 0, scale: 0.9});
-        tl.from(this.deleteBtn, {duration: 1, delay: -0.7, opacity: 0, scale: 0.9});
-        tl.from(this.pTag, {duration: 1, delay: -0.8, opacity: 0, scale: 0.9});
+        tl.from(this.prev, {duration: 0.9, delay: -0.3, opacity: 0, scale: 0.9});
+        tl.from(this.next, {duration: 0.9, delay: -0.6, opacity: 0, scale: 0.9});
+        tl.from(this.addBtn, {duration: 0.9, delay: -0.7, opacity: 0, scale: 0.9});
+        tl.from(this.deleteBtn, {duration: 0.9, delay: -0.7, opacity: 0, scale: 0.9});
+        tl.from(this.pTag, {duration: 0.9, delay: -0.8, opacity: 0, scale: 0.9});
     }
 
     render() {
