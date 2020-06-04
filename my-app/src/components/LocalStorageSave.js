@@ -4,7 +4,6 @@ const LocalStorageSave = () => {
     localStorage.setItem("allEntries"+localStorage.getItem("position"), JSON.stringify(entry));
     console.log(localStorage.getItem("allEntries"+localStorage.getItem("position")));
 };
-
 export default LocalStorageSave;
 
 {/*
