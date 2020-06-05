@@ -52,14 +52,14 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), editContent("","","","","","get").indexOf(entries),"add");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","","","","","","get").indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            editContent("","","","",editContent("","","","", "","get").indexOf(entries),"delete");
+            editContent("","","","","",editContent("","","","", "","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"),editContent("","","","", "","get").indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"),editContent("","","","", "", "","get").indexOf(entries),"edit");
         }
     }
 
@@ -81,9 +81,11 @@ function TimeLineItem ({entries}) {
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
                 <FontAwesomeIcon className="test" icon={entries.icon} />
+                <div>
+                <img className="image" src={entries.file}/>
+                </div>
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
-                <FileInput/>
                 <span onMouseEnter={e => hoverCircle(e)}
                       onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
                       className="circle1" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>

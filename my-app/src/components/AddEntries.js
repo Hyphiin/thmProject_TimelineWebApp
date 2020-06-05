@@ -4,7 +4,7 @@ import LocalStorageUsage from "./localStorageUsage";
 import LocalStorageSave from "./LocalStorageSave";
 
 
-function editContent (text, date, tag, icon, position, mode){
+function editContent (text, date, tag, icon, file, position, mode){
     if (mode==="get") {
             return entry;
     }
@@ -14,6 +14,7 @@ function editContent (text, date, tag, icon, position, mode){
             date: date,
             tag: tag,
             icon: icon,
+            file: file,
 
         };
         entry.splice(position, 0, newObject);
@@ -47,6 +48,7 @@ function editContent (text, date, tag, icon, position, mode){
                 tag: tag
             },
             icon: icon,
+            file: file,
         };
         entry.splice(position, 1, newObject);
     }

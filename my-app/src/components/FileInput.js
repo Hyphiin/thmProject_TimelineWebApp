@@ -13,10 +13,11 @@ function FileInput() {
             current.file = file;
             reader.onload = e => {
                 current.src = e.target.result;
+                console.log('RESULT', reader.result)
+                localStorage.setItem('file', reader.result)
             };
             reader.readAsDataURL(file);
         }
-        localStorage.setItem('file', file);
     };
 
     return (

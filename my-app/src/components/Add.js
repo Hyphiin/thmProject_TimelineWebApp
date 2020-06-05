@@ -7,6 +7,7 @@ import IconInsert from "./IconInsert";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import LocalStorageUsage from "./localStorageUsage";
 import editContent from "./AddEntries";
+import FileInput from "./FileInput";
 
 export default class Add extends React.Component{
     state = {
@@ -23,7 +24,7 @@ export default class Add extends React.Component{
         localStorage.setItem("tag",this.state.tag);
         if (mode==="add"){
             if (LocalStorageUsage().length===0){
-                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), 0,"add");
+                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"),localStorage.getItem("file"), 0,"add");
             }
             else {
                 localStorage.setItem("mode", "add");
@@ -69,6 +70,7 @@ export default class Add extends React.Component{
                     <input ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
                     <input ref={ e => this.date = e } id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
                     <IconInsert/>
+                    <FileInput/>
                 </div>
                 <div id="form_button">
                     <button onMouseEnter={e => hoverButton(e)}
