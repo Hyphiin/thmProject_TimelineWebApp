@@ -6,7 +6,11 @@ import editContent from "./AddEntries";
 
 class Export_Import extends React.Component {
 
+
+
+
     download(content) {
+
         if (localStorage.getItem("xmlorjson")==="xml"){
             content = this.JSONtoXML(content)
         }
@@ -23,12 +27,27 @@ class Export_Import extends React.Component {
             var reader = new FileReader();
             reader.readAsText(file, "UTF-8");
             reader.onload = function (evt) {
-                console.log(evt.target.result)
+                console.log(evt.target.result);
+                let upload=evt.target.result.toString();
+
                 //ToDo XML or JSON?
-            }
+                if(editContent("","","","","","","get").length===0){
+
+                }
+                else{
+
+                    let i=parseInt(localStorage.getItem("nuOfTimelines"));
+                    console.log(i);
+                    localStorage.setItem("position",(i+1).toString());
+                    localStorage.setItem("nuOfTimelines", (i+1).toString());
+                }
+                editContent("","","","","","","import",upload);
+
+            };
             reader.onerror = function (evt) {
                 console.log("error reading file")
-            }
+            };
+
         }
     }
 

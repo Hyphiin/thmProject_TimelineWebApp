@@ -4,7 +4,7 @@ import LocalStorageUsage from "./localStorageUsage";
 import LocalStorageSave from "./LocalStorageSave";
 
 
-function editContent (text, date, tag, icon, file, position, mode){
+function editContent (text, date, tag, icon, file, position, mode, importInput){
     if (mode==="get") {
             return entry;
     }
@@ -38,6 +38,19 @@ function editContent (text, date, tag, icon, file, position, mode){
             entry.pop();
         }
         LocalStorageSave()
+    }
+    if(mode==="import"){
+        let input=JSON.parse(importInput);
+        console.log(input);
+        console.log(input.length);
+        while(entry.length>0){
+            entry.pop();
+        }
+        for(let i=0; i<input.length;i++){
+            entry.push(input[i]);
+        }
+        LocalStorageSave();
+        console.log("blas"+entry.length);
     }
 
     if (mode==="edit"){
