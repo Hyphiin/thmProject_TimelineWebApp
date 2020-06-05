@@ -4,7 +4,7 @@ import FileInput from "./FileInput";
 import LocalStorageSave from "./LocalStorageSave";
 
 import {
-    circlesStagger
+    circlesStagger, hoverCircle, hoverExitCircle
 } from "./Animation";
 
 
@@ -52,25 +52,23 @@ function TimeLineItem ({entries}) {
     function clickHandler(mode) {
         localStorage.setItem("mode","neutral");
         if (mode==="add") {
-                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), editContent("","","","","","get").indexOf(entries),"add");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), editContent("","","","","","get").indexOf(entries),"add");
 
         }
         if (mode==="delete"){
-            editContent("","","",editContent("","","","", "","get").indexOf(entries),"delete");
+            editContent("","","","",editContent("","","","", "","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),editContent("","","","", "","get").indexOf(entries),"edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"),editContent("","","","", "","get").indexOf(entries),"edit");
         }
     }
 
     /*Animation*/
-    let tagA = useRef(null);
     let circle1A = useRef(null);
     let circle2A = useRef(null);
     let fileA = useRef(null);
-    let timeA = useRef(null);
     useEffect(() => {
-        circlesStagger(circle1A,circle2A);
+
     })
 
     return (
@@ -82,15 +80,21 @@ function TimeLineItem ({entries}) {
             </span>
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
-                    { localStorage.getItem('icon') ? <FontAwesomeIcon icon={['fas', localStorage.getItem('icon')]} /> : '' }
+                <FontAwesomeIcon className="icon" icon={entries.icon} />
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
                 <FileInput/>
-                <span className="circle" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
+                <span onMouseEnter={e => hoverCircle(e)}
+                      onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
+                      className="circle1" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
+                <span onMouseEnter={e => hoverCircle(e)}
+                      onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
+                      ref={el => (circle2A = el)} className="circle2" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
             </div>
         </div>
         </div>
     )
 }
+
 
 export default TimeLineItem;

@@ -13,7 +13,7 @@ function editContent (text, date, tag, icon, position, mode){
             text: text,
             date: date,
             tag: tag,
-            icon: icon
+            icon: icon,
 
         };
         entry.splice(position, 0, newObject);
@@ -46,7 +46,7 @@ function editContent (text, date, tag, icon, position, mode){
             category: {
                 tag: tag
             },
-            icon: icon
+            icon: icon,
         };
         entry.splice(position, 1, newObject);
     }

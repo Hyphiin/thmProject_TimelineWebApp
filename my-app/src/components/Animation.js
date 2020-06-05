@@ -1,11 +1,5 @@
 import gsap from "gsap";
 
-/*Animation für Überschrift*/
-export const h1Animation = node => {
-    let tl = gsap.timeline();
-    tl.from(node, {duration: 1, y: 200, ease:"circ.out", opacity: 0})
-};
-
 /*Animation für Timeline*/
 export const tlAnimationRight = node => {
     gsap.from(node, {delay: 0.3, duration: 1, y: 200, ease: "back.out(1)", opacity: 0})

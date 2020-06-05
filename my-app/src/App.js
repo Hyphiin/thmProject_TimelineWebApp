@@ -10,7 +10,7 @@ import {
     hoverExitItem,
     hoverItem, timelineLine, timelineStagger,
 } from "./components/Animation";
-import gsap from "gsap";
+
 
 class App extends React.Component {
         constructor(props) {

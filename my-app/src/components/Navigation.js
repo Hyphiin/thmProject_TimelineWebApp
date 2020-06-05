@@ -60,7 +60,7 @@ class Navigation extends React.Component {
         }
     }
 
-    /* Animation */
+    /* Animation ToolBox unten*/
     componentDidMount() {
         let tl = gsap.timeline();
         console.clear();

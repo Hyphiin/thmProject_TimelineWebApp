@@ -41,15 +41,15 @@ class IconInsert extends React.Component {
     componentDidMount() {
         let tl = gsap.timeline();
         console.clear();
-        console.log( this.icon);
-        tl.from(this.icon, {duration: 2, delay: -0.8, opacity: 0, scale: 0.9})
+        console.log( this.iconA);
+        tl.from(this.iconA, {duration: 2, delay: -0.8, opacity: 0, scale: 0.9})
     }
 
     render() {
-        return  <div ref={ e => this.icon = e } className="icon">
+        return  <div ref={ e => this.iconA = e } className="icon">
             <div className="iconselect">
                 <FontAwesomeIcon onMouseEnter={e => hoverButton(e)}
-                                 onMouseOut={e => hoverExitButton(e)} ref={ e => this.icon = e }
+                                 onMouseOut={e => hoverExitButton(e)} ref={ e => this.iconA = e }
                                  className="icon" style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)}/>
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faAnchor} onClick={() => this.setIcon(faAnchor)} />
