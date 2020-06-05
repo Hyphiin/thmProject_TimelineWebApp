@@ -56,7 +56,7 @@ function TimeLineItem ({entries}) {
 
         }
         if (mode==="delete"){
-            editContent("","","","","",editContent("","","","", "","get").indexOf(entries),"delete");
+            editContent("","","","","",editContent("","","","", "","","get").indexOf(entries),"delete");
         }
         if (mode==="edit"){
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"),editContent("","","","", "", "","get").indexOf(entries),"edit");
