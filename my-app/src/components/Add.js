@@ -13,7 +13,6 @@ export default class Add extends React.Component{
         date: "",
         description: "",
         tag: "",
-        icon:"",
     };
 
     onSubmit = (e, mode) => {
@@ -22,7 +21,6 @@ export default class Add extends React.Component{
         localStorage.setItem("text",this.state.description);
         localStorage.setItem("date", this.state.date);
         localStorage.setItem("tag",this.state.tag);
-        localStorage.setItem("icon",this.state.icon);
         if (mode==="add"){
             if (LocalStorageUsage().length===0){
                 editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"), 0,"add");
@@ -39,7 +37,7 @@ export default class Add extends React.Component{
         }
         this.setState({date: "",
             description: "",
-            tag: "", icon:"",})
+            tag: ""})
     };
 
     /* Animation ToolBox oben*/

@@ -80,7 +80,7 @@ function TimeLineItem ({entries}) {
             </span>
                 <time>{entries.date}</time>
                 <p onClick={() => clickHandler("remove")}> {entries.text} </p>
-                <FontAwesomeIcon className="icon" icon={entries.icon} />
+                <FontAwesomeIcon className="test" icon={entries.icon} />
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
                 <FileInput/>
