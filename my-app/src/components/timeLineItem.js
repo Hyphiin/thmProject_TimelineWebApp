@@ -49,11 +49,13 @@ library.add(
 
 function TimeLineItem ({entries}) {
 
-    function clickHandler(mode) {
+    function clickHandler(mode,pos) {
         localStorage.setItem("mode","neutral");
-        if (mode==="add") {
+        if (mode==="add"&& pos==="before") {
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","","","","","","get").indexOf(entries),"add");
-
+        }
+        if (mode==="add" && pos==="after"){
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","","","","","","get").indexOf(entries)+1,"add");
         }
         if (mode==="delete"){
             editContent("","","","","",editContent("","","","", "","","get").indexOf(entries),"delete");
@@ -88,10 +90,10 @@ function TimeLineItem ({entries}) {
                 <div ref={el => (fileA = el)} className="file-input-content">
                 <span onMouseEnter={e => hoverCircle(e)}
                       onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
-                      className="circle1" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
+                      className="circle1" onClick={() => {clickHandler(localStorage.getItem("mode"),"before"); LocalStorageSave()}}/>
                 <span onMouseEnter={e => hoverCircle(e)}
                       onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
-                      ref={el => (circle2A = el)} className="circle2" onClick={() => {clickHandler(localStorage.getItem("mode")); LocalStorageSave()}}/>
+                      ref={el => (circle2A = el)} className="circle2" onClick={() => {clickHandler(localStorage.getItem("mode"),"after"); LocalStorageSave()}}/>
             </div>
         </div>
         </div>
