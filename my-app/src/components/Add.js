@@ -89,6 +89,3 @@ export default class Add extends React.Component{
         )
     }
 }
-{/*
-aktuell wird noch der letzte punkt aus dem localStorage nicht abgespeichert, evtl auf nen andren OnClick oder ähnliches
-*/}

@@ -94,7 +94,12 @@ function TimeLineItem ({entries}) {
                 <span onMouseEnter={e => hoverCircle(e)}
                       onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
                       ref={el => (circle2A = el)} className="circle2" onClick={() => {clickHandler(localStorage.getItem("mode"),"after"); LocalStorageSave()}}/>
-            </div>
+                    {/* ????
+                      <span onMouseEnter={e => hoverCircle(e)}
+                      onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
+                      ref={el => (circle2A = el)} className="circle3" onClick={() => {clickHandler(localStorage.getItem("mode"),"after"); LocalStorageSave()}}/>
+                      */}
+                </div>
         </div>
         </div>
     )

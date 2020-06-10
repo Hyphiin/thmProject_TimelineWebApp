@@ -9,13 +9,14 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 75vh;
     font-family: 'Lato', sans-serif;
     margin: 0;
 }
 
 h1 {
     text-align: center;
+    margin: 0 5px 0 5px;
     background-color: #004f6e;
 }
 
@@ -43,7 +44,7 @@ h1 {
     position: absolute;
     left: calc(50% - 2px);
     width: 4px;
-    height: 105%;
+    height: 100%;
     z-index:-100;
 }
 
@@ -79,15 +80,15 @@ h1 {
 
 /*der Kreis des Eintrags*/
 .timeline-item-content::after {
-    content: ' ';
+content: ' ';
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
     height: 18px;
     width: 18px;
-    background-color: #000;
+    background-color: #f8cf25;
     border-radius: 50%;
     position: absolute;
     right: -34px;
-    top: calc(50% - 8px);
+    top: calc(50% - 10px);
     z-index: 100;
 }
 
@@ -170,7 +171,24 @@ h1 {
     background-color: #f56e47;
 }
 
+{/*
+.timeline-item-content .circle3 {
+    background-color: #f8cf25;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: -35px;
+    width: 20px;
+    height: 20px;
+    z-index: 100;
+}
 
+.timeline-item:nth-child(odd) .timeline-item-content .circle3 {
+    right: auto;
+    left: -35px;
+    background-color: #f8cf25;
+}
+*/}
 
 @media only screen and (max-width: 1023px) {
     .timeline-item-content {
@@ -254,8 +272,9 @@ resize: none;
 }
 
 #export-container{
-    width: 70px;
-    height: 25px;
+    text-align: left;
+    width: 105px;
+    height: 30px;
 }
 .iconselect{
     border: 2px black solid;
