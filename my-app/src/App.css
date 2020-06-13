@@ -79,6 +79,7 @@ h1 {
 }
 
 /*der Kreis des Eintrags*/
+{/*
 .timeline-item-content::after {
 content: ' ';
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -91,7 +92,7 @@ content: ' ';
     top: calc(50% - 10px);
     z-index: 100;
 }
-
+*/}
 .timeline-item:nth-child(odd) .timeline-item-content {
     text-align: left;
     align-items: flex-start;
@@ -171,7 +172,7 @@ content: ' ';
     background-color: #f56e47;
 }
 
-{/*
+
 .timeline-item-content .circle3 {
     background-color: #f8cf25;
     border-radius: 50%;
@@ -188,7 +189,7 @@ content: ' ';
     left: -35px;
     background-color: #f8cf25;
 }
-*/}
+
 
 @media only screen and (max-width: 1023px) {
     .timeline-item-content {
