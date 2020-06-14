@@ -60,6 +60,7 @@ h1 {
 .timeline-item:nth-child(odd) {
     align-self: flex-end;
     justify-content: flex-start;
+    left: auto;
     padding-left: 25px;
     padding-right: 0;
 }
@@ -78,21 +79,6 @@ h1 {
     text-align: right;
 }
 
-/*der Kreis des Eintrags*/
-{/*
-.timeline-item-content::after {
-content: ' ';
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
-    height: 18px;
-    width: 18px;
-    background-color: #f8cf25;
-    border-radius: 50%;
-    position: absolute;
-    right: -34px;
-    top: calc(50% - 10px);
-    z-index: 100;
-}
-*/}
 .timeline-item:nth-child(odd) .timeline-item-content {
     text-align: left;
     align-items: flex-start;
@@ -139,19 +125,19 @@ content: ' ';
 
 
 .timeline-item-content .circle1 {
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
     background-color: #f56e47;
     border-radius: 50%;
     position: absolute;
-    right: -34px;
+    right: -35px;
     top: calc(50% - 50px);
     z-index: 100;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content .circle1 {
     right: auto;
-    left: -34px;
+    left: -35px;
     background-color: #f56e47;
 }
 
@@ -188,6 +174,56 @@ content: ' ';
     right: auto;
     left: -35px;
     background-color: #f8cf25;
+}
+
+
+.plus1 {
+    background-color: #000000;
+    right: -27px;
+    position: absolute;
+    top: calc(50% - 47px);
+    height: 14px;
+    width: 4px;
+    z-index: 200;
+}
+.plus1::after {
+    background-color: #000000;
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    height: 4px;
+    width: 14px;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content .plus1 {
+    right: auto;
+    left: -27px;
+}
+
+
+.plus2 {
+    background-color: #000000;
+    right: -27px;
+    position: absolute;
+    top: calc(50% + 33px);
+    height: 14px;
+    width: 4px;
+    z-index: 200;
+}
+.plus2::after {
+    background-color: #000000;
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    height: 4px;
+    width: 14px;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content .plus2 {
+    right: auto;
+    left: -27px;
 }
 
 
