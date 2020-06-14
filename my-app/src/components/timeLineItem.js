@@ -51,16 +51,19 @@ function TimeLineItem({entries}) {
 
     function clickHandler(mode, pos) {
         localStorage.setItem("mode", "neutral");
+        console.log(mode+","+pos);
         if (mode === "add" && pos === "before") {
+            console.log("add before");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "add");
         }
         if (mode === "add" && pos === "after") {
+            console.log("add after");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
         }
         if (mode === "delete") {
             editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
         }
-        if (mode === "edit") {
+        if (mode === "edit" ) {
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
         }
     }
@@ -88,22 +91,22 @@ function TimeLineItem({entries}) {
                     </div>
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
-                    <span onMouseEnter={e => hoverCircle(e)}
+                    <span onMouseEnter={e => hoverCircle(e)} //erster dot
                           onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
                           className="circle1" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "before");
                         LocalStorageSave()
                     }}/>
-                    <span onMouseEnter={e => hoverCircle(e)}
+                    <span onMouseEnter={e => hoverCircle(e)} //letzer dot
                           onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
                           ref={el => (circle2A = el)} className="circle2" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "after");
                         LocalStorageSave()
                     }}/>
-                    <span onMouseEnter={e => hoverCircle(e)}
+                    <span onMouseEnter={e => hoverCircle(e)} //mittlerer dot
                           onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
                           ref={el => (circle2A = el)} className="circle3" onClick={() => {
-                        clickHandler(localStorage.getItem("mode"), "after");
+                        clickHandler(localStorage.getItem("mode"), "middle");
                         LocalStorageSave()
                     }}/>
 
