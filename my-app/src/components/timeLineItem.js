@@ -109,8 +109,12 @@ function TimeLineItem({entries}) {
                         clickHandler(localStorage.getItem("mode"), "middle");
                         LocalStorageSave()
                     }}/>
-                    <span className="plus1"/>
-                    <span className="plus2"/>
+                    <span className="plus1" onClick={() => {clickHandler(localStorage.getItem("mode"), "before");
+                        LocalStorageSave()}} />
+                    <span className="plus2" onClick={() => {
+                        clickHandler(localStorage.getItem("mode"), "after");
+                        LocalStorageSave()
+                    }}/>
                 </div>
             </div>
         </div>
