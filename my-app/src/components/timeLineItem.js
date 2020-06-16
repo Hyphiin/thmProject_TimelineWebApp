@@ -75,13 +75,13 @@ function TimeLineItem ({entries}) {
 
     return (
         <div className="timeline-item">
-            <div className="timeline-item-content" >
+            <div id="1" className="timeline-item-content">
                 <div className="box">
             <span className="tag" >
                 {entries.tag}
             </span>
                 <time>{entries.date}</time>
-                <p onClick={() => clickHandler("remove")}> {entries.text} </p>
+                <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
                 <FontAwesomeIcon className="test" icon={entries.icon} />
                 <div>
                 <img className="image" src={entries.file}/>

@@ -129,6 +129,7 @@ h1 {
 }
 
 .timeline-item-content p {
+    color: #000000;
     font-size: 16px;
     line-height: 24px;
     margin: 15px 0;
@@ -299,4 +300,19 @@ resize: none;
 }
 .addBtn{
     margin: 0px 0px 0px 25px;
+}
+
+#formatbox_header{
+    text-align: center;
+    font-weight: bold;
+}
+
+#formatform{
+    text-align: center;
+    margin: 20px;
+}
+
+#format_form{
+    display: flex;
+    flex-direction: column;
 }
