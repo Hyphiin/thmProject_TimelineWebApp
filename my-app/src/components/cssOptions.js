@@ -33,28 +33,13 @@ class CssOptions extends React.Component {
                 <form id="formatform" onSubmit={this.handleSubmit}>
                     <p id="formatbox_header">Formatierung</p>
                   <label htmlFor="textfarbe">Textfarbe: </label>
-                       <select name="textfarbe" ref={(input) => this.textfarbeInput = input}>
-                           <option value="default">Schwarz</option>
-                           <option value="white">Weiß</option>
-                           <option value="red">Rot</option>
-                           <option value="green">Grün</option>
-                        </select>
+                       <input type="text" name="textfarbe" placeholder="Default: #000000" ref={(input) => this.textfarbeInput = input}/>
                     <br/>
                     <label htmlFor="hintergrundfarbe">Hintergrundfarbe: </label>
-                        <select name="hintergrundfarbe" ref={(input) => this.hintergrundfarbeInput = input}>
-                            <option value="default">Default</option>
-                            <option value="white">Weiß</option>
-                            <option value="red">Rot</option>
-                            <option value="green">Grün</option>
-                        </select>
+                        <input type="text" name="hintergrundfarbe" placeholder="Default: #42A6C6" ref={(input) => this.hintergrundfarbeInput = input}/>
                     <br/>
                     <label htmlFor="schriftgroesse">Schriftgröße: </label>
-                    <select name="schriftgroesse" ref={(input) => this.fontsizeInput = input}>
-                        <option value="default">Default</option>
-                        <option value="14px">14</option>
-                        <option value="18px">18</option>
-                        <option value="20px">20</option>
-                    </select>
+                    <input type="text" placeholder="Default: 16px" name="schriftgroesse" ref={(input) => this.fontsizeInput = input}/>
                     <br/>
                   <input type="submit" value="Submit" />
                  </form>
