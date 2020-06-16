@@ -157,7 +157,8 @@ export const hoverButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1.05,
-        backgroundColor: "#004f6e",
+        border: "#f56e47",
+        backgroundColor: "#f56e47",
         ease: "power1.inOut",
 
     });
@@ -169,10 +170,56 @@ export const hoverExitButton = e => {
         duration: 0.3,
         scale: 1,
         x: 0,
-        backgroundColor: "whitesmoke",
+        backgroundColor: "#42a6c6",
         ease: "power1.inOut"
     });
 };
+
+// Hover on the Pfeil
+export const hoverPfeil = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1.05,
+        border: "#f56e47",
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut",
+
+    });
+};
+
+// Hover off the Pfeil
+export const hoverExitPfeil = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1,
+        x: 0,
+        backgroundColor: "#004f6e",
+        ease: "power1.inOut"
+    });
+};
+
+// Hover on the Pfeil
+export const hoverErstellenButton = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1.05,
+        border: "#f56e47",
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut",
+    });
+};
+
+// Hover off the Pfeil
+export const hoverExitErstellenButton = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1,
+        x: 0,
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut"
+    });
+};
+
 
 /* Hover on the TimelineItem
 export const hoverTimelineItem = (e) => {
@@ -205,3 +252,8 @@ export const timelineLine = () => {
         ease: "power1.inOut"
     })
 };
+
+export const doCoolStuff = (node) =>{
+       node.reversed(!(node).reversed());
+}
+

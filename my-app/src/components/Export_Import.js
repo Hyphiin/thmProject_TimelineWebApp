@@ -3,6 +3,7 @@ import {hoverButton, hoverExitButton} from "./Animation";
 import gsap from "gsap";
 import LocalStorageUsage from "./localStorageUsage";
 import editContent from "./AddEntries";
+import Screenshot from "./screenCapture";
 
 class Export_Import extends React.Component {
 
@@ -91,19 +92,20 @@ class Export_Import extends React.Component {
         return <div id="exportimportButtons">
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.jsonBtn = e }
-                    className="" onClick={(e) => this.onSubmit(e, "json")}>JSON</button>
+                    className="" class="button" onClick={(e) => this.onSubmit(e, "json")}>JSON</button>
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.xmlBtn = e }
-                    className="" onClick={(e) => this.onSubmit(e, "xml")}>XML</button>
+                    className="" class="button" onClick={(e) => this.onSubmit(e, "xml")}>XML</button>
             <button  onMouseEnter={e => hoverButton(e)}
                      onMouseOut={e => hoverExitButton(e)} ref={ e => this.exportBtn = e }
-                     className="exportBtn" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>Export Timeline</button>
+                     className="exportBtn" class="button" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>Export Timeline</button>
                 <input onMouseEnter={e => hoverButton(e)}
                        onMouseOut={e => hoverExitButton(e)} ref={ e => this.file = e } id="InputFile" type="file"/>
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.importBtn = e }
-                    className="importBtn" onClick={() =>this.upload()}>Import Timeline</button>
+                    className="importBtn" class="button" onClick={() =>this.upload()}>Import Timeline</button>
         </div>
+
     }
 }
 export default Export_Import;

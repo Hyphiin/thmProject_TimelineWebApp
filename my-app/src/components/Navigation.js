@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import editContent from "./AddEntries";
 import LocalStorageUsage from "./localStorageUsage";
-import {hoverButton, hoverExitButton} from "./Animation";
+import {hoverButton, hoverExitButton, hoverExitPfeil, hoverPfeil} from "./Animation";
 import gsap from "gsap";
 
 class Navigation extends React.Component {
@@ -77,17 +77,27 @@ class Navigation extends React.Component {
     }
 
     render() {
-        return <div id="navButtons">
-                    <a ref={ e => this.prev = e } className="prev" href="#" onClick={() =>this.setTimeline("prev")} >&#8249;</a>
-                    <a ref={ e => this.next = e } className="next" href="#" onClick={() =>this.setTimeline("next")}>&#8250;</a>
+        return <div id="navContainer">
+                <div id="navButtons">
+                    <a onMouseEnter={e => hoverPfeil(e)}
+                       onMouseOut={e => hoverExitPfeil(e)} ref={ e => this.prev = e }
+                       className="prev" href="#" onClick={() =>this.setTimeline("prev")} >&#8249;</a>
+                    <a onMouseEnter={e => hoverPfeil(e)}
+                       onMouseOut={e => hoverExitPfeil(e)} ref={ e => this.next = e }
+                       className="next" href="#" onClick={() =>this.setTimeline("next")}>&#8250;</a>
                     <button  onMouseEnter={e => hoverButton(e)}
                              onMouseOut={e => hoverExitButton(e)} ref={ e => this.addBtn = e }
-                             className="addBtn" onClick={() =>this.newTimeline()}> Neue Timeline <br/> anlegen</button>
+                             className="addBtn" class="button" onClick={() =>this.newTimeline()}> Neue Timeline <br/> anlegen</button>
                     <button  onMouseEnter={e => hoverButton(e)}
                              onMouseOut={e => hoverExitButton(e)} ref={ e => this.deleteBtn = e }
-                             className="deleteBtn" onClick={() =>this.deleteTimeline()}>Aktuelle Timeline  <br/> löschen </button>
-                    <p ref={ e => this.pTag = e } onClick={() =>localStorage.clear()}>Seite {localStorage.getItem("position")||1} von {localStorage.getItem("nuOfTimelines")||1}</p>
+                             className="deleteBtn" class="button" onClick={() =>this.deleteTimeline()}>Aktuelle Timeline  <br/> löschen </button>
+
                 </div>
+                <div id="seitenAnzahl">
+                <p ref={e => this.pTag = e} className="pTag"
+                 onClick={() => localStorage.clear()}>Seite {localStorage.getItem("position") || 1} von {localStorage.getItem("nuOfTimelines") || 1}</p>
+                </div>
+        </div>
     }
 }
 export default Navigation;

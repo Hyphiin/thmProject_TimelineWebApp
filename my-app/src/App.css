@@ -290,7 +290,7 @@ h1 {
 }
 
 #form_desc{
-resize: none;
+    resize: none;
 }
 
 #form_button{
@@ -302,17 +302,79 @@ resize: none;
 #form_button_add, #form_button_delete, #form_button_edit{
     height: 40px;
     width: 33%;
+    background-color: #f56e47;
+    display:inline-block;
+    margin:20px;
+    text-decoration:none;
+    font-size:16px;
+    border:2px solid #f56e47;
+    border-radius:5px;
+    color:#000;
+    padding:3px 7px;
 }
+#form_button_add:hover, #form_button_delete:hover, #form_button_edit:hover{
+    color:#fff;
+    box-shadow:3px 3px 4px #A1B0BF;
+}
+
 .divider{
     width: 0.5%;
     margin: 2px;
 }
 
-#export-container{
-    text-align: left;
-    width: 105px;
-    height: 30px;
+#wrapper{
+    display: flex;
+    justify-content: end;
 }
+
+#export-container{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #42a6c6;
+    color: #000;
+    border: 2px solid #42a6c6;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    display:inline-block;
+    margin:20px;
+    font-size:16px;
+}
+
+#export-container:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #fff;
+    background: #f56e47;
+    transition: all .35s;
+}
+
+#export-container:hover{
+    color: #fff;
+}
+
+#export-container:hover:after{
+    width: 100%;
+}
+
+
+#exportimportButtons{
+    margin: 15% 0px 0px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .iconselect{
     border: 2px black solid;
     margin: 5px;
@@ -326,33 +388,63 @@ resize: none;
 
 #navButtons{
     margin: 0px 0px 0px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
+
+#seitenAnzahl{
+    margin: 0px 0px 0px 12%;
+}
+
 .prev {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
     margin: 0px 5px;
-    background-color: #42a6c6;
+    background-color: #004f6e;
     color: black;
     border-radius: 50%;
 }
 .prev:hover{
     background-color: #f56e47;
-    color: black;
+    color:#fff;
+    box-shadow:3px 3px 4px #A1B0BF;
 }
 
 .next{
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    background-color: #42a6c6;
+    background-color: #004f6e;
     color: black;
     border-radius: 50%;
 }
+
 .next:hover{
     background-color: #f56e47;
-    color: black;
+    color:#fff;
+    box-shadow:3px 3px 4px #A1B0BF;
 }
-.addBtn{
-    margin: 0px 0px 0px 25px;
+
+
+
+.button {
+    display:inline-block;
+    margin:20px;
+    text-decoration:none;
+    font-size:16px;
+    border:2px solid #42a6c6;
+    border-radius:5px;
+    color:#000;
+    background-color:#42a6c6;
+    padding:3px 7px;
 }
+
+.button:hover{
+    color:#fff;
+    box-shadow:3px 3px 4px #A1B0BF;
+}
+
+
