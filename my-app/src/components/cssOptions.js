@@ -16,7 +16,7 @@ class CssOptions extends React.Component {
         {
             x[i].style.backgroundColor = this.hintergrundfarbeInput.value;
         }
-        let a = document.getElementById("1");
+        let a = document.getElementById("timeline-export");
         let y = a.getElementsByTagName("p");
         for(let i=0; i<y.length; i++)
         {
