@@ -63,16 +63,16 @@ export default class Add extends React.Component{
 
     render(){
         return (
-            <form id="form">
-                <p  ref={ e => this.header = e } id="toolbox_header">Toolbox</p>
-                <div id="form_input">
-                    <textarea ref={ e => this.description = e } id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
-                    <input ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
-                    <input ref={ e => this.date = e } id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
-                    <IconInsert/>
-                    <FileInput/>
+            <form id="form" className="form">
+                <p  className="theader" ref={ e => this.header = e } id="toolbox_header">Toolbox</p>
+                <div className="form_input" id="form_input">
+                    <textarea className="desc" ref={ e => this.description = e } id="form_desc" rows="5" placeholder='Beschreibung' value={this.state.description} onChange={e => this.setState({description: e.target.value})}></textarea>
+                    <input className="tag" ref={ e => this.tag = e } id="form_tag" placeholder='Tag' value={this.state.tag} onChange={e => this.setState({tag: e.target.value})}/>
+                    <input className="date" ref={ e => this.date = e } id="form_date" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                    <p className="iinsert"><IconInsert/></p>
+                    <p className="finsert"><FileInput/></p>
                 </div>
-                <div id="form_button">
+                <div id="form_button" className="formbutton">
                     <button onMouseEnter={e => hoverButton(e)}
                             onMouseOut={e => hoverExitButton(e)}
                             ref={ e => this.button_add = e } id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>

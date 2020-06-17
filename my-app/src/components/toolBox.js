@@ -8,7 +8,7 @@ import {circlesStagger} from "./Animation";
 
 function Toolbox () {
     return(
-    <div id="toolbox_container">
+    <div className="toolbox_container" id="toolbox_container">
         <Add/>
         <Navigation/>
         <Export_Import/>

@@ -231,10 +231,6 @@ h1 {
     .timeline-item-content {
         max-width: 65%;
     }
-    #insert{
-        width:80%;
-        height:80%;
-    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -248,14 +244,73 @@ h1 {
     .timeline-item-content .tag {
         width: calc(100% - 10px);
         text-align: center;
+        font-size: 60%;
+        font-weight: bold;
     }
 
     .timeline-item-content time {
         margin-top: 20px;
+        font-size: 60%;
     }
+
+    .timeline-item-content p {
+        font-size: 60%;
+    }
+
+    .theader{
+        width: 60%;
+        font-size: 60%;
+    }
+
+    .form_input{
+        display: flex;
+        justify-content: center;
+    }
+
+    .toolbox_container{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .headline{
+        font-size: 80%;
+    }
+
     #insert{
         width:50%;
         height:50%;
+    }
+    .desc{
+        width:60%;
+        font-size: 60%;
+    }
+    .tag{
+        width:60%;
+        font-size: 60%;
+    }
+    .date{
+        width:60%;
+        font-size: 60%;
+    }
+    .iinsert{
+        width:60%;
+        font-size: 60%;
+    }
+    .finsert{
+        width:60%;
+        font-size: 60%;
+    }
+    .formbutton{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    button{
+        font-size: 60%;
     }
 }
 .image{
