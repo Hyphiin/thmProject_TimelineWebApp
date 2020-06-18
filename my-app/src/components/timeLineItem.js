@@ -4,7 +4,14 @@ import FileInput from "./FileInput";
 import LocalStorageSave from "./LocalStorageSave";
 
 import {
-    circlesStagger, hoverCircle, hoverExitCircle
+    circlesStagger,
+    clickButtonEdit,
+    clickCircle,
+    clickCircleMid, clickPlus,
+    hoverCircle,
+    hoverCircleMid,
+    hoverExitCircle,
+    hoverExitCircleMid, hoverExitPlus, hoverPlus
 } from "./Animation";
 
 
@@ -25,7 +32,7 @@ import {
     faShoppingBag,
     faBatteryEmpty,
     faBatteryFull,
-    faBook
+    faBook, faPlus
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -91,30 +98,41 @@ function TimeLineItem({entries}) {
                     </div>
                 </div>
                 <div ref={el => (fileA = el)} className="file-input-content">
-                    <span onMouseEnter={e => hoverCircle(e)} //erster dot
-                          onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
-                          className="circle1" onClick={() => {
+                    <span //onMouseEnter={e => hoverCircle(e)} //erster dot
+                          //onMouseOut={e => hoverExitCircle(e)}
+                          ref={el => (circle1A = el)}  className="circle1" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "before");
                         LocalStorageSave()
+                        clickCircle()
                     }}/>
-                    <span onMouseEnter={e => hoverCircle(e)} //letzer dot
-                          onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
+                    <span //onMouseEnter={e => hoverCircle(e)} //letzer dot
+                          //onMouseOut={e => hoverExitCircle(e)}
                           ref={el => (circle2A = el)} className="circle2" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "after");
                         LocalStorageSave()
+                        clickCircle()
                     }}/>
-                    <span onMouseEnter={e => hoverCircle(e)} //mittlerer dot
-                          onMouseOut={e => hoverExitCircle(e)} ref={el => (circle1A = el)}
+                    <span onMouseEnter={e => hoverCircleMid(e)} //mittlerer dot
+                          onMouseOut={e => hoverExitCircleMid(e)}
                           ref={el => (circle2A = el)} className="circle3" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "middle");
                         LocalStorageSave()
+                        clickCircleMid()
                     }}/>
-                    <span className="plus1" onClick={() => {clickHandler(localStorage.getItem("mode"), "before");
-                        LocalStorageSave()}} />
-                    <span className="plus2" onClick={() => {
-                        clickHandler(localStorage.getItem("mode"), "after");
-                        LocalStorageSave()
-                    }}/>
+                    <span //onMouseEnter={e => hoverPlus(e)}
+                          //onMouseOut={e => hoverExitPlus(e)}
+                          className="plus1"
+                          onClick={() => {clickHandler(localStorage.getItem("mode"), "before");
+                          LocalStorageSave()
+                          clickPlus()
+                    }} ><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                    <span //onMouseEnter={e => hoverPlus(e)}
+                          //onMouseOut={e => hoverExitPlus(e)}
+                          className="plus2"
+                          onClick={() => {clickHandler(localStorage.getItem("mode"), "after");
+                          LocalStorageSave()
+                          clickPlus()
+                          }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
                 </div>
             </div>
         </div>

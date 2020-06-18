@@ -1,4 +1,10 @@
 import gsap from "gsap";
+import LocalStorageSave from "./LocalStorageSave";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faBirthdayCake, faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
 /*Animation für Timeline*/
 export const tlAnimationRight = node => {
@@ -10,7 +16,7 @@ export const timelineStagger = () => {
     let tl = gsap.timeline();
     tl.from(".timeline-item-content", {
         delay: -0.5,
-        duration: 2,
+        duration: 1,
         scale: 0.1,
         y: -400,
         ease: "back.out(1)",
@@ -25,9 +31,9 @@ export const timelineStagger = () => {
 }
 
 /*Animation für orange Circles, erscheinen*/
-export const circlesStagger = (node1, node2) => {
+export const circlesStagger = () => {
     let tl = gsap.timeline();
-    tl.from(node1, {
+    tl.from(".circle1", {
         delay: -0.5,
         duration: 2,
         scale: 0.1,
@@ -39,8 +45,32 @@ export const circlesStagger = (node1, node2) => {
             amount: 0.2
         }
     });
-    tl.from(node2, {
+    tl.from(".circle2", {
         delay: -2,
+        duration: 2,
+        scale: 0.1,
+        y: -40,
+        ease: "power1.inOut",
+        stagger: {
+            grid: [7,15],
+            from: "center",
+            amount: 0.2
+        }
+    });
+    tl.from(".plus1", {
+        delay:-2.3,
+        duration: 2,
+        scale: 0.1,
+        y: 40,
+        ease: "power1.inOut",
+        stagger: {
+            grid: "auto",
+            from: "center",
+            amount: 0.2
+        }
+    });
+    tl.from(".plus2", {
+        delay: -2.3,
         duration: 2,
         scale: 0.1,
         y: -40,
@@ -110,19 +140,125 @@ export const timelineContentAOFF = (node1 ,node2 ,node3) => {
 };
 */
 
+/* Animation beim adden einer neuen Items
+
+export const ItemAdd = () => {
+    gsap.to(".timeline-item-content", {
+        delay: -0.5,
+        duration: 1,
+        scale: 1,
+        x: -40,
+        ease: "bounce",
+    });
+}
+*/
 
 
-// Hover on the circle
-export const hoverCircle = e => {
+
+
+/* wenn man auf eintrag bearbeiten/löschen klickt */
+export const clickButtonEdit = e => {
+    gsap.to(".timeline-item-content .circle3", {
+        duration: 1,
+        scale: 1.5,
+        backgroundColor: "#f8cf25",
+        ease: "power1.inOut"
+    });
+}
+
+/* wenn man auf eintrag erstellen klickt */
+export const clickButtonAdd = e => {
+    gsap.to(".timeline-item-content .circle1", {
+        duration: 1,
+        scale: 1.5,
+        backgroundColor: "#f8cf25",
+        ease: "power1.inOut",
+    });
+    gsap.to(".timeline-item-content .circle2", {
+        duration: 1,
+        scale: 1.5,
+        backgroundColor: "#f8cf25",
+        ease: "power1.inOut"
+    });
+
+
+}
+
+/* wenn man auf mittleren circle klickt */
+export const clickCircleMid = () => {
+    gsap.to(".timeline-item-content .circle3", {
+        duration: 1,
+        scale:1,
+        backgroundColor: "black",
+        ease: "power1.inOut"
+    });
+}
+
+/* wenn man auf die anderen circle klickt */
+export const clickCircle = () => {
+    gsap.to(".timeline-item-content .circle1", {
+        duration: 1,
+        scale:1,
+        backgroundColor: "black",
+        ease: "power1.inOut"
+    });
+    gsap.to(".timeline-item-content .circle2", {
+        duration: 1,
+        scale:1,
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut"
+    });
+
+}
+
+
+export const clickPlus = () => {
+    gsap.to(".timeline-item-content .circle1", {
+        duration: 1,
+        scale:1,
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut"
+    });
+    gsap.to(".timeline-item-content .circle2", {
+        duration: 1,
+        scale:1,
+        backgroundColor: "#f56e47",
+        ease: "power1.inOut"
+    });
+}
+
+
+
+// Hover on the circle mid
+export const hoverCircleMid = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1.3,
-        backgroundColor: "black",
+        backgroundColor: "#f8cf25",
         ease: "power1.inOut"
     });
 };
 
-// Hover off the circle
+// Hover off the circle mid
+export const hoverExitCircleMid = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1,
+        backgroundColor: "black",
+        ease: "power1.inOut"
+    });
+};
+// Hover on the circle außen
+export const hoverCircle = e => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1.3,
+        backgroundColor: "#f8cf25",
+        ease: "power1.inOut"
+    });
+};
+
+// Hover off the circle außen
 export const hoverExitCircle = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -131,6 +267,33 @@ export const hoverExitCircle = e => {
         ease: "power1.inOut"
     });
 };
+
+/*
+// Hover on the plus
+export const hoverPlus = (e) => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1.3,
+        backgroundColor: "#f8cf25",
+        width: "20px",
+        height: "20px",
+        borderRadius: "50%",
+        ease: "power1.inOut",
+        top: "calc(50% + 30px)",
+    });
+};
+
+// Hover off the plus
+export const hoverExitPlus = (e) => {
+    gsap.to(e.target, {
+        duration: 0.3,
+        scale: 1,
+        ease: "power1.inOut",
+    });
+
+};
+*/
+
 
 // Hover on the Header
 export const hoverItem = e => {
@@ -245,15 +408,11 @@ export const hoverExitTimeline = e => {
 
 /*versucht Timeline Linie zu animieren...klappt noch nicht*/
 export const timelineLine = () => {
-    gsap.from(".timeline-container::after",{
-        duration: 2,
-        y:-800,
-        backgroundColor: "#f56e47",
+    gsap.from(".timeline-container",{
+        duration: 1,
+        y:400,
         ease: "power1.inOut"
     })
 };
 
-export const doCoolStuff = (node) =>{
-       node.reversed(!(node).reversed());
-}
 

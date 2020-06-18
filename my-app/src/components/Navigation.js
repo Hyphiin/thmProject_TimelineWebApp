@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import editContent from "./AddEntries";
 import LocalStorageUsage from "./localStorageUsage";
-import {hoverButton, hoverExitButton, hoverExitPfeil, hoverPfeil} from "./Animation";
+import {hoverButton, hoverExitButton, hoverExitPfeil, hoverPfeil, timelineStagger} from "./Animation";
 import gsap from "gsap";
 
 class Navigation extends React.Component {
@@ -80,10 +80,14 @@ class Navigation extends React.Component {
         return <div id="navContainer">
                 <div id="navButtons">
                     <a onMouseEnter={e => hoverPfeil(e)}
-                       onMouseOut={e => hoverExitPfeil(e)} ref={ e => this.prev = e }
+                       onMouseOut={e => hoverExitPfeil(e)}
+                       onClickCapture={e => timelineStagger(e)}
+                       ref={ e => this.prev = e }
                        className="prev" href="#" onClick={() =>this.setTimeline("prev")} >&#8249;</a>
                     <a onMouseEnter={e => hoverPfeil(e)}
-                       onMouseOut={e => hoverExitPfeil(e)} ref={ e => this.next = e }
+                       onMouseOut={e => hoverExitPfeil(e)}
+                       onClickCapture={e => timelineStagger(e)}
+                       ref={ e => this.next = e }
                        className="next" href="#" onClick={() =>this.setTimeline("next")}>&#8250;</a>
                     <button  onMouseEnter={e => hoverButton(e)}
                              onMouseOut={e => hoverExitButton(e)} ref={ e => this.addBtn = e }

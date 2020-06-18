@@ -1,7 +1,9 @@
 import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {
-    hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton
+    clickButtonAdd,
+    clickButtonEdit,
+    hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton, timelineStagger
 } from "./Animation";
 import IconInsert from "./IconInsert";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -75,14 +77,17 @@ export default class Add extends React.Component{
                 <div id="form_button">
                     <button onMouseEnter={e => hoverErstellenButton(e)}
                             onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonAdd()}
                             ref={ e => this.button_add = e } class= "button" id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
                     <var className="divider"></var>
                     <button onMouseEnter={e => hoverErstellenButton(e)}
                             onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonEdit()}
                             ref={ e => this.button_edit = e } class= "button" id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
                     <var className="divider"></var>
                     <button onMouseEnter={e => hoverErstellenButton(e)}
                             onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonEdit()}
                             ref={ e => this.button_delete = e } class= "button" id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
                 </div>
             </form>

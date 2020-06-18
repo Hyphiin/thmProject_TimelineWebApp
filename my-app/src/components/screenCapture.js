@@ -4,11 +4,10 @@ import {circlesStagger, hoverButton, hoverExitButton} from "./Animation";
 
 const Screenshot = () => (
     <div id="wrapper">
-    <button id ="export-container" onClick={capture}>
-        Bild exportieren
-    </button>
+         <button id ="export-container" onClick={capture}>
+            Bild exportieren
+         </button>
     </div>
-
 );
 
 function capture(){

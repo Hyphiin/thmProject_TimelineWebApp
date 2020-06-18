@@ -2,6 +2,7 @@ import entry from "./entries";
 import React, {Component} from "react";
 import LocalStorageUsage from "./localStorageUsage";
 import LocalStorageSave from "./LocalStorageSave";
+import {ItemAdd} from "./Animation";
 
 
 function editContent (text, date, tag, icon, file, position, mode, importInput){
@@ -15,10 +16,10 @@ function editContent (text, date, tag, icon, file, position, mode, importInput){
             tag: tag,
             icon: icon,
             file: file,
-
         };
         entry.splice(position, 0, newObject);
         console.log(entry);
+        //ItemAdd();
     }
 
     if(mode==="nav"){
