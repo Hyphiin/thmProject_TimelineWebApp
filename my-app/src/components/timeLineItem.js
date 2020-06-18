@@ -58,7 +58,7 @@ function TimeLineItem({entries}) {
 
     function clickHandler(mode, pos) {
         localStorage.setItem("mode", "neutral");
-        console.log(mode+","+pos);
+        console.log(mode + "," + pos);
         if (mode === "add" && pos === "before") {
             console.log("add before");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "add");
@@ -70,7 +70,7 @@ function TimeLineItem({entries}) {
         if (mode === "delete") {
             editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
         }
-        if (mode === "edit" ) {
+        if (mode === "edit") {
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
         }
     }
@@ -90,48 +90,51 @@ function TimeLineItem({entries}) {
             <span className="tag">
                 {entries.tag}
             </span>
-                <time>{entries.date}</time>
-                <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
-                <FontAwesomeIcon className="test" icon={entries.icon} />
-                <div>
-                <img className="image" src={entries.file}/>
-                </div>
-                <div ref={el => (fileA = el)} className="file-input-content">
+                    <time>{entries.date}</time>
+                    <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
+                    <FontAwesomeIcon className="test" icon={entries.icon}/>
+                    <div>
+                        <img className="image" src={entries.file}/>
+                    </div>
+                    <div ref={el => (fileA = el)} className="file-input-content">
                     <span //onMouseEnter={e => hoverCircle(e)} //erster dot
-                          //onMouseOut={e => hoverExitCircle(e)}
-                          ref={el => (circle1A = el)}  className="circle1" onClick={() => {
+                        //onMouseOut={e => hoverExitCircle(e)}
+                        ref={el => (circle1A = el)} className="circle1" onClick={() => {
                         clickHandler(localStorage.getItem("mode"), "before");
                         LocalStorageSave()
                         clickCircle()
                     }}/>
-                    <span //onMouseEnter={e => hoverCircle(e)} //letzer dot
-                          //onMouseOut={e => hoverExitCircle(e)}
-                          ref={el => (circle2A = el)} className="circle2" onClick={() => {
-                        clickHandler(localStorage.getItem("mode"), "after");
-                        LocalStorageSave()
-                        clickCircle()
-                    }}/>
-                    <span onMouseEnter={e => hoverCircleMid(e)} //mittlerer dot
-                          onMouseOut={e => hoverExitCircleMid(e)}
-                          ref={el => (circle2A = el)} className="circle3" onClick={() => {
-                        clickHandler(localStorage.getItem("mode"), "middle");
-                        LocalStorageSave()
-                        clickCircleMid()
-                    }}/>
-                    <span //onMouseEnter={e => hoverPlus(e)}
-                          //onMouseOut={e => hoverExitPlus(e)}
-                          className="plus1"
-                          onClick={() => {clickHandler(localStorage.getItem("mode"), "before");
-                          LocalStorageSave()
-                          clickPlus()
-                    }} ><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
-                    <span //onMouseEnter={e => hoverPlus(e)}
-                          //onMouseOut={e => hoverExitPlus(e)}
-                          className="plus2"
-                          onClick={() => {clickHandler(localStorage.getItem("mode"), "after");
-                          LocalStorageSave()
-                          clickPlus()
-                          }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                        <span //onMouseEnter={e => hoverCircle(e)} //letzer dot
+                            //onMouseOut={e => hoverExitCircle(e)}
+                            ref={el => (circle2A = el)} className="circle2" onClick={() => {
+                            clickHandler(localStorage.getItem("mode"), "after");
+                            LocalStorageSave()
+                            clickCircle()
+                        }}/>
+                        <span onMouseEnter={e => hoverCircleMid(e)} //mittlerer dot
+                              onMouseOut={e => hoverExitCircleMid(e)}
+                              ref={el => (circle2A = el)} className="circle3" onClick={() => {
+                            clickHandler(localStorage.getItem("mode"), "middle");
+                            LocalStorageSave()
+                            clickCircleMid()
+                        }}/>
+                        <span //onMouseEnter={e => hoverPlus(e)}
+                            //onMouseOut={e => hoverExitPlus(e)}
+                            className="plus1"
+                            onClick={() => {
+                                clickHandler(localStorage.getItem("mode"), "before");
+                                LocalStorageSave()
+                                clickPlus()
+                            }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                        <span //onMouseEnter={e => hoverPlus(e)}
+                            //onMouseOut={e => hoverExitPlus(e)}
+                            className="plus2"
+                            onClick={() => {
+                                clickHandler(localStorage.getItem("mode"), "after");
+                                LocalStorageSave()
+                                clickPlus()
+                            }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                    </div>
                 </div>
             </div>
         </div>

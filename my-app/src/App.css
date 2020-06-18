@@ -180,14 +180,13 @@ h1 {
 
 /* Plus Kreuze auf Circles */
 .plus1 {
-    background-color: #004f6e;
+
     right: -37px;
     position: absolute;
     top: calc(50% - 53px);
     z-index: 200;
 }
 .plus1::after {
-    background-color: #004f6e;
     content: "";
     position: absolute;
 
@@ -199,14 +198,14 @@ h1 {
 }
 
 .plus2 {
-    background-color: #004f6e;
+
     right: -37px;
     position: absolute;
     top: calc(50% + 27px);
     z-index: 200;
 }
 .plus2::after {
-    background-color: #004f6e;
+
     content: "";
     position: absolute;
 
