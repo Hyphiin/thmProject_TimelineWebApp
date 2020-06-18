@@ -5,6 +5,7 @@ import gsap from "gsap";
 import Export_Import from "./Export_Import";
 import {circlesStagger} from "./Animation";
 import Screenshot from "./screenCapture";
+import CssOptions from "./cssOptions.js";
 
 
 function Toolbox () {
@@ -15,6 +16,7 @@ function Toolbox () {
         <Export_Import/>
         <Screenshot/>
 
+        <CssOptions/>
     </div>
     )
 }

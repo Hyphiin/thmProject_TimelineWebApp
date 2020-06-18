@@ -118,6 +118,7 @@ h1 {
 }
 
 .timeline-item-content p {
+    color: #000000;
     font-size: 16px;
     line-height: 24px;
     margin: 15px 0;
@@ -446,3 +447,18 @@ h1 {
 }
 
 
+
+#formatbox_header{
+    text-align: center;
+    font-weight: bold;
+}
+
+#formatform{
+    text-align: center;
+    margin: 20px;
+}
+
+#format_form{
+    display: flex;
+    flex-direction: column;
+}
