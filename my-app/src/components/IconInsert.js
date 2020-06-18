@@ -16,7 +16,8 @@ import {
     faShoppingBag,
     faBatteryEmpty,
     faBatteryFull,
-    faBook
+    faBook,
+    faStop,
 } from "@fortawesome/free-solid-svg-icons";
 import gsap from "gsap";
 import {hoverButton, hoverExitButton} from "./Animation";
@@ -65,6 +66,7 @@ class IconInsert extends React.Component {
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBatteryEmpty} onClick={() => this.setIcon(faBatteryEmpty)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
                 <FontAwesomeIcon style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
+                <FontAwesomeIcon style={{ margin: '5px' }} icon={faStop} onClick={() => this.setIcon("null")} />
             </div>
         </div>;
     }
