@@ -3,12 +3,11 @@ import React, {useEffect, useRef} from "react";
 import {circlesStagger, hoverButton, hoverExitButton} from "./Animation";
 
 const Screenshot = () => (
-
-    <button  onMouseEnter={e => hoverButton(e)}
-             onMouseOut={e => hoverExitButton(e)}
-             id ="export-container" onClick={capture}>
-        Export
-    </button>
+    <div id="wrapper">
+         <button id ="export-container" onClick={capture}>
+            Bild exportieren
+         </button>
+    </div>
 );
 
 function capture(){

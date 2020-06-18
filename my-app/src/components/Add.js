@@ -1,7 +1,9 @@
 import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {
-    hoverButton, hoverExitButton
+    clickButtonAdd,
+    clickButtonEdit,
+    hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton, timelineStagger
 } from "./Animation";
 import IconInsert from "./IconInsert";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -43,8 +45,8 @@ export default class Add extends React.Component{
 
     /* Animation ToolBox oben*/
     componentDidMount() {
-        let tl = gsap.timeline();
         console.clear();
+        let tl = gsap.timeline();
         console.log( this.header);
         console.log( this.description);
         console.log( this.tag);
@@ -73,17 +75,20 @@ export default class Add extends React.Component{
                     <FileInput/>
                 </div>
                 <div id="form_button">
-                    <button onMouseEnter={e => hoverButton(e)}
-                            onMouseOut={e => hoverExitButton(e)}
-                            ref={ e => this.button_add = e } id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
+                    <button onMouseEnter={e => hoverErstellenButton(e)}
+                            onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonAdd()}
+                            ref={ e => this.button_add = e } class= "button" id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
                     <var className="divider"></var>
-                    <button onMouseEnter={e => hoverButton(e)}
-                            onMouseOut={e => hoverExitButton(e)}
-                            ref={ e => this.button_edit = e } id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
+                    <button onMouseEnter={e => hoverErstellenButton(e)}
+                            onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonEdit()}
+                            ref={ e => this.button_edit = e } class= "button" id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
                     <var className="divider"></var>
-                    <button onMouseEnter={e => hoverButton(e)}
-                            onMouseOut={e => hoverExitButton(e)}
-                            ref={ e => this.button_delete = e } id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
+                    <button onMouseEnter={e => hoverErstellenButton(e)}
+                            onMouseOut={e => hoverExitErstellenButton(e)}
+                            onClickCapture={e => clickButtonEdit()}
+                            ref={ e => this.button_delete = e } class= "button" id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
                 </div>
             </form>
         )

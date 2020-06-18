@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import gsap from "gsap";
 import Export_Import from "./Export_Import";
 import {circlesStagger} from "./Animation";
+import Screenshot from "./screenCapture";
 
 
 function Toolbox () {
@@ -12,6 +13,8 @@ function Toolbox () {
         <Add/>
         <Navigation/>
         <Export_Import/>
+        <Screenshot/>
+
     </div>
     )
 }

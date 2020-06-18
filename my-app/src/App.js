@@ -6,9 +6,10 @@ import Screenshot from "./components/screenCapture";
 import LocalStorageSave from "./components/LocalStorageSave";
 
 import {
-    h1Animation,
-    hoverExitItem,
-    hoverItem, timelineLine, timelineStagger,
+        circlesStagger,
+        h1Animation,
+        hoverExitItem,
+        hoverItem, timelineLine, timelineStagger,
 } from "./components/Animation";
 
 
@@ -30,8 +31,8 @@ class App extends React.Component {
 
         componentDidMount() {
                 console.clear();
-                timelineStagger();
                 timelineLine();
+                circlesStagger();
         }
 
         render() {
@@ -41,8 +42,6 @@ class App extends React.Component {
                                 <Timeline/>
                                 <Toolbox/>
                         </div>
-                        <Screenshot/>
-
                 </>
         }
 }
