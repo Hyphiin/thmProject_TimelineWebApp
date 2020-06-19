@@ -76,11 +76,9 @@ export default class Add extends React.Component{
                     <button onMouseEnter={e => hoverButton(e)}
                             onMouseOut={e => hoverExitButton(e)}
                             ref={ e => this.button_add = e } id="form_button_add" onClick={(e) => this.onSubmit(e,"add")}>Eintrag erstellen</button>
-                    <var className="divider"></var>
                     <button onMouseEnter={e => hoverButton(e)}
                             onMouseOut={e => hoverExitButton(e)}
                             ref={ e => this.button_edit = e } id="form_button_edit" onClick={(e) => this.onSubmit(e,"edit")}>Eintrag bearbeiten</button>
-                    <var className="divider"></var>
                     <button onMouseEnter={e => hoverButton(e)}
                             onMouseOut={e => hoverExitButton(e)}
                             ref={ e => this.button_delete = e } id="form_button_delete" onClick={(e) => this.onSubmit(e,"delete")}>Eintrag löschen</button>
