@@ -339,6 +339,11 @@ h1 {
     #InputFile{
         width:80%;
     }
+
+    #wrapper #export-container{
+        font-size: 80%;
+        justify-content: center;
+    }
 }
 
 /* TOOLBOX */
