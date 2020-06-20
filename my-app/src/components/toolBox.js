@@ -10,7 +10,7 @@ import CssOptions from "./cssOptions.js";
 
 function Toolbox () {
     return(
-    <div id="toolbox_container">
+    <div className="toolbox_container" id="toolbox_container">
         <Add/>
         <Navigation/>
         <Export_Import/>

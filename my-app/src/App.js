@@ -37,7 +37,7 @@ class App extends React.Component {
 
         render() {
                 return <>
-                        <h1>React Lebenslauf</h1>
+                        <h1 className="headline" >React Lebenslauf</h1>
                         <div className="container" onClick={()=>this.clickHandler("jo")}>
                                 <Timeline/>
                                 <Toolbox/>
