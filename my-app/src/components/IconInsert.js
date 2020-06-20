@@ -68,7 +68,6 @@ class IconInsert extends React.Component {
                 <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBatteryEmpty} onClick={() => this.setIcon(faBatteryEmpty)} />
                 <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
                 <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
-                <span>Ausgewähltes Icon: <FontAwesomeIcon style={{ margin: '5px' }} icon={localStorage.getItem('icon')} /></span>
                 <span>Kein Icon: <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faTrash} onClick={() => this.setIcon("null")} /></span>
             </div>
         </div>;
