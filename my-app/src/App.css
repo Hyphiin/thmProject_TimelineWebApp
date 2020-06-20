@@ -279,7 +279,7 @@ h1 {
     }
     .tag{
         width:80%;
-        font-size: 80%;
+        font-size: 60%;
     }
     .date{
         width:80%;
@@ -293,19 +293,51 @@ h1 {
         width:80%;
         font-size: 80%;
     }
-    .formbutton{
+    #form_button{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .formbutton button{
-        flex-direction: column;
-        font-size: 60%;
+    #form_button button{
+        font-size: 50%;
         flex-wrap: wrap;
     }
     .form{
         display: flex;
         flex-direction: column;
+    }
+
+    #exportimportButtons{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        flex-wrap: wrap;
+    }
+
+    #navContainer{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #navButtons{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        flex-wrap: wrap;
+        font-size: 80%;
+    }
+
+    #seitenAnzahl{
+        display: flex;
+        justify-content: center;
+        font-size: 80%;
+    }
+
+    #InputFile{
+        width:80%;
     }
 }
 
