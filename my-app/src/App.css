@@ -471,9 +471,12 @@ h1 {
 }
 
 .iconselect{
-    border: 2px black solid;
+    border: 1px black solid;
     margin: 5px;
     box-shadow: 1px -1px black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #iconpic{
