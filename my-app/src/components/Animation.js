@@ -227,6 +227,13 @@ export const clickPlus = () => {
     });
 }
 
+/* wenn man auf ein icon klickt
+export const clickIcon = (e) => {
+    gsap.to(e.target, {
+        color:"#f56e47",
+    });
+}
+*/
 
 
 // Hover on the circle mid

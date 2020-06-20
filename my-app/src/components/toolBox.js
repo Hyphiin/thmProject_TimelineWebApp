@@ -13,10 +13,9 @@ function Toolbox () {
     <div className="toolbox_container" id="toolbox_container">
         <Add/>
         <Navigation/>
+        <CssOptions/>
         <Export_Import/>
         <Screenshot/>
-
-        <CssOptions/>
     </div>
     )
 }

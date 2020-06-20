@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton} from "./Animation";
 
 class CssOptions extends React.Component {
     constructor(props){
@@ -41,7 +42,9 @@ class CssOptions extends React.Component {
                     <label htmlFor="schriftgroesse">Schriftgröße: </label>
                     <input type="text" placeholder="Default: 16px" name="schriftgroesse" ref={(input) => this.fontsizeInput = input}/>
                     <br/>
-                  <input type="submit" value="Submit" />
+                  <input onMouseEnter={e => hoverButton(e)}
+                         onMouseOut={e => hoverExitButton(e)}
+                         className="button" type="submit" value="Submit" />
                  </form>
             </div>
         );

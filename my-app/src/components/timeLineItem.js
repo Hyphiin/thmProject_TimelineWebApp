@@ -11,7 +11,7 @@ import {
     hoverCircle,
     hoverCircleMid,
     hoverExitCircle,
-    hoverExitCircleMid, hoverExitPlus, hoverPlus
+    hoverExitCircleMid,
 } from "./Animation";
 
 

@@ -99,8 +99,7 @@ class Export_Import extends React.Component {
             <button  onMouseEnter={e => hoverButton(e)}
                      onMouseOut={e => hoverExitButton(e)} ref={ e => this.exportBtn = e }
                      className="exportBtn" class="button" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>Export Timeline</button>
-                <input onMouseEnter={e => hoverButton(e)}
-                       onMouseOut={e => hoverExitButton(e)} ref={ e => this.file = e } id="InputFile" type="file"/>
+                <input ref={ e => this.file = e } id="InputFile" type="file"/>
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.importBtn = e }
                     className="importBtn" class="button" onClick={() =>this.upload()}>Import Timeline</button>
