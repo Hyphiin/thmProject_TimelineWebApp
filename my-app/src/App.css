@@ -236,22 +236,22 @@ h1 {
     .timeline-item-content .tag {
         width: calc(100% - 10px);
         text-align: center;
-        font-size: 60%;
+        font-size: 80%;
         font-weight: bold;
     }
 
     .timeline-item-content time {
         margin-top: 20px;
-        font-size: 60%;
+        font-size: 80%;
     }
 
     .timeline-item-content p {
-        font-size: 60%;
+        font-size: 80%;
     }
 
     .theader{
-        width: 60%;
-        font-size: 60%;
+        width:80%;
+        font-size: 80%;
     }
 
     .form_input{
@@ -260,7 +260,6 @@ h1 {
     }
 
     .toolbox_container{
-        width: 80%;
         display: flex;
         justify-content: center;
     }
@@ -270,27 +269,21 @@ h1 {
     }
 
     #insert{
-        width:70%;
         height:70%;
     }
     .desc{
-        width:80%;
         font-size: 80%;
     }
     .tag{
-        width:80%;
         font-size: 60%;
     }
     .date{
-        width:80%;
         font-size: 80%;
     }
     .iinsert{
-        width:80%;
         font-size: 80%;
     }
     .finsert{
-        width:80%;
         font-size: 80%;
     }
     #form_button{
@@ -311,8 +304,7 @@ h1 {
     #exportimportButtons{
         display: flex;
         flex-direction: column;
-        width: 80%;
-        justify-content: space-evenly;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -326,10 +318,22 @@ h1 {
     #navButtons{
         display: flex;
         flex-direction: column;
-        width: 80%;
         flex-wrap: wrap;
         font-size: 80%;
+        justify-content: center;
     }
+
+
+    #navButtons button{
+        width: 80%;
+        font-size: 80%;
+    }
+
+    #navButtons p{
+        width: 80%;
+        font-size: 80%;
+    }
+
 
     #seitenAnzahl{
         display: flex;
@@ -344,6 +348,29 @@ h1 {
     #wrapper #export-container{
         font-size: 80%;
         justify-content: center;
+    }
+
+    #formatform{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #formatform input{
+        font-size: 80%;
+    }
+
+    #formatform label{
+        font-size: 80%;
+    }
+
+    #formatform p{
+        font-size: 80%;
+    }
+
+    #exportimportButtons button{
+        font-size: 80%;
+        width: 80%;
     }
 }
 
@@ -573,4 +600,10 @@ h1 {
 #format_form{
     display: flex;
     flex-direction: column;
+}
+
+#exportimportButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
