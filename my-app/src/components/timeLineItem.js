@@ -13,6 +13,7 @@ import {
     hoverExitCircle,
     hoverExitCircleMid,
 } from "./Animation";
+import DraggableEntry from "./DraggableEntry";
 
 
 import {library} from '@fortawesome/fontawesome-svg-core';
@@ -84,7 +85,7 @@ function TimeLineItem({entries}) {
     })
 
     return (
-        <div className="timeline-item">
+        <DraggableEntry id={"entry"} className="timeline-item" draggable={"true"}>
             <div id="1" className="timeline-item-content">
                 <div className="box">
             <span className="tag">
@@ -137,7 +138,7 @@ function TimeLineItem({entries}) {
                     </div>
                 </div>
             </div>
-        </div>
+        </DraggableEntry>
     )
 }
 

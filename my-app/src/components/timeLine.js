@@ -7,6 +7,7 @@ import {
     timelineStagger,
     tlAnimationRight
 } from "./Animation";
+import DropContainer from "./DropContainer";
 
 
 console.log("timeline");
@@ -21,9 +22,9 @@ console.log("timeline");
      }
 
      render() {
-         return <div id="timeline-export" className="timeline-container">
+         return <DropContainer id="timeline-export" className="timeline-container">
              <MapEntries/>
-         </div>
+         </DropContainer>
      }
 
 
