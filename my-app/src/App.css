@@ -516,11 +516,12 @@ h1 {
     justify-content: flex-start;
 }
 
-#einzelIcon:hover{
+.einzelIcon:hover{
     color: #f56e47;
 }
-#einzelIcon:focus{
-    color: #f56e47;
+
+.einzelIcon:active{
+    background-color: #f56e47;
 }
 
 #navButtons{

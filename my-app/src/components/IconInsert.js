@@ -53,21 +53,21 @@ class IconInsert extends React.Component {
     render() {
         return  <div ref={ e => this.iconA = e } className="icon">
             <div className="iconselect">
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)}/>
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faAnchor} onClick={() => this.setIcon(faAnchor)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faAddressBook} onClick={() => this.setIcon(faAddressBook)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faAmbulance} onClick={() => this.setIcon(faAmbulance)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faWineBottle} onClick={() => this.setIcon(faWineBottle)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faAtom} onClick={() => this.setIcon(faAtom)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBaby} onClick={() => this.setIcon(faBaby)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBaseballBall} onClick={() => this.setIcon(faBaseballBall)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBasketballBall} onClick={() => this.setIcon(faBasketballBall)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faFootballBall} onClick={() => this.setIcon(faFootballBall)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faShoppingBag} onClick={() => this.setIcon(faShoppingBag)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBatteryEmpty} onClick={() => this.setIcon(faBatteryEmpty)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
-                <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faCoffee} onClick={() => this.setIcon(faCoffee)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBirthdayCake} onClick={() => this.setIcon(faBirthdayCake)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faAnchor} onClick={() => this.setIcon(faAnchor)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faAddressBook} onClick={() => this.setIcon(faAddressBook)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faAmbulance} onClick={() => this.setIcon(faAmbulance)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faWineBottle} onClick={() => this.setIcon(faWineBottle)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faAtom} onClick={() => this.setIcon(faAtom)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBaby} onClick={() => this.setIcon(faBaby)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBaseballBall} onClick={() => this.setIcon(faBaseballBall)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBasketballBall} onClick={() => this.setIcon(faBasketballBall)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faFootballBall} onClick={() => this.setIcon(faFootballBall)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faShoppingBag} onClick={() => this.setIcon(faShoppingBag)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBatteryEmpty} onClick={() => this.setIcon(faBatteryEmpty)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBatteryFull} onClick={() => this.setIcon(faBatteryFull)} />
+                <FontAwesomeIcon className="einzelIcon" style={{ margin: '5px' }} icon={faBook} onClick={() => this.setIcon(faBook)} />
                 <span>Kein Icon: <FontAwesomeIcon id="einzelIcon" style={{ margin: '5px' }} icon={faTrash} onClick={() => this.setIcon("null")} /></span>
             </div>
         </div>;
