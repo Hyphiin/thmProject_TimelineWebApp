@@ -16,7 +16,7 @@ export const timelineStagger = () => {
     let tl = gsap.timeline();
     tl.from(".timeline-item-content", {
         delay: -0.5,
-        duration: 1,
+        duration: 0.8,
         scale: 0.1,
         y: -400,
         ease: "back.out(1)",
@@ -29,6 +29,25 @@ export const timelineStagger = () => {
         }
     });
 }
+
+/*versucht Timeline Linie zu animieren...klappt noch nicht*/
+export const timelineLine = () => {
+    gsap.from(".timeline-container",{
+        duration: 1,
+        y:400,
+        ease: "power1.inOut"
+    })
+};
+
+export const timelinePrev = () => {
+    gsap.from(".timeline-container",{
+        duration: 0.8,
+        scale: 1.6,
+        ease: "back.out(1)"
+    })
+};
+
+
 
 /*Animation für orange Circles, erscheinen*/
 export const circlesStagger = () => {
@@ -227,13 +246,21 @@ export const clickPlus = () => {
     });
 }
 
-/* wenn man auf ein icon klickt
+/* wenn man auf ein icon klickt */
+let current = "";
+let before = "#muell";
+
 export const clickIcon = (e) => {
+    current = e.target;
     gsap.to(e.target, {
         color:"#f56e47",
     });
+    gsap.to(before, {
+        color:"#000000",
+    });
+    before = current;
 }
-*/
+
 
 
 // Hover on the circle mid
@@ -413,13 +440,6 @@ export const hoverExitTimeline = e => {
 };
  */
 
-/*versucht Timeline Linie zu animieren...klappt noch nicht*/
-export const timelineLine = () => {
-    gsap.from(".timeline-container",{
-        duration: 1,
-        y:400,
-        ease: "power1.inOut"
-    })
-};
+
 
 

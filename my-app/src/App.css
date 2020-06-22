@@ -521,7 +521,11 @@ h1 {
 }
 
 .einzelIcon:active{
-    background-color: #f56e47;
+   font-size: 18px;
+}
+
+#muell{
+    color: #f56e47;
 }
 
 #navButtons{
@@ -583,7 +587,6 @@ h1 {
     color:#fff;
     box-shadow:3px 3px 4px #A1B0BF;
 }
-
 
 
 #formatbox_header{

@@ -2,7 +2,7 @@ import entry from "./entries";
 import React, {Component} from "react";
 import LocalStorageUsage from "./localStorageUsage";
 import LocalStorageSave from "./LocalStorageSave";
-import {ItemAdd} from "./Animation";
+import {ItemAdd, timelinePrev} from "./Animation";
 
 
 function editContent (text, date, tag, icon, file, position, mode, importInput){
@@ -31,6 +31,7 @@ function editContent (text, date, tag, icon, file, position, mode, importInput){
                 entry.push(LocalStorageUsage()[i]);
             }
         }
+        timelinePrev();
     }
 
     if (mode==="new"){
