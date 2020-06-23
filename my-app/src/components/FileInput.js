@@ -20,8 +20,12 @@ function FileInput() {
         }
     };
 
+    function clearImage(){
+        localStorage.removeItem('file');
+    }
+
     return (
-        <div
+        <form
             style={{
                 display: "flex",
                 flexDirection: "column",
@@ -55,7 +59,8 @@ function FileInput() {
                 />
             </div>
             Click to upload Image
-        </div>
+            <input type="reset" onClick={clearImage} />
+        </form>
     );
 }
 
