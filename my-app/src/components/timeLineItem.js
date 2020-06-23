@@ -99,7 +99,7 @@ function TimeLineItem({entries}) {
                     <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
                     <FontAwesomeIcon className="test" icon={entries.icon}/>
                     <div>
-                        <input type="image" className="image"  src={entries.file}/>
+                        <input type="image" className="image"  alt="" src={entries.file}/>
                     </div>
                     <div ref={el => (fileA = el)} className="file-input-content">
                     <span //onMouseEnter={e => hoverCircle(e)} //erster dot
