@@ -1,5 +1,6 @@
 import React from "react";
 import {hoverButton, hoverExitButton} from "./Animation";
+import $ from "jquery"
 
 import LocalStorageUsage from "./localStorageUsage";
 
@@ -36,18 +37,21 @@ class GoogleDocs extends React.Component {
             // this line makes the user redirected to the url
 
             window.location = url;
+            localStorage.setItem("googleData",url);
         }
     }
 
     upload(){
 
-          /*  const urlParams = new URLSearchParams(window.location.search);
+            const urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams);
             const code = urlParams.get('code');
+            console.log(code);
             const redirect_uri = "http://localhost:3000"; // replace with your redirect_uri;
             const client_secret = "h9EpQ7-n9ebU39PMk7dkjFBQ"; // replace with your client secret
             const scope = "https://www.googleapis.com/auth/drive";
             var access_token= "";
-            var client_id = "1057260951853-1hap6fgn6vnm0dhl15qh88angt7umttc.apps.googleusercontent.com"// replace it with your client id;
+            var client_id = "1057260951853-1hap6fgn6vnm0dhl15qh88angt7umttc.apps.googleusercontent.com"; // replace it with your client id;
 
 
             $.ajax({
@@ -99,7 +103,7 @@ class GoogleDocs extends React.Component {
 
                 // add assoc key values, this will be posts values
                 formData.append("file", this.file, this.getName());
-                formData.append("upload_file", true);
+               formData.append("upload_file", true);
 
                 $.ajax({
                     type: "POST",
@@ -125,7 +129,7 @@ class GoogleDocs extends React.Component {
                         console.log(error);
                     },
                     async: true,
-                    //data: formData,
+                    data: formData,
                     cache: false,
                     contentType: false,
                     processData: false,
@@ -136,8 +140,10 @@ class GoogleDocs extends React.Component {
 
 
             $("#upload").on("click", function (e) {
+
                 var file =LocalStorageUsage();
-                var upload = new Upload(file);
+                var blob = new Blob([file],{type: "text/plain"});
+                var upload = new Upload(blob);
 
                 // maby check size or type here with upload.getSize() and upload.getType()
 
@@ -145,7 +151,7 @@ class GoogleDocs extends React.Component {
                 upload.doUpload();
             });
 
-*/
+
 
 
 
