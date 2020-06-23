@@ -14,11 +14,11 @@ class MapEntries extends React.Component{
             i=1;
             localStorage.setItem("nuOfTimelines",i.toString());
             localStorage.setItem("position",i.toString());
-            editContent("","","","", "","","new");
+            editContent( "", "","","","", "","","new");
         }
 
 
-            return editContent("", "", "", "", "","","get").map((entries, idx) => (
+            return editContent("","", "", "", "", "","","get").map((entries, idx) => (
                 <TimeLineItem entries={entries} key={idx}/>
             ))
         }

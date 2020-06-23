@@ -13,6 +13,7 @@ import FileInput from "./FileInput";
 
 export default class Add extends React.Component{
     state = {
+        id: "",
         date: "",
         description: "",
         tag: "",
@@ -26,7 +27,7 @@ export default class Add extends React.Component{
         localStorage.setItem("tag",this.state.tag);
         if (mode==="add"){
             if (LocalStorageUsage().length===0){
-                editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"),localStorage.getItem("file"), 0,"add");
+                editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"),localStorage.getItem("icon"),localStorage.getItem("file"), 0,"add");
             }
             else {
                 localStorage.setItem("mode", "add");

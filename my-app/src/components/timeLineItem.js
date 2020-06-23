@@ -61,17 +61,17 @@ function TimeLineItem({entries}) {
         console.log(mode + "," + pos);
         if (mode === "add" && pos === "before") {
             console.log("add before");
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "add");
+            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "", "get").indexOf(entries), "add");
         }
         if (mode === "add" && pos === "after") {
             console.log("add after");
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
+            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
         }
         if (mode === "delete") {
-            editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
+            editContent("","", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
         }
         if (mode === "edit") {
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
+            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","", "", "", "", "", "", "get").indexOf(entries), "edit");
         }
     }
 
@@ -88,15 +88,73 @@ function TimeLineItem({entries}) {
         arrayOfItems[i].id = "entry " + i.toString();
     }
 
-    const entriesArray = LocalStorageUsage();
+    const allEntries = LocalStorageUsage();
     const dragItem = useRef();
 
     const handleDragStart = (e, id) => {
-        console.log("Drag start", id.entriesArray);
+        console.log("Drag start", id.entryI);
     }
 
     return (
-        <div className="timeline-item" draggable={true} onDragStart={(e) => handleDragStart(e, {entriesArray})}>
+                <div draggable={true} onDragStart={(e) => {allEntries.map((entry, entryI) => (handleDragStart(e, {entryI})))}} className="timeline-item">
+                    <div id="1" className="timeline-item-content">
+                        <div className="box">
+            <span className="tag">
+                {entries.tag}
+            </span>
+                            <time>{entries.date}</time>
+                            <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
+                            <FontAwesomeIcon className="test" icon={entries.icon}/>
+                            <div>
+                                <input type="image" className="image" src={entries.file}/>
+                            </div>
+                            <div ref={el => (fileA = el)} className="file-input-content">
+                    <span //onMouseEnter={e => hoverCircle(e)} //erster dot
+                        //onMouseOut={e => hoverExitCircle(e)}
+                        ref={el => (circle1A = el)} className="circle1" onClick={() => {
+                        clickHandler(localStorage.getItem("mode"), "before");
+                        LocalStorageSave()
+                        clickCircle()
+                    }}/>
+                                <span //onMouseEnter={e => hoverCircle(e)} //letzer dot
+                                    //onMouseOut={e => hoverExitCircle(e)}
+                                    ref={el => (circle2A = el)} className="circle2" onClick={() => {
+                                    clickHandler(localStorage.getItem("mode"), "after");
+                                    LocalStorageSave()
+                                    clickCircle()
+                                }}/>
+                                <span onMouseEnter={e => hoverCircleMid(e)} //mittlerer dot
+                                      onMouseOut={e => hoverExitCircleMid(e)}
+                                      ref={el => (circle2A = el)} className="circle3" onClick={() => {
+                                    clickHandler(localStorage.getItem("mode"), "middle");
+                                    LocalStorageSave()
+                                    clickCircleMid()
+                                }}/>
+                                <span //onMouseEnter={e => hoverPlus(e)}
+                                    //onMouseOut={e => hoverExitPlus(e)}
+                                    className="plus1"
+                                    onClick={() => {
+                                        clickHandler(localStorage.getItem("mode"), "before");
+                                        LocalStorageSave()
+                                        clickPlus()
+                                    }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                                <span //onMouseEnter={e => hoverPlus(e)}
+                                    //onMouseOut={e => hoverExitPlus(e)}
+                                    className="plus2"
+                                    onClick={() => {
+                                        clickHandler(localStorage.getItem("mode"), "after");
+                                        LocalStorageSave()
+                                        clickPlus()
+                                    }}><FontAwesomeIcon style={{margin: '5px'}} icon={faPlus}/></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+    /*<div className="timeline-item" draggable={true} onDragStart={(e) => handleDragStart(e, {allEntries})}>
             <div id="1" className="timeline-item-content">
                 <div className="box">
             <span className="tag">
@@ -149,7 +207,7 @@ function TimeLineItem({entries}) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*/
     )
 
 }
