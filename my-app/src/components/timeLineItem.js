@@ -34,6 +34,7 @@ import {
     faBatteryFull,
     faBook, faPlus
 } from "@fortawesome/free-solid-svg-icons";
+import LocalStorageUsage from "./localStorageUsage";
 
 library.add(
     faCoffee,
@@ -52,7 +53,6 @@ library.add(
     faBatteryFull,
     faBook
 );
-
 
 function TimeLineItem({entries}) {
 
@@ -84,12 +84,19 @@ function TimeLineItem({entries}) {
     })
 
     let arrayOfItems = document.getElementsByClassName("timeline-item");
-    for (let i=0; i<arrayOfItems.length; i++){
+    for (let i = 0; i < arrayOfItems.length; i++) {
         arrayOfItems[i].id = "entry " + i.toString();
     }
 
+    const entriesArray = LocalStorageUsage();
+    const dragItem = useRef();
+
+    const handleDragStart = (e, id) => {
+        console.log("Drag start", id.entriesArray);
+    }
+
     return (
-        <div className="timeline-item">
+        <div className="timeline-item" draggable={true} onDragStart={(e) => handleDragStart(e, {entriesArray})}>
             <div id="1" className="timeline-item-content">
                 <div className="box">
             <span className="tag">
@@ -99,7 +106,7 @@ function TimeLineItem({entries}) {
                     <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
                     <FontAwesomeIcon className="test" icon={entries.icon}/>
                     <div>
-                        <input type="image" className="image"  src={entries.file}/>
+                        <input type="image" className="image" src={entries.file}/>
                     </div>
                     <div ref={el => (fileA = el)} className="file-input-content">
                     <span //onMouseEnter={e => hoverCircle(e)} //erster dot
@@ -144,6 +151,7 @@ function TimeLineItem({entries}) {
             </div>
         </div>
     )
+
 }
 
 
