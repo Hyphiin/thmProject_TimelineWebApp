@@ -3,13 +3,14 @@ import gsap from "gsap";
 import {
     clickButtonAdd,
     clickButtonEdit,
-    hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton, timelineStagger
+    hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton, itemStagger, timelineStagger
 } from "./Animation";
 import IconInsert from "./IconInsert";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import LocalStorageUsage from "./localStorageUsage";
 import editContent from "./AddEntries";
 import FileInput from "./FileInput";
+import entry from "./entries";
 
 export default class Add extends React.Component{
     state = {
@@ -30,6 +31,7 @@ export default class Add extends React.Component{
             }
             else {
                 localStorage.setItem("mode", "add");
+                itemStagger();
             }
         }
         if (mode==="edit"){
@@ -41,6 +43,7 @@ export default class Add extends React.Component{
         this.setState({date: "",
             description: "",
             tag: ""})
+
     };
 
     /* Animation ToolBox oben*/

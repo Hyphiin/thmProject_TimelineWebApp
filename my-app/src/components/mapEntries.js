@@ -15,6 +15,7 @@ class MapEntries extends React.Component{
             localStorage.setItem("nuOfTimelines",i.toString());
             localStorage.setItem("position",i.toString());
             editContent("","","","", "","","new");
+
         }
 
 
