@@ -6,6 +6,7 @@ import Export_Import from "./Export_Import";
 import {circlesStagger} from "./Animation";
 import Screenshot from "./screenCapture";
 import CssOptions from "./cssOptions.js";
+import GoogleDocs from "./GoogleDocs";
 
 
 function Toolbox () {
@@ -14,6 +15,7 @@ function Toolbox () {
         <Add/>
         <Navigation/>
         <CssOptions/>
+        <GoogleDocs/>
         <Export_Import/>
         <Screenshot/>
     </div>
