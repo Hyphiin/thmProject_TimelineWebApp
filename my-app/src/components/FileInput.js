@@ -22,6 +22,7 @@ function FileInput() {
 
     function clearImage(){
         localStorage.removeItem('file');
+        window.location.reload(false);
     }
 
     return (
