@@ -83,6 +83,11 @@ function TimeLineItem({entries}) {
 
     })
 
+    let arrayOfItems = document.getElementsByClassName("timeline-item");
+    for (let i=0; i<arrayOfItems.length; i++){
+        arrayOfItems[i].id = "entry " + i.toString();
+    }
+
     return (
         <div className="timeline-item">
             <div id="1" className="timeline-item-content">
