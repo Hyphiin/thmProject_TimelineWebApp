@@ -1,5 +1,7 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {itemStagger} from "./Animation";
+import entry from "./entries";
 
 export default class Edit extends React.Component{
     state = {

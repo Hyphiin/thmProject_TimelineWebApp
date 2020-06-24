@@ -2,7 +2,7 @@ import entry from "./entries";
 import React, {Component} from "react";
 import LocalStorageUsage from "./localStorageUsage";
 import LocalStorageSave from "./LocalStorageSave";
-import {ItemAdd, timelinePrev} from "./Animation";
+import {ItemAdd, itemStagger, timelinePrev} from "./Animation";
 
 
 function editContent (text, date, tag, icon, file, position, mode, importInput){
@@ -19,7 +19,6 @@ function editContent (text, date, tag, icon, file, position, mode, importInput){
         };
         entry.splice(position, 0, newObject);
         console.log(entry);
-        //ItemAdd();
     }
 
     if(mode==="nav"){
