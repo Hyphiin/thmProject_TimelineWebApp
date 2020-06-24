@@ -11,6 +11,7 @@ import {
         hoverExitItem,
         hoverItem, timelineLine, timelineStagger,
 } from "./components/Animation";
+import MenuContainer from "./components/MenuContainer";
 
 
 class App extends React.Component {
@@ -40,7 +41,7 @@ class App extends React.Component {
                         <h1 className="headline" >React Lebenslauf</h1>
                         <div className="container" onClick={()=>this.clickHandler("jo")}>
                                 <Timeline/>
-                                <Toolbox/>
+                                <MenuContainer/>
                         </div>
                 </>
         }
