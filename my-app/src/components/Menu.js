@@ -14,8 +14,10 @@ class Menu extends Component {
             <div id="flyoutMenu"
                  className={visibility}>
                 <Toolbox/>
-                <button onMouseDown={this.props.handleMouseDown}>
-                    Hide
+                <button className="toggle-button" onMouseDown={this.props.handleMouseDown}>
+                    <div className="toggle-button__line" />
+                    <div className="toggle-button__line" />
+                    <div className="toggle-button__line" />
                 </button>
             </div>
         );
