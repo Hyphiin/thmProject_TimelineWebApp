@@ -80,10 +80,10 @@ function TimeLineItem({entries}) {
             itemStagger();
         }
         if (mode === "edit") {
-            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
             localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
             console.log(localStorage.getItem("lastAdd"));
             itemStagger();
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
         }
     }
 
