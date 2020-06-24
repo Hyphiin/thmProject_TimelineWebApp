@@ -26,8 +26,8 @@
     display: flex;
     justify-content: flex-end;
     width: 30%;
-    position: fixed;
-    background-color: #A1B0BF;
+    position: absolute;
+    background-color: #e6e4e1;
     top: 0;
     right: 0;
     transition: transform .3s
