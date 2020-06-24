@@ -88,6 +88,10 @@ function TimeLineItem({entries}) {
         arrayOfItems[i].id = "entry " + i.toString();
     }
 
+    const handleDragStart = (e) => {
+
+    }
+
     return (
                 /*<div draggable={true} onDragStart={(e) => {allEntries.map((entry, entryI) => (handleDragStart(e, {entryI})))}} className="timeline-item">
                     <div id="1" className="timeline-item-content">
