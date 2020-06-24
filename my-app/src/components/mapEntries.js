@@ -17,7 +17,6 @@ class MapEntries extends React.Component{
             editContent("","","","", "","","new");
         }
 
-
             return editContent("", "", "", "", "","","get").map((entries, idx) => (
                 <TimeLineItem entries={entries} key={idx}/>
             ))

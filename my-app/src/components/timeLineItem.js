@@ -11,7 +11,7 @@ import {
     hoverCircle,
     hoverCircleMid,
     hoverExitCircle,
-    hoverExitCircleMid,
+    hoverExitCircleMid, itemStagger,
 } from "./Animation";
 
 
@@ -62,16 +62,28 @@ function TimeLineItem({entries}) {
         if (mode === "add" && pos === "before") {
             console.log("add before");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "add");
+            localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries) - 1).toString());
+            console.log(localStorage.getItem("lastAdd"));
+            itemStagger();
         }
         if (mode === "add" && pos === "after") {
             console.log("add after");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
+            localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries) + 1).toString());
+            console.log(localStorage.getItem("lastAdd"));
+            itemStagger();
         }
         if (mode === "delete") {
             editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
+            localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
+            console.log(localStorage.getItem("lastAdd"));
+            itemStagger();
         }
         if (mode === "edit") {
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
+            localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
+            console.log(localStorage.getItem("lastAdd"));
+            itemStagger();
         }
     }
 
@@ -85,8 +97,9 @@ function TimeLineItem({entries}) {
 
     let arrayOfItems = document.getElementsByClassName("timeline-item");
     for (let i=0; i<arrayOfItems.length; i++){
-        arrayOfItems[i].id = "entry " + i.toString();
+        arrayOfItems[i].id = "entry" + i.toString();
     }
+
 
     return (
         <div className="timeline-item">

@@ -455,6 +455,7 @@ h1 {
     background-color: #42a6c6;
     color: #000;
     border: 2px solid #42a6c6;
+    border-radius: 5px;
     letter-spacing: 2px;
     text-align: center;
     position: relative;
@@ -486,6 +487,7 @@ h1 {
 #export-container:hover:after{
     width: 100%;
     z-index: 2;
+    content:"Bild exportieren";
 }
 
 

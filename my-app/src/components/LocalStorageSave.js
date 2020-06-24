@@ -1,4 +1,5 @@
 import entry from "./entries";
+import {itemStagger} from "./Animation";
 
 const LocalStorageSave = () => {
     localStorage.setItem("allEntries"+localStorage.getItem("position"), JSON.stringify(entry));

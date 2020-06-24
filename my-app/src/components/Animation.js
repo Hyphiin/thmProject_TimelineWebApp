@@ -28,9 +28,9 @@ export const timelineStagger = () => {
             amount: 0.3
         }
     });
-}
+};
 
-/*versucht Timeline Linie zu animieren...klappt noch nicht*/
+/*Timeline Linie Animation */
 export const timelineLine = () => {
     gsap.from(".timeline-container",{
         duration: 1,
@@ -39,12 +39,27 @@ export const timelineLine = () => {
     })
 };
 
+/* Animation beim wechseln der Timeline */
 export const timelinePrev = () => {
     gsap.from(".timeline-container",{
         duration: 0.8,
         scale: 1.6,
         ease: "back.out(1)"
     })
+};
+
+/*Animation für Item add/delete/change */
+export const itemStagger = () => {
+    let arrayOfItems = document.getElementsByClassName("timeline-item");
+    let i = parseInt(localStorage.getItem("lastAdd"),10);
+    console.log(i);
+        let item = arrayOfItems[i];
+        console.log(item);
+        gsap.from( item, {
+            duration: 0.8,
+            scale: 1.6,
+            ease: "back.out(1)"});
+
 };
 
 
