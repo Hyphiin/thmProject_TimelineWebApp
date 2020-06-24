@@ -51,9 +51,15 @@ export const timelinePrev = () => {
 /*Animation für Item add/delete/change */
 export const itemStagger = () => {
     let arrayOfItems = document.getElementsByClassName("timeline-item");
-    let item = arrayOfItems[1].id.toString();
-    console.log(item);
-    gsap.to("#"+item,{scale:5});
+    let i = parseInt(localStorage.getItem("lastAdd"),10);
+    console.log(i);
+        let item = arrayOfItems[i];
+        console.log(item);
+        gsap.from( item, {
+            duration: 0.8,
+            scale: 1.6,
+            ease: "back.out(1)"});
+
 };
 
 

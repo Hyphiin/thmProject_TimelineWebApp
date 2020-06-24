@@ -31,7 +31,6 @@ export default class Add extends React.Component{
             }
             else {
                 localStorage.setItem("mode", "add");
-                itemStagger();
             }
         }
         if (mode==="edit"){
