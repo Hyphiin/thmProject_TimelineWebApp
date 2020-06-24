@@ -54,3 +54,11 @@
 #flyoutMenu h2 a:hover {
     text-decoration: underline;
 }
+
+
+@media only screen and (max-width: 767px) {
+    #flyoutMenu {
+        width: 30%;
+        justify-content: center;
+    }
+}
