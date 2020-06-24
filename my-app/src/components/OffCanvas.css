@@ -28,7 +28,7 @@
     width: 30%;
     position: absolute;
     background-color: #e6e4e1;
-    top: 0;
+    top: 36px;
     right: 0;
     transition: transform .3s
     cubic-bezier(0, .52, 0, 1);
