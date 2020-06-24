@@ -5,6 +5,7 @@ import LocalStorageSave from "./LocalStorageSave";
 import LocalStorageUsage from "./localStorageUsage";
 
 let dragging = false;
+let allEntries = editContent("", "", "", "", "", "", "", "get");
 
 class MapEntries extends React.Component {
     constructor(props) {
@@ -19,18 +20,24 @@ class MapEntries extends React.Component {
         console.log("Drag start", id);
         this.dragItem.current = id;
         this.dragNode.current = e.target;
-        dragging = true;
-        console.log("Current: ", this.dragNode);
+        this.dragNode.current.addEventListener('dragend', this.handleDragEnd);
+        setTimeout(() => {
+            dragging = true;
+        }, 0);
     }
 
     handleDragEnter = (e, id) => {
-        console.log("Drag enter", id);
+        if(e.target !== this.dragNode.current){
+            console.log("Drag enter", id);
+        }
     }
 
     handleDragEnd = () => {
-        console.log("Drag end");
+        console.log("Drag end on: ");
+        this.dragNode.current.removeEventListener('dragend', this.handleDragEnd);
+        this.dragItem.current = null;
+        this.dragNode.current = null;
         dragging = false;
-        console.log(dragging);
     }
 
 
@@ -46,9 +53,9 @@ class MapEntries extends React.Component {
 
         return editContent("", "", "", "", "", "", "", "get").map((entries, idx) => (
             <div draggable={true}
-                 onDragStart={(e) => this.handleDragStart(entries, idx)}
-                 onDragEnter={(e) => {this.handleDragEnter(e, {entries, idx})}}
-                 onDragEnd={this.handleDragEnd}>
+                 onDragStart={(e) => {this.handleDragStart(e, {idx})}}
+                 onDragEnter={(e) => {this.handleDragEnter(e, {idx})}}
+                 >
                 <TimeLineItem entries={entries} key={idx}/>
             </div>
         ))
