@@ -4,26 +4,34 @@ import TimeLineItem from "./timeLineItem";
 import LocalStorageSave from "./LocalStorageSave";
 import LocalStorageUsage from "./localStorageUsage";
 
-class MapEntries extends React.Component{
+class MapEntries extends React.Component {
 
-    render()
-    {
-        let i=parseInt(localStorage.getItem("nuOfTimelines"));
-        if(isNaN(i)===true){
+    handleDragStart = (e, id) => {
+            console.log("Drag", id)
+    }
+
+    render() {
+        let i = parseInt(localStorage.getItem("nuOfTimelines"));
+        if (isNaN(i) === true) {
             console.log("drinne");
-            i=1;
-            localStorage.setItem("nuOfTimelines",i.toString());
-            localStorage.setItem("position",i.toString());
-            editContent( "", "","","","", "","","new");
+            i = 1;
+            localStorage.setItem("nuOfTimelines", i.toString());
+            localStorage.setItem("position", i.toString());
+            editContent("", "", "", "", "", "", "", "new");
         }
 
-
-            return editContent("","", "", "", "", "","","get").map((entries, idx) => (
+        return editContent("", "", "", "", "", "", "", "get").map((entries, idx) => (
+            <div draggable={true} onDragStart={(e) => this.handleDragStart(entries, idx)}>
                 <TimeLineItem entries={entries} key={idx}/>
-            ))
-        }
+            </div>
+
+
+
+        ))
+    }
 
 }
+
 export default MapEntries;
 
 

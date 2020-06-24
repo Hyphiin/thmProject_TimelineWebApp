@@ -88,15 +88,8 @@ function TimeLineItem({entries}) {
         arrayOfItems[i].id = "entry " + i.toString();
     }
 
-    const allEntries = LocalStorageUsage();
-    const dragItem = useRef();
-
-    const handleDragStart = (e, id) => {
-        console.log("Drag start", id.entryI);
-    }
-
     return (
-                <div draggable={true} onDragStart={(e) => {allEntries.map((entry, entryI) => (handleDragStart(e, {entryI})))}} className="timeline-item">
+                /*<div draggable={true} onDragStart={(e) => {allEntries.map((entry, entryI) => (handleDragStart(e, {entryI})))}} className="timeline-item">
                     <div id="1" className="timeline-item-content">
                         <div className="box">
             <span className="tag">
@@ -149,12 +142,12 @@ function TimeLineItem({entries}) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*/
 
 
 
 
-    /*<div className="timeline-item" draggable={true} onDragStart={(e) => handleDragStart(e, {allEntries})}>
+    <div className="timeline-item">
             <div id="1" className="timeline-item-content">
                 <div className="box">
             <span className="tag">
@@ -207,7 +200,7 @@ function TimeLineItem({entries}) {
                     </div>
                 </div>
             </div>
-        </div>*/
+        </div>
     )
 
 }
