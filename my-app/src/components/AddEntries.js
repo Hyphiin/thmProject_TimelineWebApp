@@ -5,13 +5,12 @@ import LocalStorageSave from "./LocalStorageSave";
 import {ItemAdd, timelinePrev} from "./Animation";
 
 
-function editContent (id, text, date, tag, icon, file, position, mode, importInput){
+function editContent (text, date, tag, icon, file, position, mode, importInput){
     if (mode==="get") {
             return entry;
     }
     if(mode==="add") {
         let newObject = {
-            id: id,
             text: text,
             date: date,
             tag: tag,
@@ -58,7 +57,6 @@ function editContent (id, text, date, tag, icon, file, position, mode, importInp
 
     if (mode==="edit"){
         let newObject = {
-            id: id,
             text: text,
             date: date,
             category: {

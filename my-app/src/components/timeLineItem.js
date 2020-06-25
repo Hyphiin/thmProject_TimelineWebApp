@@ -61,17 +61,17 @@ function TimeLineItem({entries}) {
         console.log(mode + "," + pos);
         if (mode === "add" && pos === "before") {
             console.log("add before");
-            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "", "get").indexOf(entries), "add");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent( "", "", "", "", "", "", "get").indexOf(entries), "add");
         }
         if (mode === "add" && pos === "after") {
             console.log("add after");
-            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
         }
         if (mode === "delete") {
             editContent("","", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
         }
         if (mode === "edit") {
-            editContent(localStorage.getItem("id"), localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("","", "", "", "", "", "", "get").indexOf(entries), "edit");
+            editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
         }
     }
 
@@ -86,10 +86,6 @@ function TimeLineItem({entries}) {
     let arrayOfItems = document.getElementsByClassName("timeline-item");
     for (let i = 0; i < arrayOfItems.length; i++) {
         arrayOfItems[i].id = "entry " + i.toString();
-    }
-
-    const handleDragStart = (e) => {
-
     }
 
     return (

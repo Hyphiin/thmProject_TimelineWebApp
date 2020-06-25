@@ -4,16 +4,18 @@ import TimeLineItem from "./timeLineItem";
 import LocalStorageSave from "./LocalStorageSave";
 import LocalStorageUsage from "./localStorageUsage";
 
-let dragging = false;
-let allEntries = editContent("", "", "", "", "", "", "", "get");
+
+let allEntries = editContent("", "", "", "", "", "", "get");
 
 class MapEntries extends React.Component {
     constructor(props) {
         super(props);
         this.dragItem = React.createRef();
         this.dragNode = React.createRef();
+        this.state = {
+            dragging: false
+        }
     }
-
 
 
     handleDragStart = (e, id) => {
@@ -21,14 +23,14 @@ class MapEntries extends React.Component {
         this.dragItem.current = id;
         this.dragNode.current = e.target;
         this.dragNode.current.addEventListener('dragend', this.handleDragEnd);
-        setTimeout(() => {
-            dragging = true;
-        }, 0);
+        setTimeout(()=>{
+            this.setState({dragging: this.state.dragging = true});
+        }, 0)
     }
 
     handleDragEnter = (e, id) => {
-        if(e.target !== this.dragNode.current){
-            console.log("Drag enter", id);
+        if (e.target !== this.dragNode.current) {
+            console.log("test");
         }
     }
 
@@ -37,7 +39,7 @@ class MapEntries extends React.Component {
         this.dragNode.current.removeEventListener('dragend', this.handleDragEnd);
         this.dragItem.current = null;
         this.dragNode.current = null;
-        dragging = false;
+        this.setState({dragging: this.state.dragging = false});
     }
 
 
@@ -48,14 +50,18 @@ class MapEntries extends React.Component {
             i = 1;
             localStorage.setItem("nuOfTimelines", i.toString());
             localStorage.setItem("position", i.toString());
-            editContent("", "", "", "", "", "", "", "new");
+            editContent("", "", "", "", "", "", "new");
         }
 
-        return editContent("", "", "", "", "", "", "", "get").map((entries, idx) => (
+        return editContent("", "", "", "", "", "", "get").map((entries, idx) => (
             <div draggable={true}
-                 onDragStart={(e) => {this.handleDragStart(e, {idx})}}
-                 onDragEnter={(e) => {this.handleDragEnter(e, {idx})}}
-                 >
+                 onDragStart={(e) => {
+                     this.handleDragStart(e, {idx})
+                 }}
+                 onDragEnter={this.state.dragging ? ((e) => {
+                     this.handleDragEnter(e, {idx})
+                 }) : null}
+            >
                 <TimeLineItem entries={entries} key={idx}/>
             </div>
         ))
