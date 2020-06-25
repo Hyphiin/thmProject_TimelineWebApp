@@ -1,24 +1,18 @@
-import React from "react";
+import React, {useRef} from "react";
 import ReactToPrint from "react-to-print";
 import Timeline from "./timeLine.js";
 
-class Print extends React.Component{
+        const Print = () => {
+            const componentRef = useRef();
 
-    render(){
-        return(
-            <div>
-                <ReactToPrint
-                    trigger={()=> <button>Drucken</button>}
-                    documentTitle={()=> "Mein Lebenslauf"}
-                    copyStyles={()=> true}
-                    content={()=> this.componentRef}
-                />
-                <div style={{display: "none"}}>
-                    <Timeline ref={el => (this.componentRef = el)}/>
+            return (
+                <div>
+                    <ReactToPrint
+                        trigger={() => <button>Print this out!</button>}
+                        content={() => componentRef.current}
+                    />
+                    <Timeline ref={componentRef}/>
                 </div>
-            </div>
-        )
-    }
-}
-
+            );
+        }
 export default Print;
