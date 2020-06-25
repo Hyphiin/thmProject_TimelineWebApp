@@ -48,20 +48,28 @@ export const timelinePrev = () => {
     })
 };
 
-/*Animation für Item add/delete/change */
+/*Animation für Item add/change */
 export const itemStagger = () => {
     let arrayOfItems = document.getElementsByClassName("timeline-item");
     let i = parseInt(localStorage.getItem("lastAdd"),10);
     console.log(i);
-        let item = arrayOfItems[i];
+    if (arrayOfItems.length === i){
+        let item = arrayOfItems[arrayOfItems.length+1];
         console.log(item);
         gsap.from( item, {
             duration: 0.8,
             scale: 1.6,
             ease: "back.out(1)"});
-
+    }else {
+        let item = arrayOfItems[i];
+        console.log(item);
+        gsap.from(item, {
+            duration: 0.8,
+            scale: 1.6,
+            ease: "back.out(1)"
+        });
+    }
 };
-
 
 
 /*Animation für orange Circles, erscheinen*/
@@ -174,18 +182,7 @@ export const timelineContentAOFF = (node1 ,node2 ,node3) => {
 };
 */
 
-/* Animation beim adden einer neuen Items
 
-export const ItemAdd = () => {
-    gsap.to(".timeline-item-content", {
-        delay: -0.5,
-        duration: 1,
-        scale: 1,
-        x: -40,
-        ease: "bounce",
-    });
-}
-*/
 
 
 

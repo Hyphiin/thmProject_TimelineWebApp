@@ -89,20 +89,28 @@ class Export_Import extends React.Component {
     }
 
     render() {
-        return <div id="exportimportButtons">
+        return<div id="exportimportButtons">
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.jsonBtn = e }
                     className="" class="button" onClick={(e) => this.onSubmit(e, "json")}>JSON</button>
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.xmlBtn = e }
                     className="" class="button" onClick={(e) => this.onSubmit(e, "xml")}>XML</button>
-            <button  onMouseEnter={e => hoverButton(e)}
-                     onMouseOut={e => hoverExitButton(e)} ref={ e => this.exportBtn = e }
-                     className="exportBtn" class="button" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>Export Timeline</button>
-                <input ref={ e => this.file = e } id="InputFile" type="file"/>
-            <button onMouseEnter={e => hoverButton(e)}
-                    onMouseOut={e => hoverExitButton(e)} ref={ e => this.importBtn = e }
-                    className="importBtn" class="button" onClick={() =>this.upload()}>Import Timeline</button>
+            <a href="#" className="cta" onClick={() =>this.download(localStorage.getItem("allEntries"+localStorage.getItem("position")))}>
+                <span className="span">Export Timeline</span>
+                <svg className="svg" width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <input ref={ e => this.file = e } id="InputFile" type="file"/>
+            <a href="#" className="cta" onClick={() =>this.upload()}>
+                <span className="span">Import Timeline</span>
+                <svg className="svg" width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
         </div>
 
     }

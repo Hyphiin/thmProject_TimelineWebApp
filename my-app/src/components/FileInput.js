@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton} from "./Animation";
 
 function FileInput() {
     const uploadedImage = React.useRef(null);
@@ -60,7 +61,8 @@ function FileInput() {
                 />
             </div>
             Click to upload Image
-            <input type="reset" onClick={clearImage} />
+            <input class="button" type="reset" onClick={clearImage} onMouseEnter={e => hoverButton(e)}
+                   onMouseOut={e => hoverExitButton(e)}/>
         </form>
     );
 }

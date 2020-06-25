@@ -11,7 +11,7 @@ import {
     hoverCircle,
     hoverCircleMid,
     hoverExitCircle,
-    hoverExitCircleMid, itemStagger,
+    hoverExitCircleMid, itemStagger, itemStaggerDelete,
 } from "./Animation";
 
 
@@ -75,9 +75,6 @@ function TimeLineItem({entries}) {
         }
         if (mode === "delete") {
             editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
-            localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
-            console.log(localStorage.getItem("lastAdd"));
-            itemStagger();
         }
         if (mode === "edit") {
             localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
