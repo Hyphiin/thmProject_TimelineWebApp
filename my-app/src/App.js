@@ -1,49 +1,42 @@
-import React, {useEffect, useRef, Component} from 'react';
+import React from 'react';
 import './App.css';
-import Timeline from "./components/timeLine";
-import Toolbox from "./components/toolBox";
-import Screenshot from "./components/screenCapture";
+import TimeLine from "./components/TimeLine";
 import LocalStorageSave from "./components/LocalStorageSave";
-
-import {
-        circlesStagger,
-        h1Animation,
-        hoverExitItem,
-        hoverItem, timelineLine, timelineStagger,
-} from "./components/Animation";
+import {circlesStagger, timelineLine} from "./components/Animation";
 import MenuContainer from "./components/MenuContainer";
 
 
 class App extends React.Component {
-        constructor(props) {
-                super(props);
-                this.state = {
-                        entries: this.props.entries
-                }
+    constructor(props) {
+        super(props);
+        this.state = {
+            entries: this.props.entries
         }
+    }
 
-            
-        clickHandler(nu){
-                LocalStorageSave();
-                this.setState({
-                        entries: nu
-                });
-        }
 
-        componentDidMount() {
-                console.clear();
-                timelineLine();
-                circlesStagger();
-        }
+    clickHandler(nu) {
+        LocalStorageSave();
+        this.setState({
+            entries: nu
+        });
+    }
 
-        render() {
-                return <>
-                        <h1 className="headline" >React Lebenslauf</h1>
-                        <div className="container" onClick={()=>this.clickHandler("jo")}>
-                                <Timeline/>
-                                <MenuContainer/>
-                        </div>
-                </>
-        }
+    componentDidMount() {
+        console.clear();
+        timelineLine();
+        circlesStagger();
+    }
+
+    render() {
+        return <>
+            <h1 className="headline">React Lebenslauf</h1>
+            <div className="container" onClick={() => this.clickHandler("jo")}>
+                <TimeLine/>
+                <MenuContainer/>
+            </div>
+        </>
+    }
 }
+
 export default App;

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {hoverButton, hoverErstellenButton, hoverExitButton, hoverExitErstellenButton} from "./Animation";
+import {hoverButton, hoverExitButton} from "./Animation";
 
 function FileInput() {
     const uploadedImage = React.useRef(null);
@@ -10,7 +10,7 @@ function FileInput() {
         const [file] = e.target.files;
         if (file) {
             const reader = new FileReader();
-            const { current } = uploadedImage;
+            const {current} = uploadedImage;
             current.file = file;
             reader.onload = e => {
                 current.src = e.target.result;
@@ -21,7 +21,7 @@ function FileInput() {
         }
     };
 
-    function clearImage(){
+    function clearImage() {
         localStorage.removeItem('file');
         window.location.reload(false);
     }
@@ -61,12 +61,12 @@ function FileInput() {
                 />
             </div>
             Click to upload Image
-            <input class="button" type="reset" onClick={clearImage} onMouseEnter={e => hoverButton(e)}
+            <input className="button" type="reset" onClick={clearImage} onMouseEnter={e => hoverButton(e)}
                    onMouseOut={e => hoverExitButton(e)}/>
         </form>
     );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<FileInput />, rootElement);
+ReactDOM.render(<FileInput/>, rootElement);
 export default FileInput;

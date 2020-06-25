@@ -1,20 +1,12 @@
 import editContent from "./AddEntries"
-import React, {useState, useEffect, useRef} from "react";
-import FileInput from "./FileInput";
+import React, {useEffect, useRef} from "react";
 import LocalStorageSave from "./LocalStorageSave";
-
 import {
-    circlesStagger,
-    clickButtonEdit,
     clickCircle,
     clickCircleMid, clickPlus,
-    hoverCircle,
     hoverCircleMid,
-    hoverExitCircle,
-    hoverExitCircleMid, itemStagger, itemStaggerDelete,
+    hoverExitCircleMid, itemStagger
 } from "./Animation";
-
-
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {

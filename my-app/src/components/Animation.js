@@ -1,17 +1,12 @@
 import gsap from "gsap";
-import LocalStorageSave from "./LocalStorageSave";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faBirthdayCake, faPlus,
-} from "@fortawesome/free-solid-svg-icons";
 
-/*Animation für Timeline*/
+/*Animation für TimeLine*/
 export const tlAnimationRight = node => {
     gsap.from(node, {delay: 0.3, duration: 1, y: 200, ease: "back.out(1)", opacity: 0})
 };
 
-/*Animation für Timeline erscheinen*/
+/*Animation für TimeLine erscheinen*/
 export const timelineStagger = () => {
     let tl = gsap.timeline();
     tl.from(".timeline-item-content", {
@@ -30,18 +25,18 @@ export const timelineStagger = () => {
     });
 };
 
-/*Timeline Linie Animation */
+/*TimeLine Linie Animation */
 export const timelineLine = () => {
-    gsap.from(".timeline-container",{
+    gsap.from(".timeline-container", {
         duration: 1,
-        y:400,
+        y: 400,
         ease: "power1.inOut"
     })
 };
 
-/* Animation beim wechseln der Timeline */
+/* Animation beim wechseln der TimeLine */
 export const timelinePrev = () => {
-    gsap.from(".timeline-container",{
+    gsap.from(".timeline-container", {
         duration: 0.8,
         scale: 1.6,
         ease: "back.out(1)"
@@ -51,16 +46,17 @@ export const timelinePrev = () => {
 /*Animation für Item add/change */
 export const itemStagger = () => {
     let arrayOfItems = document.getElementsByClassName("timeline-item");
-    let i = parseInt(localStorage.getItem("lastAdd"),10);
+    let i = parseInt(localStorage.getItem("lastAdd"), 10);
     console.log(i);
-    if (arrayOfItems.length === i){
-        let item = arrayOfItems[arrayOfItems.length+1];
+    if (arrayOfItems.length === i) {
+        let item = arrayOfItems[arrayOfItems.length + 1];
         console.log(item);
-        gsap.from( item, {
+        gsap.from(item, {
             duration: 0.8,
             scale: 1.6,
-            ease: "back.out(1)"});
-    }else {
+            ease: "back.out(1)"
+        });
+    } else {
         let item = arrayOfItems[i];
         console.log(item);
         gsap.from(item, {
@@ -94,13 +90,13 @@ export const circlesStagger = () => {
         y: -40,
         ease: "power1.inOut",
         stagger: {
-            grid: [7,15],
+            grid: [7, 15],
             from: "center",
             amount: 0.2
         }
     });
     tl.from(".plus1", {
-        delay:-2.3,
+        delay: -2.3,
         duration: 2,
         scale: 0.1,
         y: 40,
@@ -118,74 +114,12 @@ export const circlesStagger = () => {
         y: -40,
         ease: "power1.inOut",
         stagger: {
-            grid: [7,15],
+            grid: [7, 15],
             from: "center",
             amount: 0.2
         }
     });
 };
-
-
-/*Animation hover on TimelineItem
-export const timelineContentAON = (node1 ,node2 ,node3) => {
-    let tl = gsap.timeline();
-    tl.to(node1,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1.05,
-        backgroundColor: "#f56e47",
-        ease: "power1.inOut"
-    });
-    tl.to(node2,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1.05,
-        backgroundColor: "#f56e47",
-        ease: "power1.inOut"
-    });
-    tl.to(node3,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1.05,
-        backgroundColor: "#f56e47",
-        ease: "power1.inOut"
-    });
-
-};
-*/
-
-/*Animation hover off TimelineItem
-export const timelineContentAOFF = (node1 ,node2 ,node3) => {
-    let tl = gsap.timeline();
-    tl.to(node1,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1,
-        backgroundColor: "#42a6c6",
-        ease: "power1.inOut"
-    });
-    tl.to(node2,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1,
-        backgroundColor: "#42a6c6",
-        ease: "power1.inOut"
-    });
-    tl.to(node3,{
-        delay: -0.5,
-        duration: 0.3,
-        scale: 1,
-        backgroundColor: "#42a6c6",
-        ease: "power1.inOut"
-    });
-
-};
-*/
-
-
-
-
-
 
 /* wenn man auf eintrag bearbeiten/löschen klickt */
 export const clickButtonEdit = e => {
@@ -219,7 +153,7 @@ export const clickButtonAdd = e => {
 export const clickCircleMid = () => {
     gsap.to(".timeline-item-content .circle3", {
         duration: 1,
-        scale:1,
+        scale: 1,
         backgroundColor: "black",
         ease: "power1.inOut"
     });
@@ -229,13 +163,13 @@ export const clickCircleMid = () => {
 export const clickCircle = () => {
     gsap.to(".timeline-item-content .circle1", {
         duration: 1,
-        scale:1,
+        scale: 1,
         backgroundColor: "black",
         ease: "power1.inOut"
     });
     gsap.to(".timeline-item-content .circle2", {
         duration: 1,
-        scale:1,
+        scale: 1,
         backgroundColor: "#f56e47",
         ease: "power1.inOut"
     });
@@ -246,13 +180,13 @@ export const clickCircle = () => {
 export const clickPlus = () => {
     gsap.to(".timeline-item-content .circle1", {
         duration: 1,
-        scale:1,
+        scale: 1,
         backgroundColor: "#f56e47",
         ease: "power1.inOut"
     });
     gsap.to(".timeline-item-content .circle2", {
         duration: 1,
-        scale:1,
+        scale: 1,
         backgroundColor: "#f56e47",
         ease: "power1.inOut"
     });
@@ -265,14 +199,13 @@ let before = "#muell";
 export const clickIcon = (e) => {
     current = e.target;
     gsap.to(e.target, {
-        color:"#f56e47",
+        color: "#f56e47",
     });
     gsap.to(before, {
-        color:"#000000",
+        color: "#000000",
     });
     before = current;
 }
-
 
 
 // Hover on the circle mid
@@ -313,33 +246,6 @@ export const hoverExitCircle = e => {
         ease: "power1.inOut"
     });
 };
-
-/*
-// Hover on the plus
-export const hoverPlus = (e) => {
-    gsap.to(e.target, {
-        duration: 0.3,
-        scale: 1.3,
-        backgroundColor: "#f8cf25",
-        width: "20px",
-        height: "20px",
-        borderRadius: "50%",
-        ease: "power1.inOut",
-        top: "calc(50% + 30px)",
-    });
-};
-
-// Hover off the plus
-export const hoverExitPlus = (e) => {
-    gsap.to(e.target, {
-        duration: 0.3,
-        scale: 1,
-        ease: "power1.inOut",
-    });
-
-};
-*/
-
 
 // Hover on the Header
 export const hoverItem = e => {
@@ -384,7 +290,7 @@ export const hoverExitButton = e => {
 };
 
 // Hover on Pfeil
-export const hoverPfeil = e => {
+export const hoverArrow = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1.05,
@@ -396,7 +302,7 @@ export const hoverPfeil = e => {
 };
 
 // Hover off Pfeil
-export const hoverExitPfeil = e => {
+export const hoverExitArrow = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1,
@@ -408,7 +314,7 @@ export const hoverExitPfeil = e => {
 
 
 // Hover on Erstellen Button
-export const hoverErstellenButton = e => {
+export const hoverCreateButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1.05,
@@ -419,7 +325,7 @@ export const hoverErstellenButton = e => {
 };
 
 // Hover off Erstellen Button
-export const hoverExitErstellenButton = e => {
+export const hoverExitCreateButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
         scale: 1,
@@ -428,30 +334,3 @@ export const hoverExitErstellenButton = e => {
         ease: "power1.inOut"
     });
 };
-
-
-/* Hover on the TimelineItem
-export const hoverTimelineItem = (e) => {
-    gsap.to(e.target,{
-        duration: 0.3,
-        scale: 1.05,
-        backgroundColor: "#f56e47",
-        ease: "power1.inOut"
-    })
-};
- */
-
-/* Hover off the TimelineItem
-export const hoverExitTimeline = e => {
-    gsap.to(e.target,{
-        duration: 0.3,
-        scale: 1.00,
-        backgroundColor: "#42a6c6",
-        ease: "power1.inOut"
-    })
-};
- */
-
-
-
-

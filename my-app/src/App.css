@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color:#f6f4e1;
+    background-color: #f6f4e1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,7 @@ h1 {
     left: calc(50% - 2px);
     width: 4px;
     height: 100%;
-    z-index:-100;
+    z-index: -100;
 }
 
 .timeline-item {
@@ -124,7 +124,7 @@ h1 {
     max-width: 250px;
 }
 
-/* Timeline Kreise */
+/* TimeLine Kreise */
 .timeline-item-content .circle1 {
     height: 20px;
     width: 20px;
@@ -185,6 +185,7 @@ h1 {
     top: calc(50% - 53px);
     z-index: 200;
 }
+
 .plus1::after {
     content: "";
     position: absolute;
@@ -203,6 +204,7 @@ h1 {
     top: calc(50% + 27px);
     z-index: 200;
 }
+
 .plus2::after {
 
     content: "";
@@ -217,74 +219,76 @@ h1 {
 
 
 /* TOOLBOX */
-.image{
+.image {
     height: 50%;
     width: 50%;
     font-size: 0px;
 }
 
-#toolbox_container{
+#toolbox_container {
     display: flex;
     flex-direction: column;
     margin: 40px 0px;
     width: 100%;
 }
 
-#toolbox_header{
+#toolbox_header {
     text-align: center;
     font-weight: bold;
 }
 
-#form{
+#form {
     text-align: center;
     margin: 20px;
 }
 
-#form_input{
+#form_input {
     display: flex;
     flex-direction: column;
 }
 
-#form_tag{
+#form_tag {
     margin: 5px 0px;
 }
 
-#form_desc{
+#form_desc {
     resize: none;
 }
 
-#form_button{
+#form_button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#form_button_add, #form_button_delete, #form_button_edit{
+
+#form_button_add, #form_button_delete, #form_button_edit {
     height: 40px;
     width: 33%;
     background-color: #f56e47;
-    display:inline-block;
-    margin:20px;
-    text-decoration:none;
-    font-size:16px;
-    border:2px solid #f56e47;
-    border-radius:5px;
-    color:#000;
-    padding:3px 7px;
-}
-#form_button_add:hover, #form_button_delete:hover, #form_button_edit:hover{
-    color:#fff;
-    box-shadow:3px 3px 4px #A1B0BF;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #f56e47;
+    border-radius: 5px;
+    color: #000;
+    padding: 3px 7px;
 }
 
-.divider{
+#form_button_add:hover, #form_button_delete:hover, #form_button_edit:hover {
+    color: #fff;
+    box-shadow: 3px 3px 4px #A1B0BF;
+}
+
+.divider {
     width: 0.5%;
     margin: 2px;
 }
 
 
-/*Bild exportieren Button + Timeline Import/Export Button */
+/*Bild exportieren Button + TimeLine Import/Export Button */
 a {
     text-decoration: none;
     color: inherit;
@@ -296,6 +300,7 @@ a {
     padding: 19px 22px;
     transition: all .2s ease;
 }
+
 .cta:before {
     content: "";
     position: absolute;
@@ -308,6 +313,7 @@ a {
     height: 30px;
     transition: all .3s ease
 }
+
 .span {
     position: relative;
     font-size: 16px;
@@ -315,6 +321,7 @@ a {
     letter-spacing: .25em;
     vertical-align: middle;
 }
+
 .svg {
     position: relative;
     top: 0;
@@ -327,19 +334,22 @@ a {
     transform: translateX(-5px);
     transition: all .3s ease;
 }
+
 .cta:hover:before {
     width: 90%;
     background: #42a6c6 100%;
 }
+
 .svg:hover {
     transform: translateX(0);
 }
+
 .svg:hover:active {
     transform: scale(.96);
 }
 
 
-#exportimportButtons{
+#exportimportButtons {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -348,7 +358,7 @@ a {
     margin-left: 40px;
 }
 
-.iconselect{
+.iconselect {
     border: 1px black solid;
     margin: 5px;
     box-shadow: 1px -1px black;
@@ -357,31 +367,31 @@ a {
     flex-wrap: wrap;
 }
 
-#iconpic{
+#iconpic {
     text-align: center;
     font-weight: bold;
 }
 
-.iconselect span{
-   margin-top: 5px;
+.iconselect span {
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-.einzelIcon:hover{
+.einzelIcon:hover {
     color: #f56e47;
 }
 
-.einzelIcon:active{
-   font-size: 18px;
+.einzelIcon:active {
+    font-size: 18px;
 }
 
-#muell{
+#muell {
     color: #f56e47;
 }
 
-#navButtons{
+#navButtons {
     margin: 0px 0px 0px 40px;
     display: flex;
     align-items: center;
@@ -389,7 +399,7 @@ a {
     justify-content: space-evenly;
 }
 
-#seitenAnzahl{
+#seitenAnzahl {
     margin: 0px 0px 0px 12%;
 }
 
@@ -402,13 +412,14 @@ a {
     color: black;
     border-radius: 50%;
 }
-.prev:hover{
+
+.prev:hover {
     background-color: #f56e47;
-    color:#fff;
-    box-shadow:3px 3px 4px #A1B0BF;
+    color: #fff;
+    box-shadow: 3px 3px 4px #A1B0BF;
 }
 
-.next{
+.next {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
@@ -417,60 +428,59 @@ a {
     border-radius: 50%;
 }
 
-.next:hover{
+.next:hover {
     background-color: #f56e47;
-    color:#fff;
-    box-shadow:3px 3px 4px #A1B0BF;
+    color: #fff;
+    box-shadow: 3px 3px 4px #A1B0BF;
 }
 
 
 .button {
-    display:inline-block;
-    margin:20px;
-    text-decoration:none;
-    font-size:16px;
-    border:2px solid #42a6c6;
-    border-radius:5px;
-    color:#000;
-    background-color:#42a6c6;
-    padding:3px 7px;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #42a6c6;
+    border-radius: 5px;
+    color: #000;
+    background-color: #42a6c6;
+    padding: 3px 7px;
 }
 
-.button:hover{
-    color:#fff;
-    box-shadow:3px 3px 4px #A1B0BF;
+.button:hover {
+    color: #fff;
+    box-shadow: 3px 3px 4px #A1B0BF;
 }
 
 
-#formatbox_header{
+#formatbox_header {
     text-align: center;
     font-weight: bold;
 }
 
-#formatform{
+#formatform {
     text-align: center;
     margin: 20px;
 }
 
-#format_form{
+#format_form {
     display: flex;
     flex-direction: column;
 }
 
 
-#navContainer{
+#navContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.printButton{
+.printButton {
     display: flex;
     justify-content: center;
-    
-}
 
+}
 
 
 /* Responsibility */
@@ -539,11 +549,11 @@ a {
         font-size: 80%;
     }
 
-    .iinsert {
+    .iInsert {
         font-size: 80%;
     }
 
-    .finsert {
+    .fInsert {
         font-size: 80%;
     }
 
@@ -634,17 +644,17 @@ a {
         width: 80%;
     }
 
-    .cta{
+    .cta {
         width: 80%;
         font-size: 80%;
     }
 
-    .svg{
+    .svg {
         width: 80%;
         font-size: 80%;
     }
 
-    .span{
+    .span {
         width: 80%;
         font-size: 80%;
     }

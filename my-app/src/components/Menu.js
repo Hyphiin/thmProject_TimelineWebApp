@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./OffCanvas.css";
-import Toolbox from "./toolBox";
+import ToolBox from "./ToolBox";
 
 class Menu extends Component {
     render() {
-        var visibility = "hide";
+        let visibility = "hide";
 
         if (this.props.menuVisibility) {
             visibility = "show";
@@ -13,11 +13,11 @@ class Menu extends Component {
         return (
             <div id="flyoutMenu"
                  className={visibility}>
-                <Toolbox/>
+                <ToolBox/>
                 <button className="toggle-button" onMouseDown={this.props.handleMouseDown}>
-                    <div className="toggle-button__line" />
-                    <div className="toggle-button__line" />
-                    <div className="toggle-button__line" />
+                    <div className="toggle-button__line"/>
+                    <div className="toggle-button__line"/>
+                    <div className="toggle-button__line"/>
                 </button>
             </div>
         );

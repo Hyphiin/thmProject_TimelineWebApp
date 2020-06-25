@@ -1,32 +1,23 @@
-import React, {useState} from "react";
-import editContent from "./AddEntries";
-import TimeLineItem from "./timeLineItem";
-import MapEntries from "./mapEntries";
-import {
-    timelineLine,
-    timelineStagger,
-    tlAnimationRight
-} from "./Animation";
+import React from "react";
+import MapEntries from "./MapEntries";
 
 
 console.log("timeline");
 
- class Timeline extends React.Component{
+class TimeLine extends React.Component {
 
-     constructor(props) {
-         super(props);
-         this.state = {
-             entries: this.props.entries
-         }
-     }
+    constructor(props) {
+        super(props);
+        this.state = {
+            entries: this.props.entries
+        }
+    }
 
-     render() {
-         return <div id="timeline-export" className="timeline-container">
-             <MapEntries/>
-         </div>
-     }
-
-
+    render() {
+        return <div id="timeline-export" className="timeline-container">
+            <MapEntries/>
+        </div>
+    }
 }
 
-export default Timeline;
+export default TimeLine;

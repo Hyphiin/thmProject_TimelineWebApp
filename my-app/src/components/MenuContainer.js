@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Toolbox from "./toolBox";
+import React, {Component} from "react";
 import MenuButton from "./MenuButton";
 import Menu from "./Menu";
 

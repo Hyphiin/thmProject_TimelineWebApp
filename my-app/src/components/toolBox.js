@@ -1,25 +1,23 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import Add from "./Add";
 import Navigation from "./Navigation";
-import gsap from "gsap";
 import Export_Import from "./Export_Import";
-import {circlesStagger} from "./Animation";
-import Screenshot from "./screenCapture";
-import CssOptions from "./cssOptions.js";
-import Print from "./print.js";
+import Screenshot from "./ScreenCapture";
+import OptionsCSS from "./OptionsCSS.js";
+import Print from "./Print.js";
 
 
-function Toolbox () {
-    return(
-    <div className="toolbox_container" id="toolbox_container">
-        <Add/>
-        <Navigation/>
-        <CssOptions/>
-        <Export_Import/>
-        <Screenshot/>
-        <Print/>
-    </div>
+function ToolBox() {
+    return (
+        <div className="toolbox_container" id="toolbox_container">
+            <Add/>
+            <Navigation/>
+            <OptionsCSS/>
+            <Export_Import/>
+            <Screenshot/>
+            <Print/>
+        </div>
     )
 }
 
-export default Toolbox;
+export default ToolBox;
