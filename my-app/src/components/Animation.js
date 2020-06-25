@@ -361,7 +361,7 @@ export const hoverExitItem = e => {
     });
 };
 
-// Hover on the Button
+// Hover on Button
 export const hoverButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -369,11 +369,10 @@ export const hoverButton = e => {
         border: "#f56e47",
         backgroundColor: "#f56e47",
         ease: "power1.inOut",
-
     });
 };
 
-// Hover off the Button
+// Hover off Button
 export const hoverExitButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -384,7 +383,7 @@ export const hoverExitButton = e => {
     });
 };
 
-// Hover on the Pfeil
+// Hover on Pfeil
 export const hoverPfeil = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -396,7 +395,7 @@ export const hoverPfeil = e => {
     });
 };
 
-// Hover off the Pfeil
+// Hover off Pfeil
 export const hoverExitPfeil = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -407,7 +406,8 @@ export const hoverExitPfeil = e => {
     });
 };
 
-// Hover on the Pfeil
+
+// Hover on Erstellen Button
 export const hoverErstellenButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
@@ -418,7 +418,7 @@ export const hoverErstellenButton = e => {
     });
 };
 
-// Hover off the Pfeil
+// Hover off Erstellen Button
 export const hoverExitErstellenButton = e => {
     gsap.to(e.target, {
         duration: 0.3,
