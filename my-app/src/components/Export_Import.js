@@ -27,7 +27,7 @@ class Export_Import extends React.Component {
             let reader = new FileReader();
             reader.readAsText(file, "UTF-8");
             reader.onload = function (evt) {
-                console.log(evt.target.result);
+                //console.log(evt.target.result);
                 let upload = evt.target.result.toString();
 
 
@@ -36,7 +36,6 @@ class Export_Import extends React.Component {
                 } else {
 
                     let i = parseInt(localStorage.getItem("nuOfTimelines"));
-                    console.log(i);
                     localStorage.setItem("position", (i + 1).toString());
                     localStorage.setItem("nuOfTimelines", (i + 1).toString());
                 }
@@ -91,7 +90,7 @@ class Export_Import extends React.Component {
     }
 
     render() {
-        return <div id="exportimportButtons">
+        return <div id="export-import-buttons">
             <button onMouseEnter={e => hoverButton(e)}
                     onMouseOut={e => hoverExitButton(e)} ref={e => this.jsonBtn = e}
                     className="button" onClick={(e) => this.onSubmit(e, "json")}>JSON
@@ -102,7 +101,7 @@ class Export_Import extends React.Component {
             </button>
             <a href="#" className="cta"
                onClick={() => this.download(localStorage.getItem("allEntries" + localStorage.getItem("position")))}>
-                <span className="span">Export Timeline</span>
+                <span className="span">Export Lebenslauf</span>
                 <svg className="svg" width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"/>
                     <polyline points="8 1 12 5 8 9"/>
@@ -110,7 +109,7 @@ class Export_Import extends React.Component {
             </a>
             <input ref={e => this.file = e} id="InputFile" type="file"/>
             <a href="#" className="cta" onClick={() => this.upload()}>
-                <span className="span">Import Timeline</span>
+                <span className="span">Import Lebenslauf</span>
                 <svg className="svg" width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"/>
                     <polyline points="8 1 12 5 8 9"/>

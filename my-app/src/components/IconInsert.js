@@ -35,20 +35,19 @@ class IconInsert extends React.Component {
             icon: icon
         });
         localStorage.setItem('icon', icon.iconName);
-        console.log(icon);
+        //console.log(icon);
     }
 
     /* Animation */
     componentDidMount() {
         let tl = gsap.timeline();
-        console.clear();
-        console.log(this.iconA);
+        //console.log(this.iconA);
         tl.from(this.iconA, {duration: 2, delay: -0.8, opacity: 0, scale: 0.9})
     }
 
     render() {
         return <div ref={e => this.iconA = e} className="icon">
-            <div className="iconselect">
+            <div className="icon-select">
                 <FontAwesomeIcon className="einzelIcon" style={{margin: '5px'}} icon={faCoffee}
                                  onClick={() => this.setIcon(faCoffee)} onClickCapture={e => clickIcon(e)}/>
                 <FontAwesomeIcon className="einzelIcon" style={{margin: '5px'}} icon={faBirthdayCake}

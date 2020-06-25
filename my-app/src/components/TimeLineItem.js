@@ -50,19 +50,19 @@ function TimeLineItem({entries}) {
 
     function clickHandler(mode, pos) {
         localStorage.setItem("mode", "neutral");
-        console.log(mode + "," + pos);
+        //console.log(mode + "," + pos);
         if (mode === "add" && pos === "before") {
-            console.log("add before");
+            //console.log("add before");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "add");
             localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries) - 1).toString());
-            console.log(localStorage.getItem("lastAdd"));
+            //console.log(localStorage.getItem("lastAdd"));
             itemStagger();
         }
         if (mode === "add" && pos === "after") {
-            console.log("add after");
+            //console.log("add after");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
             localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries) + 1).toString());
-            console.log(localStorage.getItem("lastAdd"));
+            //console.log(localStorage.getItem("lastAdd"));
             itemStagger();
         }
         if (mode === "delete") {
@@ -70,7 +70,7 @@ function TimeLineItem({entries}) {
         }
         if (mode === "edit") {
             localStorage.setItem("lastAdd", (editContent("", "", "", "", "", "", "get").indexOf(entries)).toString());
-            console.log(localStorage.getItem("lastAdd"));
+            //console.log(localStorage.getItem("lastAdd"));
             itemStagger();
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
         }

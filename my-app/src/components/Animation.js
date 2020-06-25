@@ -47,10 +47,10 @@ export const timelinePrev = () => {
 export const itemStagger = () => {
     let arrayOfItems = document.getElementsByClassName("timeline-item");
     let i = parseInt(localStorage.getItem("lastAdd"), 10);
-    console.log(i);
+    //console.log(i);
     if (arrayOfItems.length === i) {
         let item = arrayOfItems[arrayOfItems.length + 1];
-        console.log(item);
+        //console.log(item);
         gsap.from(item, {
             duration: 0.8,
             scale: 1.6,
@@ -58,7 +58,7 @@ export const itemStagger = () => {
         });
     } else {
         let item = arrayOfItems[i];
-        console.log(item);
+        //console.log(item);
         gsap.from(item, {
             duration: 0.8,
             scale: 1.6,

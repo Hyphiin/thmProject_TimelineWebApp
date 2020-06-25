@@ -18,7 +18,7 @@ function editContent(text, date, tag, icon, file, position, mode, importInput) {
             file: file,
         };
         entry.splice(position, 0, newObject);
-        console.log(entry);
+        //console.log(entry);
     }
 
     if (mode === "nav") {
@@ -42,8 +42,8 @@ function editContent(text, date, tag, icon, file, position, mode, importInput) {
     }
     if (mode === "import") {
         let input = JSON.parse(importInput);
-        console.log(input);
-        console.log(input.length);
+        /*console.log(input);
+        console.log(input.length);*/
         while (entry.length > 0) {
             entry.pop();
         }

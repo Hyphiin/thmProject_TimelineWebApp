@@ -19,7 +19,7 @@ export default class Add extends React.Component {
 
     onSubmit = (e, mode) => {
         e.preventDefault();
-        console.log(this.state);
+        //console.log(this.state);
         localStorage.setItem("text", this.state.description);
         localStorage.setItem("date", this.state.date);
         localStorage.setItem("tag", this.state.tag);
@@ -46,15 +46,14 @@ export default class Add extends React.Component {
 
     /* Animation ToolBox oben*/
     componentDidMount() {
-        console.clear();
         let tl = gsap.timeline();
-        console.log(this.header);
+       /* console.log(this.header);
         console.log(this.description);
         console.log(this.tag);
         console.log(this.date);
         console.log(this.button_add);
         console.log(this.button_edit);
-        console.log(this.button_delete);
+        console.log(this.button_delete);*/
         tl.from(this.header, {x: 400, duration: 1.2, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
         tl.from(this.description, {x: 600, duration: 0.8, delay: -0.8, opacity: 0.5, ease: "power3.inOut"});
         tl.from(this.tag, {x: 600, duration: 0.8, delay: -0.6, opacity: 0.5, ease: "power3.inOut"});

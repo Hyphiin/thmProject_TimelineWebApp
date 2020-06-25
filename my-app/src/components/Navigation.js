@@ -22,7 +22,7 @@ class Navigation extends React.Component {
                 i++;
             }
             localStorage.setItem("position", i.toString());
-            console.log(localStorage.getItem("position"));
+            //console.log(localStorage.getItem("position"));
             editContent("", "", "", "", "", "", "nav");
         }
         if (direction === "prev") {
@@ -52,7 +52,7 @@ class Navigation extends React.Component {
         } else {
             i--;
             localStorage.setItem("nuOfTimelines", i.toString());
-            console.log(localStorage.getItem("position"));
+            //console.log(localStorage.getItem("position"));
             localStorage.removeItem("allEntries" + localStorage.getItem("position"));
             this.setTimeline("prev");
         }
@@ -61,17 +61,16 @@ class Navigation extends React.Component {
     /* Animation ToolBox unten*/
     componentDidMount() {
         let tl = gsap.timeline();
-        console.clear();
-        console.log(this.addBtn);
+        /*console.log(this.addBtn);
         console.log(this.deleteBtn);
         console.log(this.prev);
         console.log(this.next);
-        console.log(this.pTag);
+        console.log(this.pTag);*/
         tl.from(this.prev, {duration: 0.9, delay: -0.3, opacity: 0, scale: 0.9});
         tl.from(this.next, {duration: 0.9, delay: -0.6, opacity: 0, scale: 0.9});
         tl.from(this.addBtn, {duration: 0.9, delay: -0.7, opacity: 0, scale: 0.9});
         tl.from(this.deleteBtn, {duration: 0.9, delay: -0.7, opacity: 0, scale: 0.9});
-        tl.from(this.pTag, {duration: 0.9, delay: -0.8, opacity: 0, scale: 0.9});
+        //tl.from(this.pTag, {duration: 0.9, delay: -0.8, opacity: 0, scale: 0.9});
     }
 
     render() {
@@ -87,19 +86,14 @@ class Navigation extends React.Component {
                    className="next" href="#" onClick={() => this.setTimeline("next")}>&#8250;</a>
                 <button onMouseEnter={e => hoverButton(e)}
                         onMouseOut={e => hoverExitButton(e)} ref={e => this.addBtn = e}
-                        className="addBtn" class="button" onClick={() => this.newTimeline()}> Neue
+                        className="button" onClick={() => this.newTimeline()}> Neue
                     Timeline <br/> anlegen
                 </button>
                 <button onMouseEnter={e => hoverButton(e)}
                         onMouseOut={e => hoverExitButton(e)} ref={e => this.deleteBtn = e}
-                        className="deleteBtn" class="button" onClick={() => this.deleteTimeline()}>Aktuelle
+                        className="button" onClick={() => this.deleteTimeline()}>Aktuelle
                     Timeline <br/> löschen
                 </button>
-
-            </div>
-            <div id="seitenAnzahl">
-                <p ref={e => this.pTag = e} className="pTag"
-                   onClick={() => localStorage.clear()}>Seite {localStorage.getItem("position") || 1} von {localStorage.getItem("nuOfTimelines") || 1}</p>
             </div>
         </div>
     }

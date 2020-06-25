@@ -43,7 +43,7 @@ class OptionsCSS extends React.Component {
                     <br/>
                     <input onMouseEnter={e => hoverButton(e)}
                            onMouseOut={e => hoverExitButton(e)}
-                           className="button" type="submit" value="Submit"/>
+                           className="button" type="submit" value="Bestätigen"/>
                 </form>
             </div>
         );

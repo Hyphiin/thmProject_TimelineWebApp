@@ -1,8 +1,7 @@
 const LocalStorageUsage = () => {
     let intermediate = localStorage.getItem("allEntries" + localStorage.getItem("position"));
     let allEntriesBackToObj = JSON.parse(intermediate);
-    //addContent(allEntriesBackToObj[0].text, allEntriesBackToObj[0].date, allEntriesBackToObj[0].tag, allEntriesBackToObj[0].position, "edit");
-    //console.log("hallo " + allEntriesBackToObj[0].text + allEntriesBackToObj[0].date);
+    //console.log(allEntriesBackToObj[0].text + allEntriesBackToObj[0].date);
     return allEntriesBackToObj;
 };
 export default LocalStorageUsage;

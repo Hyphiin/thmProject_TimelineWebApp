@@ -18,7 +18,7 @@ class MenuContainer extends Component {
     handleMouseDown(e) {
         this.toggleMenu();
 
-        console.log("clicked");
+        //console.log("clicked");
         e.stopPropagation();
     }
 
