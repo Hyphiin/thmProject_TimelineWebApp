@@ -18,7 +18,11 @@ class Export_Import extends React.Component {
         var a = document.createElement("a");
         var file = new Blob([content], {type: "text/plain"});
         a.href = URL.createObjectURL(file);
-        a.download = "JSON.txt";
+        if (localStorage.getItem("xmlorjson")==="xml"){
+            a.download = "Zeitstrahl.xml";
+        }else{
+            a.download = "Zeitstrahl.json";
+        }
         a.click();
     }
 
@@ -31,7 +35,7 @@ class Export_Import extends React.Component {
                 console.log(evt.target.result);
                 let upload=evt.target.result.toString();
 
-                //ToDo XML or JSON?
+
                 if(editContent("","","","","","","get").length===0){
 
                 }
@@ -42,7 +46,12 @@ class Export_Import extends React.Component {
                     localStorage.setItem("position",(i+1).toString());
                     localStorage.setItem("nuOfTimelines", (i+1).toString());
                 }
-                editContent("","","","","","","import",upload);
+
+                if (evt.target.result.substr(0,1) === "<"){
+                }else {
+                    editContent("","","","","","","import",upload);
+                }
+
 
             };
             reader.onerror = function (evt) {
