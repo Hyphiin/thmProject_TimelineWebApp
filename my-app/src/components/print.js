@@ -11,8 +11,10 @@ import Timeline from "./timeLine.js";
                         trigger={() => <button>Print this out!</button>}
                         content={() => componentRef.current}
                     />
+                    <div style={{display: "none"}}>
                     <Timeline ref={componentRef}/>
+                    </div>
                 </div>
             );
-        }
+        };
 export default Print;
