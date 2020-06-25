@@ -465,6 +465,12 @@ a {
     flex-wrap: wrap;
 }
 
+.printButton{
+    display: flex;
+    justify-content: center;
+    
+}
+
 
 
 /* Responsibility */
