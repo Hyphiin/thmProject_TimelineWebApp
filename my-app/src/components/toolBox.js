@@ -6,6 +6,7 @@ import Export_Import from "./Export_Import";
 import {circlesStagger} from "./Animation";
 import Screenshot from "./screenCapture";
 import CssOptions from "./cssOptions.js";
+import Print from "./print.js";
 
 
 function Toolbox () {
@@ -16,6 +17,7 @@ function Toolbox () {
         <CssOptions/>
         <Export_Import/>
         <Screenshot/>
+        <Print/>
     </div>
     )
 }

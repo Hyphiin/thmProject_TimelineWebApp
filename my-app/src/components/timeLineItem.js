@@ -96,8 +96,8 @@ function TimeLineItem({entries}) {
     })
 
     let arrayOfItems = document.getElementsByClassName("timeline-item");
-    for (let i=0; i<arrayOfItems.length; i++){
-        arrayOfItems[i].id = "entry" + i.toString();
+    for (let i = 0; i < arrayOfItems.length; i++) {
+        arrayOfItems[i].id = "entry " + i.toString();
     }
 
 
@@ -111,8 +111,11 @@ function TimeLineItem({entries}) {
                     <time>{entries.date}</time>
                     <p className="timeline-item-text" onClick={() => clickHandler("remove")}> {entries.text} </p>
                     <FontAwesomeIcon className="test" icon={entries.icon}/>
-                    <div>
-                        <input type="image" className="image"  alt="" src={entries.file}/>
+                    <div className="test">
+                        <style>
+                            {`@media print {.test{margin-top: 10px; width: 130px; height: 90px; object-fit: contain;}}`}
+                        </style>
+                        <input type="image" className="image" alt="" src={entries.file}/>
                     </div>
                     <div ref={el => (fileA = el)} className="file-input-content">
                     <span //onMouseEnter={e => hoverCircle(e)} //erster dot
