@@ -1,12 +1,61 @@
 import React from "react";
 import {hoverButton, hoverExitButton} from "./Animation";
 import $ from "jquery"
+import {findDOMNode} from "react-dom";
+import {Link} from 'react-router-dom';
+import GooglePicker from 'react-google-picker';
+
 
 import LocalStorageUsage from "./localStorageUsage";
 
 class GoogleDocs extends React.Component {
 
-    login(){
+    render(){
+        return (
+            <GooglePicker clientId={'1057260951853-bflr8jkajvavpmgk5i7snjqlhfi071s7.apps.googleusercontent.com'}
+                          developerKey={'AIzaSyCWW22efNvt5YIvWs8pV3M2-YZjbEDEPlA'}
+                          scope={['https://www.googleapis.com/auth/drive.readonly']}
+                          onChange={data => console.log('on change:', data)}
+                          onAuthFailed={data => console.log('on auth failed:', data)}
+                          multiselect={true}
+                          navHidden={true}
+                          authImmediate={false}
+                          viewId={'DOCS'}
+                          mimeTypes={['image/png', 'image/jpeg', 'image/jpg']}
+                          createPicker={ (google, oauthToken) => {
+                              const googleViewId = google.picker.ViewId.DOCS;
+                              const uploadView = new google.picker.DocsUploadView();
+                              const docsView = new google.picker.DocsView(googleViewId)
+                                  .setIncludeFolders(true)
+                                  .setSelectFolderEnabled(true);
+
+                              const picker = new window.google.picker.PickerBuilder()
+                                  .enableFeature(google.picker.Feature.SIMPLE_UPLOAD_ENABLED)
+                                  .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+                                  .addView(docsView)
+                                  .addView(uploadView)/*DocsUploadView added*/
+                                  .setOAuthToken(oauthToken)
+                                  .setDeveloperKey('AIzaSyCWW22efNvt5YIvWs8pV3M2-YZjbEDEPlA')
+                                  .setCallback((data)=>{
+                                      if (data.action == google.picker.Action.PICKED) {
+                                          var fileId = data.docs[0].id;
+                                          alert('The user selected: ' + fileId);
+                                          //picker();
+                                      }
+                                  });
+                              picker.build().setVisible(true);
+                          }}>
+                <span>Click here</span>
+                <div className="google"></div>
+            </GooglePicker>
+
+        );
+    }
+
+
+
+
+   /* login(){
 
         // client id of the project
 
@@ -42,9 +91,11 @@ class GoogleDocs extends React.Component {
     }
 
     upload(){
-
-            const urlParams = new URLSearchParams(window.location.search);
-            console.log(urlParams);
+            let loc=localStorage.getItem("googleData");
+            let zwischen=loc.split("?");
+            let search ="?"+zwischen[1];
+            console.log(search)
+            const urlParams = new URLSearchParams(search);
             const code = urlParams.get('code');
             console.log(code);
             const redirect_uri = "http://localhost:3000"; // replace with your redirect_uri;
@@ -156,12 +207,38 @@ class GoogleDocs extends React.Component {
 
 
     }
+ /*
+    upload() {
+        $(document).ready(function () {
+            const url = "https://www.googleapis.com/upload/drive/v3/files?uploadType=media";
+            var file = LocalStorageUsage();
+            var blob = new Blob([file], {type: "text/plain"});
+            const data = blob;
 
-    render() {
-        return <div>
-        <button onClick={()=>this.login()}> Google Docs Login </button>
-        <button onClick={()=>this.upload()} id="upload"> Upload to <br/> Google Docs </button>
-        </div>
+            $("#upload").click(function () {
+            $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: data,
+                    headers: {'Content-Type': 'text'},
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }
+            )
+        })
+        })
     }
+
+    <button onClick={()=>this.login()}> Google Docs Login </button>
+        <button onClick={()=>this.upload()} id="upload"> Upload to <br/> Google Docs </button>
+
+
+
+*/
+
 }
 export default GoogleDocs;

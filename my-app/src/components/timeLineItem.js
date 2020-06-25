@@ -57,6 +57,9 @@ library.add(
 function TimeLineItem({entries}) {
 
     function clickHandler(mode, pos) {
+        localStorage.setItem("test",(3).toString());
+        let i = parseInt(localStorage.getItem("test"),10);
+        console.log(i);
         localStorage.setItem("mode", "neutral");
         console.log(mode + "," + pos);
         if (mode === "add" && pos === "before") {
@@ -67,11 +70,13 @@ function TimeLineItem({entries}) {
             console.log("add after");
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries) + 1, "add");
         }
-        if (mode === "delete") {
+        if (mode === "delete" && pos==="middle") {
             editContent("", "", "", "", "", editContent("", "", "", "", "", "", "get").indexOf(entries), "delete");
         }
-        if (mode === "edit") {
+        if (mode === "edit" && pos==="middle") {
+            console.log(editContent("", "", "", "", "", "", "get").indexOf(entries));
             editContent(localStorage.getItem("text"), localStorage.getItem("date"), localStorage.getItem("tag"), localStorage.getItem("icon"), localStorage.getItem("file"), editContent("", "", "", "", "", "", "get").indexOf(entries), "edit");
+
         }
     }
 
