@@ -81,12 +81,10 @@ class Navigation extends React.Component {
                 <div id="navButtons">
                     <a onMouseEnter={e => hoverPfeil(e)}
                        onMouseOut={e => hoverExitPfeil(e)}
-                       onClickCapture={e => timelineStagger(e)}
                        ref={ e => this.prev = e }
                        className="prev" href="#" onClick={() =>this.setTimeline("prev")} >&#8249;</a>
                     <a onMouseEnter={e => hoverPfeil(e)}
                        onMouseOut={e => hoverExitPfeil(e)}
-                       onClickCapture={e => timelineStagger(e)}
                        ref={ e => this.next = e }
                        className="next" href="#" onClick={() =>this.setTimeline("next")}>&#8250;</a>
                     <button  onMouseEnter={e => hoverButton(e)}

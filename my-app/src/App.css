@@ -216,162 +216,6 @@ h1 {
 }
 
 
-
-/* Responsibility */
-@media only screen and (max-width: 1023px) {
-    .timeline-item-content {
-        max-width: 65%;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .timeline-item-content,
-    .timeline-item:nth-child(odd) .timeline-item-content {
-        padding: 15px 10px;
-        text-align: center;
-        align-items: center;
-    }
-
-    .timeline-item-content .tag {
-        width: calc(100% - 10px);
-        text-align: center;
-        font-size: 80%;
-        font-weight: bold;
-    }
-
-    .timeline-item-content time {
-        margin-top: 20px;
-        font-size: 80%;
-    }
-
-    .timeline-item-content p {
-        font-size: 80%;
-    }
-
-    .theader{
-        font-size: 80%;
-    }
-
-    .form_input{
-        display: flex;
-        justify-content: center;
-    }
-
-    .toolbox_container{
-        display: flex;
-        justify-content: center;
-        height: 100%;
-    }
-
-    .headline{
-        font-size: 80%;
-    }
-
-    #insert{
-        height:70%;
-    }
-    .desc{
-        font-size: 80%;
-    }
-    .tag{
-        font-size: 60%;
-    }
-    .date{
-        font-size: 80%;
-    }
-    .iinsert{
-        font-size: 80%;
-    }
-    .finsert{
-        font-size: 80%;
-    }
-    #form_button{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #form_button button{
-        font-size: 50%;
-        flex-wrap: wrap;
-    }
-    .form{
-        display: flex;
-        flex-direction: column;
-    }
-
-    #exportimportButtons{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #navContainer{
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #navButtons{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        font-size: 80%;
-        justify-content: center;
-    }
-
-
-    #navButtons button{
-        width: 80%;
-        font-size: 80%;
-    }
-
-    #navButtons p{
-        width: 80%;
-        font-size: 80%;
-    }
-
-
-    #seitenAnzahl{
-        display: flex;
-        justify-content: center;
-        font-size: 80%;
-    }
-
-    #InputFile{
-        width:80%;
-    }
-
-    #wrapper #export-container{
-        font-size: 80%;
-        justify-content: center;
-    }
-
-    #formatform{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    #formatform input{
-        font-size: 80%;
-    }
-
-    #formatform label{
-        font-size: 80%;
-    }
-
-    #formatform p{
-        font-size: 80%;
-    }
-
-    #exportimportButtons button{
-        font-size: 80%;
-        width: 80%;
-    }
-}
-
 /* TOOLBOX */
 .image{
     height: 50%;
@@ -439,54 +283,59 @@ h1 {
     margin: 2px;
 }
 
-#wrapper{
-    display: flex;
-    justify-content:center;
-    margin-top: 1%;
-}
 
-#export-container{
-    width: 200px;
-    height: 40px;
-    line-height: 40px;
-    font-family: Arial;
+/*Bild exportieren Button + Timeline Import/Export Button */
+a {
     text-decoration: none;
-    background-color: #42a6c6;
-    color: #000;
-    border: 2px solid #42a6c6;
-    border-radius: 5px;
-    letter-spacing: 2px;
-    text-align: center;
+    color: inherit;
+}
+
+.cta {
     position: relative;
-    transition: all .35s;
-    display:block;
-    margin:20px;
-    font-size:16px;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all .2s ease;
 }
-
-
-#export-container:after{
-    position: absolute;
+.cta:before {
     content: "";
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    display: block;
+    border-radius: 28px;
+    background: #42a6c6 50%;
+    width: 30px;
+    height: 30px;
+    transition: all .3s ease
+}
+.span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: .25em;
+    vertical-align: middle;
+}
+.svg {
+    position: relative;
     top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    color: #fff;
-    background: #f56e47;
-    transition: all .35s;
-
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #f56e47;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all .3s ease;
 }
-
-#export-container:hover{
-    color: #fff;
-    z-index: 2;
+.cta:hover:before {
+    width: 90%;
+    background: #42a6c6 100%;
 }
-
-#export-container:hover:after{
-    width: 100%;
-    z-index: 2;
-    content:"Bild exportieren";
+.svg:hover {
+    transform: translateX(0);
+}
+.svg:hover:active {
+    transform: scale(.96);
 }
 
 
@@ -496,6 +345,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 40px;
 }
 
 .iconselect{
@@ -607,15 +457,189 @@ h1 {
     flex-direction: column;
 }
 
-#exportimportButtons{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 #navContainer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+
+
+/* Responsibility */
+@media only screen and (max-width: 1023px) {
+    .timeline-item-content {
+        max-width: 65%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline-item-content,
+    .timeline-item:nth-child(odd) .timeline-item-content {
+        padding: 15px 10px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .timeline-item-content .tag {
+        width: calc(100% - 10px);
+        text-align: center;
+        font-size: 80%;
+        font-weight: bold;
+    }
+
+    .timeline-item-content time {
+        margin-top: 20px;
+        font-size: 80%;
+    }
+
+    .timeline-item-content p {
+        font-size: 80%;
+    }
+
+    .theader {
+        font-size: 80%;
+    }
+
+    .form_input {
+        display: flex;
+        justify-content: center;
+    }
+
+    .toolbox_container {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .headline {
+        font-size: 80%;
+    }
+
+    #insert {
+        height: 70%;
+    }
+
+    .desc {
+        font-size: 80%;
+    }
+
+    .tag {
+        font-size: 60%;
+    }
+
+    .date {
+        font-size: 80%;
+    }
+
+    .iinsert {
+        font-size: 80%;
+    }
+
+    .finsert {
+        font-size: 80%;
+    }
+
+    #form_button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #form_button button {
+        font-size: 50%;
+        flex-wrap: wrap;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #exportimportButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #navContainer {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #navButtons {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 80%;
+        justify-content: center;
+    }
+
+
+    #navButtons button {
+        width: 80%;
+        font-size: 80%;
+    }
+
+    #navButtons p {
+        width: 80%;
+        font-size: 80%;
+    }
+
+
+    #seitenAnzahl {
+        display: flex;
+        justify-content: center;
+        font-size: 80%;
+    }
+
+    #InputFile {
+        width: 80%;
+    }
+
+    #wrapper #export-container {
+        font-size: 80%;
+        justify-content: center;
+    }
+
+    #formatform {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #formatform input {
+        font-size: 80%;
+    }
+
+    #formatform label {
+        font-size: 80%;
+    }
+
+    #formatform p {
+        font-size: 80%;
+    }
+
+    #exportimportButtons button {
+        font-size: 80%;
+        width: 80%;
+    }
+
+    .cta{
+        width: 80%;
+        font-size: 80%;
+    }
+
+    .svg{
+        width: 80%;
+        font-size: 80%;
+    }
+
+    .span{
+        width: 80%;
+        font-size: 80%;
+    }
 }

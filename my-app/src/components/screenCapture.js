@@ -3,11 +3,15 @@ import React, {useEffect, useRef} from "react";
 import {circlesStagger, hoverButton, hoverExitButton} from "./Animation";
 
 const Screenshot = () => (
-    <div id="wrapper">
-         <button id ="export-container" onClick={capture}>
-            Bild exportieren
-         </button>
-    </div>
+
+    <a href="#" className="cta" onClick={capture}>
+        <span className="span"> Bild exportieren</span>
+         <svg className="svg" width="13px" height="10px" viewBox="0 0 13 10">
+             <path d="M1,5 L11,5"></path>
+             <polyline points="8 1 12 5 8 9"></polyline>
+         </svg>
+    </a>
+
 );
 
 function capture(){
